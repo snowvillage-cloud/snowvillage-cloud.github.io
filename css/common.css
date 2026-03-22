@@ -116,25 +116,47 @@ header {
   overflow: hidden; /* ❄️ 雪がはみ出さないように */
 }
 
-/* ❄️ アイデア1：ヘッダー内の雪のパーティクル背景 */
+/* ❄️ ヘッダー内の雪（ランダム・トリプルレイヤー版） */
 header::before {
   content: '';
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
+  
+  /* 🌟 3つの異なる密度の雪を重ねて、規則性を打ち消します */
   background-image: 
-    radial-gradient(#ffffff 1px, transparent 1px),
-    radial-gradient(#ffffff 1.5px, transparent 1.5px);
-  background-size: 60px 60px;
-  background-position: 0 0, 30px 30px;
-  opacity: 0.2;
+    /* Layer 1: 手前の大きな雪（ゆっくり） */
+    radial-gradient(rgba(41, 181, 232, 0.4) 3px, transparent 3px),
+    /* Layer 2: 中間の雪（中速） */
+    radial-gradient(rgba(41, 181, 232, 0.3) 2px, transparent 2px),
+    /* Layer 3: 奥の小さな雪（速め） */
+    radial-gradient(rgba(41, 181, 232, 0.2) 1.5px, transparent 1.5px);
+  
+  /* 🌟 タイルのサイズをバラバラ（150px, 230px, 170px）にすることで、横並びを防ぎます */
+  background-size: 150px 150px, 230px 230px, 170px 170px;
+  background-position: 0 0, 40px 60px, 100px 20px;
+  
+  opacity: 0.8;
   pointer-events: none;
   z-index: -1;
-  animation: snowFallHeader 12s linear infinite;
+  /* 🌟 アニメーションを合成して、複雑な動きを作ります */
+  animation: 
+    snowLayer1 20s linear infinite,
+    snowLayer2 15s linear infinite,
+    snowLayer3 10s linear infinite;
 }
 
-@keyframes snowFallHeader {
-  from { background-position: 0 0, 30px 30px; }
-  to { background-position: 60px 120px, 90px 150px; }
+/* 🌟 各レイヤーごとに移動距離と角度を変えて、一直線に見えるのを防ぎます */
+@keyframes snowLayer1 {
+  from { background-position: 0 0; }
+  to { background-position: 150px 300px; }
+}
+@keyframes snowLayer2 {
+  from { background-position: 40px 60px; }
+  to { background-position: 270px 520px; }
+}
+@keyframes snowLayer3 {
+  from { background-position: 100px 20px; }
+  to { background-position: 270px 360px; }
 }
 
 header.scrolled {
