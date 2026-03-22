@@ -115,3 +115,76 @@ footer { background-color: var(--secondary); color: #fff; padding: 50px 0; text-
 .toggle .line1 { transform: rotate(-45deg) translate(-5px, 6px); }
 .toggle .line2 { opacity: 0; }
 .toggle .line3 { transform: rotate(45deg) translate(-5px, -6px); }
+
+/* --- 🌟 style.css の末尾に追加 --- */
+
+/* 1. ヒーローセクション自体の修正（雪を配置するための土台作り） */
+.hero {
+  position: relative; /* 雪を配置するための基準点にする */
+  height: 100vh;
+  /* 元の背景：最下層に配置。雪のレイヤーが上に乗るようにする */
+  background: radial-gradient(circle at center, #fff 0%, var(--acc-blue) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 80px;
+  overflow: hidden; /* 雪が画面外にはみ出さないように */
+}
+
+/* 2. 🌟 雪を表現する複数の背景レイヤー (擬似要素 ::after を使用) */
+/* 画像不要！CSS内でSVG結晶を生成し、複数重ねてランダム感を演出します。 */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  /* 雪の結晶のSVG (白い点と結晶の形状)
+     3つの異なるサイズ・透明度のレイヤー（遠く、普通、近く）を作成し、重ねます。 */
+  background-image:
+    /* Layer 1 (一番小さく、薄い雪 - 遠景) */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Ccircle cx='5' cy='5' r='1' fill='rgba(255, 255, 255, 0.5)'/%3E%3C/svg%3E"),
+    /* Layer 2 (中くらいのサイズ - 中景) */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Ccircle cx='10' cy='10' r='1.5' fill='rgba(255, 255, 255, 0.7)'/%3E%3C/svg%3E"),
+    /* Layer 3 (一番大きく、はっきりした結晶 - 近景) */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='2' fill='rgba(255, 255, 255, 0.9)'/%3E%3C/svg%3E");
+  
+  /* それぞれのレイヤーの繰り返し単位のサイズを設定 */
+  background-size: 100px 100px, 150px 150px, 200px 200px;
+  
+  /* 🌟 それぞれのレイヤーに異なる速度のアニメーションを適用し、ランダムな動きに見せる */
+  animation: snow_far 15s linear infinite, snow_med 10s linear infinite, snow_near 8s linear infinite;
+  
+  opacity: 0.8; /* 全体の透明度を少し下げる */
+  pointer-events: none; /* 雪がクリックを邪魔しないように */
+  z-index: 1; /* コンテンツより上、ヘッダーより下に配置 */
+}
+
+/* ヒーロー内のコンテンツ（テキスト、ボタン）を雪より上に配置 */
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* 3. 🌟 アニメーション定義 (異なる速度、移動量) */
+
+/* レイヤー1 (遠く、一番小さく、速い) */
+@keyframes snow_far {
+  0% { background-position: 0 0, 0 0, 0 0; }
+  100% { background-position: 100px 500px, 150px 450px, 200px 400px; } /* 下へ、少し右へ移動 */
+}
+
+/* レイヤー2 (普通、中くらい、普通の速さ) */
+@keyframes snow_med {
+  0% { background-position: 0 0, 0 0, 0 0; }
+  100% { background-position: 200px 600px, 300px 550px, 400px 500px; }
+}
+
+/* レイヤー3 (近く、一番大きく、ゆっくり) */
+@keyframes snow_near {
+  0% { background-position: 0 0, 0 0, 0 0; }
+  100% { background-position: 300px 700px, 450px 650px, 600px 600px; }
+}
