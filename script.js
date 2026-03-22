@@ -178,12 +178,15 @@ function loadLatestNews() {
     
     if (!newsList || typeof newsData === 'undefined' || newsData.length === 0) return;
 
-    // 🌟 最新の5件だけを取得
+    // 最新の5件だけを取得
     const latestFive = newsData.slice(0, 5);
 
-    newsList.innerHTML = latestFive.map(item => `
+    // 🌟 修正：mapにindex引数を追加
+    newsList.innerHTML = latestFive.map((item, index) => `
         <li class="news-item">
             <a href="${item.link}" class="news-link" ${item.isExternal ? 'target="_blank" rel="noopener noreferrer"' : ''}>
+                ${index === 0 ? '<span class="latest-pulse" aria-hidden="true"></span>' : ''}
+                
                 <span class="news-date">${item.date}</span>
                 <span class="news-text">${item.text}</span>
                 <span class="news-arrow">→</span>
@@ -191,7 +194,7 @@ function loadLatestNews() {
         </li>
     `).join('');
 
-    // 🌟 6件以上データがあれば、アーカイブへのリンクを表示
+    // 6件以上データがあれば、アーカイブへのリンクを表示
     if (newsData.length > 5 && archiveLink) {
         archiveLink.style.display = 'block';
     }

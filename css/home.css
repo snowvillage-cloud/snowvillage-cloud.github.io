@@ -273,3 +273,45 @@
     color: #fff;
     letter-spacing: 0.5px;
 }
+
+/* --- 🌟 最新News用点滅パルスアイコン --- */
+
+.news-item {
+    position: relative; /* パルスを絶対配置するため */
+}
+
+/* 最新（最初）のニュースのリンクにパディングを作る */
+.news-item:first-child .news-link {
+    padding-left: 30px; 
+}
+
+/* 点滅する丸（パルス）の本体 */
+.latest-pulse {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: var(--primary); /* Snowflakeブルー */
+    border-radius: 50%;
+    z-index: 2;
+}
+
+/* 点滅する外輪（アニメーション） */
+.latest-pulse::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--primary);
+    border-radius: 50%;
+    animation: pulse-ring 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+    opacity: 0;
+}
+
+/* 🌟 アニメーション定義（以前のNewsラベル用を流用） */
+@keyframes pulse-ring {
+    0% { transform: scale(1); opacity: 0.7; }
+    100% { transform: scale(3); opacity: 0; }
+}

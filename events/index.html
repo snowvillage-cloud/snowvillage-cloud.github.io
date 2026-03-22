@@ -1,46 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>イベント情報 - Snowflake UG Japan</title>
-    <link rel="stylesheet" href="../style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="../style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet" />
+  </head>
+  <body>
     <div id="header-container"></div>
 
-    <main class="container" style="padding-top: 150px;">
-        
-        <section>
-            <div style="text-align: center; margin-bottom: 60px;">
-                <h2 class="reveal" style="margin-bottom: 10px;">Featured Events</h2>
-                <p class="reveal" style="color: var(--text-light); font-size: 1.1rem;">
-                    コミュニティ全体で開催される、大規模なミートアップや注目のイベントです。
-                </p>
-            </div>
-            <div class="grid" id="event-grid"></div>
-        </section>
+    <main class="container" style="padding-top: 150px">
+      <section>
+        <div style="text-align: center; margin-bottom: 60px">
+          <h2 class="reveal" style="margin-bottom: 10px">Featured Events</h2>
+          <p class="reveal" style="color: var(--text-light); font-size: 1.1rem">コミュニティ全体で開催される、大規模なミートアップや注目のイベントです。</p>
+        </div>
+        <div class="grid" id="event-grid"></div>
+      </section>
 
-        <section class="reveal">
-            <div class="techplay-banner">
-                <div class="banner-content">
-                    <h3>全てのイベント情報は TECH PLAY でチェック！</h3>
-                    <p>最新のイベント日程、詳細の確認、および参加申し込みは、TECH PLAYの公式コミュニティページにて受け付けています。グループをフォローして最新情報を受け取りましょう。</p>
-                    <a href="https://techplay.jp/community_group/snowflake_users" target="_blank" rel="noopener noreferrer" class="btn btn-techplay">
-                        TECH PLAY コミュニティページへ
-                    </a>
-                </div>
-            </div>
-        </section>
-        
+      <section class="reveal">
+        <div class="techplay-banner">
+          <div class="banner-content">
+            <h3>全てのイベント情報は TECH PLAY でチェック！</h3>
+            <p>最新のイベント日程、詳細の確認、および参加申し込みは、TECH PLAYの公式コミュニティページにて受け付けています。グループをフォローして最新情報を受け取りましょう。</p>
+            <a href="https://techplay.jp/community_group/snowflake_users" target="_blank" rel="noopener noreferrer" class="btn btn-techplay"> TECH PLAY コミュニティページへ </a>
+          </div>
+        </div>
+      </section>
     </main>
     <div id="footer-container"></div>
-    
+
     <script src="../script.js"></script>
     <script>
-        renderHeader('..', 'events');
-        renderFooter();
+      renderHeader("..", "events");
+      renderFooter();
     </script>
-</body>
+  </body>
 </html>
