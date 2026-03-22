@@ -104,3 +104,21 @@ const addEventStyles = () => {
         document.head.appendChild(style);
     }
 };
+
+// --- 🌟 規約同意チェックボックスの制御---
+document.addEventListener('DOMContentLoaded', () => {
+    const agreeCheckbox = document.getElementById('agree-checkbox');
+    const slackJoinBtn = document.getElementById('slack-join-btn');
+
+    if (agreeCheckbox && slackJoinBtn) {
+        agreeCheckbox.addEventListener('change', (e) => {
+            if (e.target.checked) {
+                // チェックが入ったら disabled クラスを外す
+                slackJoinBtn.classList.remove('disabled');
+            } else {
+                // チェックが外れたら disabled クラスをつける
+                slackJoinBtn.classList.add('disabled');
+            }
+        });
+    }
+});
