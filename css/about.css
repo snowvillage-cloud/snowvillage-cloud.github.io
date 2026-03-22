@@ -137,6 +137,39 @@
   fill: var(--primary); /* Snowflakeブルーに点灯 */
 }
 
+
+/* 🌟 担当部門（Departments）タグのデザイン */
+.dept-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px; /* 以前の8pxから半分に縮小して密集感を出す */
+  margin-top: 8px;
+}
+
+.dept-tag {
+  background-color: rgba(41, 181, 232, 0.08);
+  color: var(--primary);
+  border: 1px solid rgba(41, 181, 232, 0.4);
+  padding: 2px 6px;
+  border-radius: 12px;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  
+  /* 🌟 以下3行を追記（リンクとして機能させるため） */
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+/* 🌟 追加：マウスを乗せた時のクリック感エフェクト */
+.dept-tag:hover {
+  background-color: var(--primary);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(41, 181, 232, 0.2);
+}
+
 /* 各ブランド固有のホバー色にしたい場合はこちら（お好みで） */
 /* .sns-link[href*="x.com"]:hover .sns-icon { fill: #000; }
 .sns-link[href*="linkedin"]:hover .sns-icon { fill: #0077B5; }

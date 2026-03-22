@@ -1,0 +1,55 @@
+/* 🌟 注力領域（Focus Areas）説明ページ専用スタイル */
+
+.dept-section {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 40px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  border-top: 4px solid var(--primary);
+  /* 💡 ここが重要：タグクリックで飛んできた時に、固定ヘッダーの下に隠れないようにする余白 */
+  scroll-margin-top: 100px; 
+}
+
+.dept-title {
+  color: var(--secondary);
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dept-icon {
+  font-size: 2rem;
+}
+
+/* 🌟 追加：業務内容リストの装飾スタイル */
+.task-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 20px;
+}
+
+.task-list li {
+  margin-bottom: 12px;
+  padding-left: 24px;
+  position: relative;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.task-list li::before {
+  content: "✦";
+  color: var(--primary);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 0.9rem;
+}
+
+.task-list strong {
+  color: var(--secondary);
+  font-weight: 600;
+  margin-right: 5px;
+}

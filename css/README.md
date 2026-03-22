@@ -9,7 +9,8 @@ SnowVillage公式サイトのビジュアルとレスポンシブ挙動を定義
 | :--- | :--- | :--- |
 | **`common.css`** | **全ページ共通（最重要）** | `:root` (変数), `body`, `.container`, `.btn`, `header`, `footer`<br>※サイト全体の余白、ブランドカラー、ベースフォントを管理。 |
 | **`home.css`** | **トップページ ＆ Newsアーカイブ** | `.hero` (幾何学スノー/3Dグリッド), `.news-wrapper`, `.news-item`<br>※最新お知らせの点滅アニメーション `.latest-pulse` もここで定義。<br>※ `/news/index.html` でも流用されています。 |
-| **`about.css`** | **運営・卒業生・スポンサー紹介** | `.member-card`, `.member-photo`, `.member-sns`, `.alumni-banner`<br>※カードの浮遊エフェクトや、インラインSVGアイコンのホバーカラー遷移を制御。 |
+| **`about.css`** | **運営・卒業生・スポンサー紹介** | `.member-card`, `.dept-tag`, `.member-sns`, `.alumni-banner`<br>※カードの浮遊エフェクト、部門タグのホバーアクション、インラインSVGアイコンのカラー遷移を制御。 |
+| **`departments.css`** | **注力領域（Focus Areas）説明** | `.dept-section`, `.dept-title`, `.task-list`<br>※アンカーリンク時のヘッダー被り防止（`scroll-margin-top`）や、独自のリスト装飾（`✦`アイコン）を制御。 |
 | **`guide.css`** | **コミュニティガイドライン** | `.guide-section`, `.guide-block`, `.callout` (info/warning/tip)<br>※`.channel-tag` や `.mention-tag` など、Slack風のテキスト装飾も担う、可読性重視のCSS。 |
 | **`join.css`** | **Slack参加・同意フォーム** | `.rules-box`, `.rule-item`, `.agreement-area`, `.checkbox-container`<br>※独自デザインの同意チェックボックスと、無効化ボタン（`.disabled`）のスタイル。 |
 | **`calendar.css`** | **イベントカレンダー** | `.calendar-wrapper`, `.calendar-section`<br>※Googleカレンダーの `iframe` をスマホ画面にレスポンシブ対応させるためのラッパー制御。 |

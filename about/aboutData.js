@@ -6,6 +6,7 @@ const organizersData = [
     name: "XXXXX",
     role: "Organizer / Community Lead",
     desc: "XXXXXX",
+    departments: ["Programs & Ops", "Events & Experience"],
     photo: "../images/organizers/photo_taro.jpg",
     xUrl: "https://x.com/あなたのID",
     linkedInUrl: "https://www.linkedin.com/in/あなたのID"
@@ -14,6 +15,7 @@ const organizersData = [
     name: "Yuya Matsubara",
     role: "Snowflake DataSuperheros 2026 & Snowflake Squad",
     desc: "Principal Data Engineer at NTT DOCOMO, Inc. <br>Slackでなんかうるさいやつです!",
+    departments: ["Events & Experience", "Content & Platform"],
     photo: "../images/organizers/yuya_matsubara.jpeg",
     xUrl: "https://x.com/matsubara_tech",
     linkedInUrl: "https://www.linkedin.com/in/yuya-matsubara-b86278323"
@@ -22,6 +24,7 @@ const organizersData = [
     name: "Cloud Jiro",
     role: "Public Relations",
     desc: "XXXXXX",
+    departments: ["Content & Platform"],
     photo: "../images/organizers/photo_jiro.jpg",
     xUrl: "https://x.com/あなたのID",
     linkedInUrl: "https://www.linkedin.com/in/あなたのID"
