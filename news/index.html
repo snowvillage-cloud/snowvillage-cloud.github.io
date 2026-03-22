@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>News アーカイブ</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/home.css"> <style>
+        /* アーカイブページ専用の微調整 */
+        .archive-container { padding-top: 150px; min-height: 80vh; }
+        .news-wrapper { max-width: 1000px; margin-bottom: 100px; }
+        .news-item { padding: 20px 0; } /* 一覧なので少しゆったり */
+    </style>
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <main class="container archive-container">
+        <h2 class="reveal" style="text-align: center; margin-bottom: 40px;">News Archive</h2>
+        
+        <div class="news-wrapper reveal">
+            <ul id="news-full-list"></ul>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="../newsData.js"></script>
+    <script src="../script.js"></script>
+    <script>
+        renderHeader('..', 'news');
+        renderFooter();
+
+        // 🌟 アーカイブページ専用の読み込み処理
+        window.addEventListener('DOMContentLoaded', () => {
+            const fullList = document.getElementById('news-full-list');
+            if (fullList && typeof newsData !== 'undefined') {
+                fullList.innerHTML = newsData.map(item => `
+                    <li class="news-item">
+                        <a href="${item.link.startsWith('http') ? item.link : '../' + item.link}" 
+                           class="news-link" 
+                           ${item.isExternal ? 'target="_blank"' : ''}>
+                            <span class="news-date">${item.date}</span>
+                            <span class="news-text">${item.text}</span>
+                            <span class="news-arrow">→</span>
+                        </a>
+                    </li>
+                `).join('');
+            }
+        });
+    </script>
+</body>
+</html>

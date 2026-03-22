@@ -172,25 +172,27 @@ const renderFooter = () => {
     `;
 };
 
-// --- 🌟 最新ニュースを1件表示する機能 (script.js) ---
-const loadLatestNews = () => {
-    const newsTicker = document.getElementById('news-ticker');
-    if (!newsTicker || !newsData || newsData.length === 0) return;
+function loadLatestNews() {
+    const newsList = document.getElementById('news-ticker-list');
+    const archiveLink = document.getElementById('news-archive-link');
+    
+    if (!newsList || typeof newsData === 'undefined' || newsData.length === 0) return;
 
-    // 配列の最初（最新）のデータを取得
-    const latest = newsData[0];
+    // 🌟 最新の5件だけを取得
+    const latestFive = newsData.slice(0, 5);
 
-    newsTicker.innerHTML = `
-        <div class="news-label">
-            <span class="pulse-icon"></span>
-            <strong>News</strong>
-        </div>
-        <div class="news-content">
-            <a href="${latest.link}" class="news-link" ${latest.isExternal ? 'target="_blank" rel="noopener noreferrer"' : ''}>
-                <span class="news-date">${latest.date}</span>
-                <span class="news-text">${latest.text}</span>
+    newsList.innerHTML = latestFive.map(item => `
+        <li class="news-item">
+            <a href="${item.link}" class="news-link" ${item.isExternal ? 'target="_blank" rel="noopener noreferrer"' : ''}>
+                <span class="news-date">${item.date}</span>
+                <span class="news-text">${item.text}</span>
                 <span class="news-arrow">→</span>
             </a>
-        </div>
-    `;
-};
+        </li>
+    `).join('');
+
+    // 🌟 6件以上データがあれば、アーカイブへのリンクを表示
+    if (newsData.length > 5 && archiveLink) {
+        archiveLink.style.display = 'block';
+    }
+}

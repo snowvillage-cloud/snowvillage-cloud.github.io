@@ -147,149 +147,129 @@
   50% { transform: translateY(-10px); }
 }
 
-/* --- 🌟 News: お知らせセクションのスタイル --- */
+
+/* --- 🌟 News: お知らせセクションのスタイル (白背景対応版) --- */
 .news-section {
-    padding: 40px 0 0; /* ミッションとの間隔調整 */
+    padding: 60px 0 20px; /* 上下の余白を広げて独立させる */
     position: relative;
     z-index: 20;
 }
 
+/* 🌟 外枠：白背景に浮かび上がるよう、背景を濃くし、影を調整 */
 .news-wrapper {
-    display: flex;
-    align-items: center;
-    background: rgba(15, 23, 42, 0.6); /* サイバー背景に合わせた半透明 */
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(41, 181, 232, 0.3);
-    border-radius: 50px; /* 丸みのあるバッジ形状 */
-    padding: 10px 30px;
-    max-width: 900px;
+    background: #0f172a; /* 濃いネイビーに変更して視認性を確保 */
+    border: 1px solid rgba(41, 181, 232, 0.4);
+    border-radius: 24px;
+    padding: 30px 40px;
+    max-width: 950px;
     margin: 0 auto;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    /* 白背景で映える、少し強めの青みがかった影 */
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
 }
 
 .news-label {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 10px;
-    padding-right: 20px;
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--primary);
+    padding: 4px 14px;
+    margin-bottom: 20px;
+    background: rgba(41, 181, 232, 0.15);
+    border: 1px solid rgba(41, 181, 232, 0.3);
+    border-radius: 6px;
+    color: var(--primary); /* Snowflakeブルー */
     font-weight: 800;
-    letter-spacing: 1px;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
 }
 
-/* 🌟 生きているコミュニティを演出する「拍動」アニメーション */
-.pulse-icon {
-    width: 8px;
-    height: 8px;
-    background-color: var(--primary);
-    border-radius: 50%;
-    position: relative;
+#news-ticker-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.pulse-icon::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: var(--primary);
-    border-radius: 50%;
-    animation: pulse-ring 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+.news-item {
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
 }
 
-@keyframes pulse-ring {
-    0% { transform: scale(1); opacity: 0.7; }
-    100% { transform: scale(3); opacity: 0; }
-}
-
-.news-content {
-    flex-grow: 1;
-    padding-left: 20px;
-    overflow: hidden;
+.news-item:last-child {
+    border-bottom: none;
 }
 
 .news-link {
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: #fff;
-    transition: var(--transition);
+    width: 100%;
 }
 
+/* 🌟 日付の色を少し明るいグレーに（白背景上の濃い箱の中でも読みやすく） */
 .news-date {
-    font-size: 0.85rem;
-    color: var(--text-light);
-    margin-right: 15px;
+    font-size: 0.9rem;
+    color: #94a3b8; 
+    margin-right: 25px;
     font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    flex-shrink: 0;
 }
 
+/* 🌟 テキストは純粋な白でくっきりと */
 .news-text {
-    font-size: 0.95rem;
+    font-size: 1rem;
+    color: #f8fafc;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis; /* 長い文字を「...」にする */
-    flex-grow: 1;
+    text-overflow: ellipsis;
+    flex: 1;
+    min-width: 0;
 }
 
 .news-arrow {
-    margin-left: 10px;
+    margin-left: 15px;
     color: var(--primary);
-    transition: transform 0.3s ease;
+    font-weight: bold;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    flex-shrink: 0;
+    width: 25px;
+    text-align: right;
 }
 
-.news-link:hover .news-text {
+/* --- 🌟 ホバーアクション --- */
+.news-item:hover {
+    background: rgba(255, 255, 255, 0.03); /* ほんの少しだけ明るく */
+}
+
+.news-item:hover .news-text {
     color: var(--primary);
 }
 
-.news-link:hover .news-arrow {
-    transform: translateX(5px);
+.news-item:hover .news-date {
+    color: #fff;
 }
 
-/* スマホ対応 */
-@media screen and (max-width: 768px) {
-    .news-wrapper {
-        flex-direction: column;
-        border-radius: 15px;
-        padding: 15px;
-        align-items: flex-start;
-    }
-    .news-label {
-        border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        width: 100%;
-        padding-bottom: 10px;
-        margin-bottom: 10px;
-    }
-    .news-content {
-        padding-left: 0;
-        width: 100%;
-    }
+.news-item:hover .news-arrow {
+    transform: translateX(10px);
 }
 
-/* --- ヒーローセクションと雪のアニメーション ---
-.hero {
-  position: relative; height: 100vh;
-  background: radial-gradient(circle at center, #fff 0%, var(--acc-blue) 100%);
-  display: flex; align-items: center; justify-content: center; text-align: center; padding-top: 80px; overflow: hidden;
+/* 🌟 アーカイブリンク（もっと見る） */
+.archive-link-container {
+    text-align: right;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.hero::after {
-  content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-  background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Ccircle cx='5' cy='5' r='1' fill='rgba(255, 255, 255, 0.5)'/%3E%3C/svg%3E"),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Ccircle cx='10' cy='10' r='1.5' fill='rgba(255, 255, 255, 0.7)'/%3E%3C/svg%3E"),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='2' fill='rgba(255, 255, 255, 0.9)'/%3E%3C/svg%3E");
-  background-size: 100px 100px, 150px 150px, 200px 200px;
-  animation: snow_far 15s linear infinite, snow_med 10s linear infinite, snow_near 8s linear infinite;
-  opacity: 0.8; pointer-events: none; z-index: 1;
+.btn-more {
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
 }
 
-.hero-content { position: relative; z-index: 2; }
-.hero-content h1 { font-size: 3.5rem; color: var(--secondary); margin-bottom: 20px; line-height: 1.2; }
-.hero-content p { font-size: 1.3rem; color: var(--text-light); margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto; }
-@media screen and (max-width: 768px) { .hero-content h1 { font-size: 2.5rem; } }
-
-@keyframes snow_far { 0% { background-position: 0 0, 0 0, 0 0; } 100% { background-position: 100px 500px, 150px 450px, 200px 400px; } }
-@keyframes snow_med { 0% { background-position: 0 0, 0 0, 0 0; } 100% { background-position: 200px 600px, 300px 550px, 400px 500px; } }
-@keyframes snow_near { 0% { background-position: 0 0, 0 0, 0 0; } 100% { background-position: 300px 700px, 450px 650px, 600px 600px; } } */
+.btn-more:hover {
+    color: #fff;
+    letter-spacing: 0.5px;
+}

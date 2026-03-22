@@ -19,12 +19,23 @@
     </div>
 
     <main class="container">
+
         <section class="news-section">
             <div class="container">
-                <div class="news-wrapper reveal" id="news-ticker">
+                <div class="news-wrapper reveal">
+                    <div class="news-label">
+                        <span class="pulse-icon"></span>
+                        <strong>News</strong>
+                    </div>
+                    <ul id="news-ticker-list"></ul>
+                    <div id="news-archive-link" class="archive-link-container" style="display: none;">
+                        <a href="news/" class="btn-more">過去のお知らせを見る →</a>
+                    </div>
                 </div>
             </div>
         </section>
+
+
         <section class="mission">
             <h2 class="reveal">私たちのミッション</h2>
             <div class="grid">
@@ -61,6 +72,16 @@
         // 第二引数 'home' は「ホームのリンクをアクティブ(青字)にする」という意味です
         renderHeader('.', 'home');
         renderFooter();
+        
+        // 2. 🌟 ページ読み込み完了後にニュースを読み込む
+        // DOMが準備できてから実行することで、id="news-ticker" を確実に見つけます
+        window.addEventListener('DOMContentLoaded', () => {
+            if (typeof loadLatestNews === 'function') {
+                loadLatestNews();
+            } else {
+                console.error("loadLatestNews関数がscript.js内で定義されていません。");
+            }
+        });
     </script>
 
 </body>
