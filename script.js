@@ -122,17 +122,23 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // --- 🌟 共通ヘッダーの生成 ---
+// --- 🌟 共通ヘッダーの生成 (script.js) ---
 const renderHeader = (pathToRoot, activeMenu) => {
     const headerContainer = document.getElementById('header-container');
     if (!headerContainer) return;
 
+    // 🌟 リンク先を `${pathToRoot}/index.html` から `${pathToRoot}/` に変更
+    const logoHtml = activeMenu === 'home' 
+        ? `<a href="${pathToRoot}/" class="logo" style="font-size: 1.2rem;">Japan Snowflake User Group <span>SnowVillage</span></a>`
+        : `<a href="${pathToRoot}/" class="logo">Snow<span>Village</span></a>`;
+
     headerContainer.innerHTML = `
     <header>
         <div class="container nav-container">
-            <a href="${pathToRoot}/index.html" class="logo">Snow<span>Village</span></a>
+            ${logoHtml}
             <ul class="nav-links">
-                <li><a href="${pathToRoot}/index.html" class="${activeMenu === 'home' ? 'active' : ''}">ホーム</a></li>
-                <li><a href="${pathToRoot}/guide/" class="${activeMenu === 'guide' ? 'active' : ''}">歩き方</a></li> 
+                <li><a href="${pathToRoot}/" class="${activeMenu === 'home' ? 'active' : ''}">ホーム</a></li>
+                <li><a href="${pathToRoot}/guide/" class="${activeMenu === 'guide' ? 'active' : ''}">歩き方</a></li>
                 <li><a href="${pathToRoot}/about/" class="${activeMenu === 'about' ? 'active' : ''}">運営について</a></li>
                 <li><a href="${pathToRoot}/events/" class="${activeMenu === 'events' ? 'active' : ''}">イベント</a></li>
                 <li><a href="${pathToRoot}/calendar/" class="${activeMenu === 'calendar' ? 'active' : ''}">カレンダー</a></li>
@@ -145,7 +151,6 @@ const renderHeader = (pathToRoot, activeMenu) => {
     </header>
     `;
     
-    // ヘッダーのHTMLが画面に作られた後に、ハンバーガーメニューの動きを紐付ける
     initNav();
 };
 
