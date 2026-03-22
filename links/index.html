@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>リンク集 - Snowflake UG Japan</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet" />
+    <style>
+      /* リンク集専用の微調整スタイル */
+      .link-card {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        padding: 25px;
+      }
+      .link-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        border-color: var(--primary);
+      }
+      .link-icon {
+        font-size: 2rem;
+        margin-bottom: 15px;
+      }
+      .link-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: var(--secondary);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .link-arrow {
+        color: var(--primary);
+        font-weight: bold;
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        transform: translateX(-10px);
+      }
+      .link-card:hover .link-arrow {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header-container"></div>
+
+    <main class="container" style="padding-top: 150px; padding-bottom: 100px;">
+      <div style="text-align: center; margin-bottom: 60px;">
+        <h1 class="reveal" style="color: var(--secondary); font-size: 2.8rem; margin-bottom: 15px">Useful Links</h1>
+        <p class="reveal" style="color: var(--text-light); font-size: 1.2rem">SnowVillageメンバーに役立つリソース集</p>
+      </div>
+
+      <div id="links-container"></div>
+
+    </main>
+
+    <div id="footer-container"></div>
+    
+    <script src="../script.js"></script>
+    <script src="linksData.js"></script>
+
+    <script>
+      // 1. ヘッダーとフッターの描画
+      renderHeader("..", "links");
+      renderFooter();
+
+      // 2. リンク集の描画（イベント待機を外して直接実行）
+      const container = document.getElementById('links-container');
+      
+      if (container && typeof linksData !== 'undefined') {
+        container.innerHTML = linksData.map((section, sectionIndex) => `
+          <section class="reveal" style="margin-bottom: 60px;">
+            <h2 style="border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 10px;">${section.category}</h2>
+            <p style="color: var(--text-light); margin-bottom: 30px;">${section.description}</p>
+            
+            <div class="grid">
+              ${section.items.map((item, itemIndex) => `
+                <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="card link-card" style="transition-delay: ${(itemIndex * 0.1)}s">
+                  <div class="link-icon">${item.icon}</div>
+                  <div class="link-title">
+                    ${item.title}
+                    <span class="link-arrow">→</span>
+                  </div>
+                  <p style="font-size: 0.95rem; color: var(--text-light); line-height: 1.5;">${item.desc}</p>
+                </a>
+              `).join('')}
+            </div>
+          </section>
+        `).join('');
+      } else {
+        // もしデータが読み込めていなければ、赤いエラーを出す
+        console.error("【エラー】linksData.js が読み込めていないか、links-container が見つかりません！");
+      }
+    </script>
