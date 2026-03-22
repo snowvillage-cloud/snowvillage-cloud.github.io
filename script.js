@@ -38,25 +38,18 @@ const loadEvents = () => {
 
     const eventsData = [
         {
-            image: '../images/events/event_1.jpg', // events/index.html から見た相対パス
-            title: '第1回 Snowflake入門 & LT大会',
-            date: '2026.04.15 (水)',
-            tags: ['初心者歓迎', 'Zoom', 'LT募集'],
-            desc: '記念すべき第1回！基礎セッションとユーザーによるLT(ライトニングトーク)を行います。'
+            image: '../images/events/sample.png', // events/index.html から見た相対パス
+            title: 'Snowflake World Tour Tokyo',
+            date: '2026.XX.XX (X)',
+            tags: ['オンライン', 'XXXXX', 'XXXX'],
+            desc: 'XXXXXXXX'
         },
         {
-            image: '../images/events/event_2.jpg',
-            title: 'Data Engineering Deep Dive',
+            image: '../images/events/sample.png',
+            title: 'XXXXXXX',
             date: '2026.05.20 (水)',
-            tags: ['中級者向け', 'Tech', 'オフライン'],
-            desc: 'Dynamic TablesやSnowparkを使った高度なデータパイプライン構築について学びます。'
-        },
-        {
-            image: '../images/events/event_3.jpg',
-            title: 'Snowflake Summer Festival 2026',
-            date: '2026.07.10 (金)',
-            tags: ['大型イベント', '全ユーザー向け', '都内'],
-            desc: '夏の大感謝祭！特別ゲストを招いた基調講演と、複数の分科会、懇親会を開催します。'
+            tags: ['Tech', 'XXXX'],
+            desc: 'aaaaa'
         }
     ];
 
