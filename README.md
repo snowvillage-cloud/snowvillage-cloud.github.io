@@ -1,31 +1,37 @@
-# Japan Snowflake User Group "SnowVillage" 公式Webサイト
+# ❄️ Snowflake UG Japan (SnowVillage) Official Website
 
-このリポジトリは、Japan Snowflake User Group のコミュニティ「SnowVillage」の公式Webサイトのソースコードを管理しています。GitHub Pagesを利用してホスティングされる静的サイト（HTML/CSS/JS）です。
+Snowflakeユーザーコミュニティ「SnowVillage」のポータルサイトです。
+「Data Cloud」の先進性と「Lodge（山小屋）」の温かさを融合させたサイバー・ネイチャー・デザインをコンセプトとしています。
 
-## 📁 ディレクトリ構成
+## 🛠 技術スタック & 設計思想
+- **Frontend**: HTML5, CSS3 (Modern Flexbox/Grid), JavaScript (Vanilla JS)
+- **Data Management**: `newsData.js` による疑似的なヘッドレスCMS構造。
+- **Component Engine**: `script.js` による共通パーツ（Header/Footer）の動的インジェクション。
 
-当サイトは、管理を容易にするためにページや機能ごとにディレクトリを分割しています。詳細な説明は各ディレクトリ内の `README.md` を参照してください。
+## 📂 主要ディレクトリとファイルの役割
+- **`index.html`**: トップページ。ヒーローセクション（幾何学スノー＋3Dグリッド）と最新ニュースを表示。
+- **`newsData.js`**: 全ページのお知らせデータを一元管理するJSON型配列。
+- **`script.js`**: 
+  - `renderHeader / renderFooter`: 階層に応じた相対パスの自動計算と描画。
+  - `loadLatestNews`: トップページへの最新5件の抽出とDOM反映。
+- **`/css/`**: ページ・機能ごとに分割されたスタイルシート群。
+- **`/news/`**: 過去のお知らせを全件表示するアーカイブ。
+- **`/about/`**: 運営メンバー（Mayors）とスポンサーの紹介。
+- **`/images/`**: サイト内で使用する画像アセット。
 
-- `/` (ルート) : トップページ、共通スクリプト、全体のCSS目次
-- `/css/` : ページごとに分割されたスタイルシート群
-- `/about/` : 運営メンバーおよびスポンサー紹介ページ
-  - `/about/alumni/` : 運営卒業生（Alumni）紹介ページ
-- `/events/` : イベント情報・TECH PLAYへの導線ページ
-- `/join/` : Slack参加前のコミュニティ行動規範（Code of Conduct）同意ページ
-- `/images/` : サイト内で使用するすべての画像リソース
+## 🚀 運用・更新ガイド
 
-## 📄 ルート直下の主要ファイル
+### ニュースの更新
+`newsData.js` を開き、配列の先頭に新しい要素を追加してください。
+```javascript
+{
+    date: "YYYY.MM.DD",
+    text: "お知らせのタイトル",
+    link: "リンク先URLまたは相対パス",
+    isExternal: false // 外部リンクの場合はtrueに設定
+}
+```
+トップページには最新5件が表示され、1件目には自動で「点滅パルス」が付与されます。
 
-- **`index.html`**
-  - コミュニティの顔となるトップページです。ヒーローセクション（CSSによる雪のアニメーション）、コミュニティのミッション、Slackへの誘導CTAが含まれています。
-- **`style.css`**
-  - サイト全体のCSSを読み込むための「目次（エントリーポイント）」です。このファイル自体にはスタイルを記述せず、`@import` を使って `/css/` フォルダ内の各CSSファイルを読み込んでいます。
-- **`script.js`**
-  - 全ページ共通で動作するJavaScriptです。以下の機能を制御しています。
-    - モバイル用のハンバーガーメニューの開閉
-    - スクロール時のフェードインアニメーション（Intersection Observer）
-    - `/events/` ページに表示する注目イベントデータの動的生成
-    - `/join/` ページの規約同意チェックボックスの制御
-
-## 🛠️ ローカルでの確認方法
-特別なビルド環境（Node.jsなど）は不要です。ファイルをローカルにクローンし、ブラウザで直接 `index.html` を開くか、VS Codeの拡張機能「Live Server」等を使用することで、すぐに動作確認が可能です。
+### モバイル表示の一括サイズ調整
+css/common.css または style.css のメディアクエリ（max-width: 768px）内にある html { font-size: 11px; } の数値を変更することで、サイト全体の文字サイズと余白のスケールを一括調整できます。
