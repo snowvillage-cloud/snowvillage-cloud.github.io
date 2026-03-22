@@ -188,3 +188,62 @@ footer { background-color: var(--secondary); color: #fff; padding: 50px 0; text-
   0% { background-position: 0 0, 0 0, 0 0; }
   100% { background-position: 300px 700px, 450px 650px, 600px 600px; }
 }
+
+
+/* --- style.css の該当箇所を修正 --- */
+
+/* --- 🌟 卒業生バナー用リッチボタン  🌟 --- */
+.btn-alumni {
+  display: inline-flex; /* アイコンとテキストを横並びに */
+  align-items: center; /* 縦方向中央揃え */
+  justify-content: center; /* 横方向中央揃え */
+  gap: 12px; /* アイコン、テキスト、矢印の間隔 */
+  padding: 14px 35px; /* 少し大きく */
+  
+  /* すりガラスのような透過グラデーション背景 */
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+  color: var(--white);
+  text-decoration: none;
+  
+  border-radius: 50px; /* もっと丸くしてモダンに */
+  font-weight: 600;
+  border: 1px solid rgba(255,255,255,0.3); /* 薄い透過ボーダー */
+  
+  /* 背景をぼかすエフェクト（グラスモルフィズム） */
+  backdrop-filter: blur(5px);
+  
+  /* 弾むようなアニメーション効果 */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  overflow: hidden; /* ホバー時の効果がはみ出さないように */
+  position: relative;
+}
+
+/* 各要素の基本スタイル */
+.btn-alumni .icon {
+  font-size: 1.3rem; /* 少し大きく */
+}
+
+.btn-alumni .text {
+  position: relative;
+  z-index: 1;
+}
+
+/* 矢印（→）のアニメーション設定 */
+.btn-alumni .arrow {
+  transition: transform 0.4s ease; /* 矢印だけの移動アニメーション */
+  font-weight: 400; /* 矢印は少し細く */
+}
+
+/* --- ✅ ホバー時の挙動（リッチな演出） --- */
+.btn-alumni:hover {
+  background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.1) 100%);
+  border-color: rgba(255,255,255,0.5); /* ボーダーを明るく */
+  transform: translateY(-5px); /* 少し上に浮き上がる */
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2); /* 影を強く */
+}
+
+/* ホバー時に矢印（→）だけを右に動かす */
+.btn-alumni:hover .arrow {
+  transform: translateX(5px);
+}
