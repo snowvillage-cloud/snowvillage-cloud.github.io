@@ -1,0 +1,20 @@
+/* --- イベント画像 --- */
+.event-image-container { width: 100%; height: 200px; overflow: hidden; position: relative; }
+.event-photo { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.event-card:hover .event-photo { transform: scale(1.1); }
+
+/* --- TECH PLAY バナー --- */
+.techplay-banner {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); border-left: 6px solid var(--primary);
+  padding: 50px 40px; border-radius: 15px; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+.techplay-banner h3 { font-size: 1.8rem; color: var(--secondary); margin-bottom: 15px; }
+.techplay-banner p { color: var(--text-light); margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto; font-size: 1.1rem; }
+
+.btn-techplay { background: var(--secondary); box-shadow: 0 4px 15px rgba(26, 54, 93, 0.3); font-size: 1.1rem; padding: 15px 40px; }
+.btn-techplay:hover { background: #2a4365; box-shadow: 0 6px 20px rgba(26, 54, 93, 0.4); }
+
+/* --- 分科会(Chapter)カード --- */
+.chapter-card { display: flex; flex-direction: column; border-top: 4px solid var(--primary); }
+.chapter-icon { font-size: 2.5rem; margin-bottom: 20px; background-color: var(--acc-blue); width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 12px; }
+.chapter-card .desc { flex-grow: 1; margin-bottom: 20px; color: var(--text-light); }

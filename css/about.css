@@ -1,0 +1,34 @@
+/* --- メンバー・卒業生画像 --- */
+.member-card { text-align: center; }
+.member-photo {
+  width: 120px; height: 120px; border-radius: 50%; margin: 0 auto 20px;
+  display: block; object-fit: cover; border: 3px solid var(--acc-blue);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.member-card:hover .member-photo { transform: scale(1.05) translateY(-5px); box-shadow: 0 8px 20px rgba(41, 181, 232, 0.2); }
+
+/* --- スポンサーロゴ --- */
+.sponsor-card { display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 40px 20px; }
+.sponsor-logo { max-width: 100%; height: auto; max-height: 60px; margin-bottom: 15px; filter: grayscale(100%); opacity: 0.7; transition: all 0.4s ease; }
+.sponsor-card:hover .sponsor-logo { filter: grayscale(0%); opacity: 1; transform: scale(1.1); }
+
+/* --- 卒業生バナー --- */
+.alumni-banner {
+  background: linear-gradient(135deg, var(--secondary) 0%, #2a4365 100%); color: var(--white);
+  padding: 50px 30px; border-radius: 20px; text-align: center; margin-top: 80px; box-shadow: 0 10px 30px rgba(26, 54, 93, 0.2);
+}
+.alumni-banner h3 { font-size: 1.8rem; margin-bottom: 15px; }
+.alumni-banner p { color: #cbd5e0; margin-bottom: 25px; }
+
+/* 卒業生ボタン */
+.btn-alumni {
+  display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 14px 35px; margin-bottom: 80px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%); color: var(--white);
+  text-decoration: none; border-radius: 50px; font-weight: 600; border: 1px solid rgba(255,255,255,0.3);
+  backdrop-filter: blur(5px); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 4px 15px rgba(0,0,0,0.1); overflow: hidden; position: relative;
+}
+.btn-alumni .icon { font-size: 1.3rem; }
+.btn-alumni .text { position: relative; z-index: 1; }
+.btn-alumni .arrow { transition: transform 0.4s ease; font-weight: 400; }
+.btn-alumni:hover { background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.1) 100%); border-color: rgba(255,255,255,0.5); transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
+.btn-alumni:hover .arrow { transform: translateX(5px); }

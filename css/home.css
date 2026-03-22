@@ -1,0 +1,26 @@
+/* --- ヒーローセクションと雪のアニメーション --- */
+.hero {
+  position: relative; height: 100vh;
+  background: radial-gradient(circle at center, #fff 0%, var(--acc-blue) 100%);
+  display: flex; align-items: center; justify-content: center; text-align: center; padding-top: 80px; overflow: hidden;
+}
+
+.hero::after {
+  content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Ccircle cx='5' cy='5' r='1' fill='rgba(255, 255, 255, 0.5)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Ccircle cx='10' cy='10' r='1.5' fill='rgba(255, 255, 255, 0.7)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='2' fill='rgba(255, 255, 255, 0.9)'/%3E%3C/svg%3E");
+  background-size: 100px 100px, 150px 150px, 200px 200px;
+  animation: snow_far 15s linear infinite, snow_med 10s linear infinite, snow_near 8s linear infinite;
+  opacity: 0.8; pointer-events: none; z-index: 1;
+}
+
+.hero-content { position: relative; z-index: 2; }
+.hero-content h1 { font-size: 3.5rem; color: var(--secondary); margin-bottom: 20px; line-height: 1.2; }
+.hero-content p { font-size: 1.3rem; color: var(--text-light); margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto; }
+@media screen and (max-width: 768px) { .hero-content h1 { font-size: 2.5rem; } }
+
+@keyframes snow_far { 0% { background-position: 0 0, 0 0, 0 0; } 100% { background-position: 100px 500px, 150px 450px, 200px 400px; } }
+@keyframes snow_med { 0% { background-position: 0 0, 0 0, 0 0; } 100% { background-position: 200px 600px, 300px 550px, 400px 500px; } }
+@keyframes snow_near { 0% { background-position: 0 0, 0 0, 0 0; } 100% { background-position: 300px 700px, 450px 650px, 600px 600px; } }
