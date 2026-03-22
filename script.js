@@ -171,3 +171,26 @@ const renderFooter = () => {
     </footer>
     `;
 };
+
+// --- 🌟 最新ニュースを1件表示する機能 (script.js) ---
+const loadLatestNews = () => {
+    const newsTicker = document.getElementById('news-ticker');
+    if (!newsTicker || !newsData || newsData.length === 0) return;
+
+    // 配列の最初（最新）のデータを取得
+    const latest = newsData[0];
+
+    newsTicker.innerHTML = `
+        <div class="news-label">
+            <span class="pulse-icon"></span>
+            <strong>News</strong>
+        </div>
+        <div class="news-content">
+            <a href="${latest.link}" class="news-link" ${latest.isExternal ? 'target="_blank" rel="noopener noreferrer"' : ''}>
+                <span class="news-date">${latest.date}</span>
+                <span class="news-text">${latest.text}</span>
+                <span class="news-arrow">→</span>
+            </a>
+        </div>
+    `;
+};

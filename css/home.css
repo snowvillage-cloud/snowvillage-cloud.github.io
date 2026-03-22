@@ -147,6 +147,125 @@
   50% { transform: translateY(-10px); }
 }
 
+/* --- 🌟 News: お知らせセクションのスタイル --- */
+.news-section {
+    padding: 40px 0 0; /* ミッションとの間隔調整 */
+    position: relative;
+    z-index: 20;
+}
+
+.news-wrapper {
+    display: flex;
+    align-items: center;
+    background: rgba(15, 23, 42, 0.6); /* サイバー背景に合わせた半透明 */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(41, 181, 232, 0.3);
+    border-radius: 50px; /* 丸みのあるバッジ形状 */
+    padding: 10px 30px;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.news-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-right: 20px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--primary);
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* 🌟 生きているコミュニティを演出する「拍動」アニメーション */
+.pulse-icon {
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary);
+    border-radius: 50%;
+    position: relative;
+}
+
+.pulse-icon::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--primary);
+    border-radius: 50%;
+    animation: pulse-ring 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+}
+
+@keyframes pulse-ring {
+    0% { transform: scale(1); opacity: 0.7; }
+    100% { transform: scale(3); opacity: 0; }
+}
+
+.news-content {
+    flex-grow: 1;
+    padding-left: 20px;
+    overflow: hidden;
+}
+
+.news-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    transition: var(--transition);
+}
+
+.news-date {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-right: 15px;
+    font-family: 'Inter', sans-serif;
+}
+
+.news-text {
+    font-size: 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* 長い文字を「...」にする */
+    flex-grow: 1;
+}
+
+.news-arrow {
+    margin-left: 10px;
+    color: var(--primary);
+    transition: transform 0.3s ease;
+}
+
+.news-link:hover .news-text {
+    color: var(--primary);
+}
+
+.news-link:hover .news-arrow {
+    transform: translateX(5px);
+}
+
+/* スマホ対応 */
+@media screen and (max-width: 768px) {
+    .news-wrapper {
+        flex-direction: column;
+        border-radius: 15px;
+        padding: 15px;
+        align-items: flex-start;
+    }
+    .news-label {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        width: 100%;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+    .news-content {
+        padding-left: 0;
+        width: 100%;
+    }
+}
 
 /* --- ヒーローセクションと雪のアニメーション ---
 .hero {
