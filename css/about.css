@@ -102,3 +102,42 @@
   color: #fff;
   transform: translateX(5px);
 }
+
+/* --- 🌟 運営メンバーSNSアイコン --- */
+
+.member-sns {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center; /* 写真に合わせて中央揃え */
+  gap: 15px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05); /* 控えめな区切り線 */
+}
+
+.sns-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.sns-icon {
+  width: 18px;
+  height: 18px;
+  fill: var(--text-light); /* 通常時はグレー */
+  transition: fill 0.3s ease;
+}
+
+/* ホバー時はSnowflakeブルーに変化し、少し弾む */
+.sns-link:hover {
+  transform: translateY(-3px) scale(1.1);
+}
+
+.sns-link:hover .sns-icon {
+  fill: var(--primary); /* Snowflakeブルーに点灯 */
+}
+
+/* 各ブランド固有のホバー色にしたい場合はこちら（お好みで） */
+/* .sns-link[href*="x.com"]:hover .sns-icon { fill: #000; }
+.sns-link[href*="linkedin"]:hover .sns-icon { fill: #0077B5; }
+*/
