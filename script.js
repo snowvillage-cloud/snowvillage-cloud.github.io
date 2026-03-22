@@ -146,6 +146,7 @@ const renderHeader = (pathToRoot, activeMenu) => {
                 <li><a href="${pathToRoot}/about/" class="${activeMenu === 'about' ? 'active' : ''}">運営について</a></li>
                 <li><a href="${pathToRoot}/events/" class="${activeMenu === 'events' ? 'active' : ''}">イベント</a></li>
                 <li><a href="${pathToRoot}/calendar/" class="${activeMenu === 'calendar' ? 'active' : ''}">カレンダー</a></li>
+                <li><a href="${basePath}/links/" class="${activePage === 'links' ? 'active' : ''}">リンク集</a></li>
                 <li><a href="${pathToRoot}/join/" class="btn ${activeMenu === 'join' ? 'active' : ''}">Slackに参加</a></li>
             </ul>
             <div class="burger">
