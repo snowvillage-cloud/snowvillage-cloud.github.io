@@ -6,3 +6,39 @@
 @import url('css/join.css');
 @import url('css/calendar.css');
 @import url('css/guide.css');
+
+
+/* --- 📱 スマートフォン向け：全体を約2/3のスケールに凝縮 --- */
+@media screen and (max-width: 768px) {
+  html {
+    /* ルートサイズを 11px に設定 (16pxの約68%) */
+    font-size: 11px !important;
+  }
+
+  body {
+    /* 行間を少し詰め、文字がバラけないように調整 */
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%; /* iPhoneでの勝手な拡大を防止 */
+  }
+
+  /* 🌟 余白も2/3スケールに合わせて一括調整 🌟 */
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  section {
+    padding: 30px 0 !important; /* 上下の大きな余白を半分〜2/3にカット */
+  }
+
+  /* ヒーローエリアの見出しが画面を占領しすぎないよう抑制 */
+  .hero-content h1 {
+    font-size: 2.4rem !important; 
+    letter-spacing: -0.5px; /* 文字間を詰めてスマートに */
+  }
+
+  /* カード類のパディングも凝縮 */
+  .card, .member-card, .news-wrapper {
+    padding: 15px 20px !important;
+  }
+}
