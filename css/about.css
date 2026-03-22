@@ -12,23 +12,93 @@
 .sponsor-logo { max-width: 100%; height: auto; max-height: 60px; margin-bottom: 15px; filter: grayscale(100%); opacity: 0.7; transition: all 0.4s ease; }
 .sponsor-card:hover .sponsor-logo { filter: grayscale(0%); opacity: 1; transform: scale(1.1); }
 
-/* --- 卒業生バナー --- */
-.alumni-banner {
-  background: linear-gradient(135deg, var(--secondary) 0%, #2a4365 100%); color: var(--white);
-  padding: 50px 30px; border-radius: 20px; text-align: center; margin-top: 80px; box-shadow: 0 10px 30px rgba(26, 54, 93, 0.2);
-}
-.alumni-banner h3 { font-size: 1.8rem; margin-bottom: 15px; }
-.alumni-banner p { color: #cbd5e0; margin-bottom: 25px; }
+/* --- css/about.css の後半部分を修正 --- */
 
-/* 卒業生ボタン */
-.btn-alumni {
-  display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 14px 35px; margin-bottom: 80px;
-  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%); color: var(--white);
-  text-decoration: none; border-radius: 50px; font-weight: 600; border: 1px solid rgba(255,255,255,0.3);
-  backdrop-filter: blur(5px); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 4px 15px rgba(0,0,0,0.1); overflow: hidden; position: relative;
+/* --- 🌟 卒業生セクション (背景色を削除) 🌟 --- */
+.alumni-banner {
+  /* 背景グラデーションを削除して透明に */
+  background: transparent;
+  
+  /* テキストの色を基本の濃い色に変更 */
+  color: var(--text);
+  
+  /* 上下の余白調整（バナー型ではなくなったため少し詰める） */
+  padding: 60px 0;
+  
+  /* 角丸と影を削除してページに馴染ませる */
+  border-radius: 0;
+  box-shadow: none;
+  
+  text-align: center;
+  margin-top: 80px;
+  
+  /* 前回追加したフッターとの間の余白 */
+  margin-bottom: 80px; 
+  
+  /* イベントページと同様、上部に区切り線を入れると綺麗です */
+  border-top: 1px solid #eee;
 }
+
+.alumni-banner h3 {
+  /* タイトルの色をSnowVillageの紺色に */
+  color: var(--secondary);
+  font-size: 2.2rem; /* セクション見出しとして少し大きく */
+  margin-bottom: 15px;
+}
+
+.alumni-banner p {
+  /* 説明文の色を薄いグレーに変更 */
+  color: var(--text-light);
+  margin-bottom: 35px;
+}
+
+/* --- 🌟 卒業生ボタン (白背景用にデザイン調整) 🌟 --- */
+.btn-alumni {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 35px;
+  
+  /* 背景を白、テキストを紺色に（透過・すりガラスを廃止） */
+  background-color: #fff;
+  color: var(--secondary);
+  
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  
+  /* ボーダーをSnowflakeブルー（水色）の2pxにしてくっきりと */
+  border: 2px solid var(--primary);
+  
+  /* ぼかしエフェクトを削除 */
+  backdrop-filter: none;
+  
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  
+  /* 影を薄く */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  overflow: hidden;
+  position: relative;
+}
+
+/* ボタン内のアイコンと矢印の色調整 */
 .btn-alumni .icon { font-size: 1.3rem; }
 .btn-alumni .text { position: relative; z-index: 1; }
-.btn-alumni .arrow { transition: transform 0.4s ease; font-weight: 400; }
-.btn-alumni:hover { background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.1) 100%); border-color: rgba(255,255,255,0.5); transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
-.btn-alumni:hover .arrow { transform: translateX(5px); }
+.btn-alumni .arrow { transition: transform 0.4s ease; font-weight: 400; color: var(--primary); /* 矢印だけ水色に */}
+
+/* --- ✅ ホバー時の挙動（白背景用） --- */
+.btn-alumni:hover {
+  /* ホバー時はSnowflakeブルー（水色）で塗りつぶすリッチな演出 */
+  background-color: var(--primary);
+  color: #fff; /* テキストは白に */
+  border-color: var(--primary);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(41, 181, 232, 0.3);
+}
+
+/* ホバー時に矢印の色を白く、右へ動かす */
+.btn-alumni:hover .arrow {
+  color: #fff;
+  transform: translateX(5px);
+}
