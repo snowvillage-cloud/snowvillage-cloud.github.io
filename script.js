@@ -1,7 +1,26 @@
+// --- 🌟 ページ読み込み完了時の処理を一元管理 ---
 document.addEventListener('DOMContentLoaded', () => {
-    initScrollReveal();
+    
+    // 1. イベントカードの動的生成（※必ずフェードイン監視の「前」に行うこと！）
     if (document.getElementById('event-grid')) {
         loadEvents();
+    }
+
+    // 2. スクロールフェードイン制御の開始（生成されたカードもここで監視対象になる）
+    initScrollReveal();
+
+    // 3. 規約同意チェックボックスの制御 (joinページ用)
+    const agreeCheckbox = document.getElementById('agree-checkbox');
+    const slackJoinBtn = document.getElementById('slack-join-btn');
+
+    if (agreeCheckbox && slackJoinBtn) {
+        agreeCheckbox.addEventListener('change', (e) => {
+            if (e.target.checked) {
+                slackJoinBtn.classList.remove('disabled');
+            } else {
+                slackJoinBtn.classList.add('disabled');
+            }
+        });
     }
 });
 
@@ -11,11 +30,16 @@ const initNav = () => {
     const nav = document.querySelector('.nav-links');
     const navLinks = document.querySelectorAll('.nav-links li');
 
+    if (!burger || !nav) return; // ヘッダーがないページでのエラー防止
+
     burger.addEventListener('click', () => {
         nav.classList.toggle('nav-active');
         navLinks.forEach((link, index) => {
-            if (link.style.animation) { link.style.animation = ''; } 
-            else { link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`; }
+            if (link.style.animation) { 
+                link.style.animation = ''; 
+            } else { 
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`; 
+            }
         });
         burger.classList.toggle('toggle');
     });
@@ -26,9 +50,12 @@ const initScrollReveal = () => {
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) { entry.target.classList.add('active'); }
+            if (entry.isIntersecting) { 
+                entry.target.classList.add('active'); 
+            }
         });
     }, { threshold: 0.1 });
+    
     reveals.forEach(reveal => { observer.observe(reveal); });
 };
 
@@ -69,7 +96,7 @@ const loadEvents = () => {
                 <h3>${event.title}</h3>
                 <div class="tags">${tagsHtml}</div>
                 <p>${event.desc}</p>
-                <a href="#" class="btn-text">詳細・参加申込 →</a>
+                <a href="https://techplay.jp/community_group/snowflake_users" target="_blank" rel="noopener noreferrer" class="btn-text">TECH PLAY で詳細を見る →</a>
             </div>
         `;
         eventGrid.appendChild(card);
@@ -85,6 +112,9 @@ const addEventStyles = () => {
         style.id = 'event-styles';
         style.innerHTML = `
             .event-card { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
+            .event-image-container { width: 100%; height: 200px; overflow: hidden; }
+            .event-photo { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+            .event-card:hover .event-photo { transform: scale(1.1); }
             .event-content { padding: 30px; flex-grow: 1; display: flex; flex-direction: column; }
             .event-date { color: var(--primary); font-weight: bold; margin-bottom: 10px; font-size: 1.1rem; }
             .tags { margin-bottom: 20px; display: flex; gap: 10px; flex-wrap: wrap; }
@@ -96,31 +126,12 @@ const addEventStyles = () => {
     }
 };
 
-// --- 🌟 規約同意チェックボックスの制御---
-document.addEventListener('DOMContentLoaded', () => {
-    const agreeCheckbox = document.getElementById('agree-checkbox');
-    const slackJoinBtn = document.getElementById('slack-join-btn');
-
-    if (agreeCheckbox && slackJoinBtn) {
-        agreeCheckbox.addEventListener('change', (e) => {
-            if (e.target.checked) {
-                // チェックが入ったら disabled クラスを外す
-                slackJoinBtn.classList.remove('disabled');
-            } else {
-                // チェックが外れたら disabled クラスをつける
-                slackJoinBtn.classList.add('disabled');
-            }
-        });
-    }
-});
-
 // --- 🌟 共通ヘッダーの生成 ---
-// --- 🌟 共通ヘッダーの生成 (script.js) ---
 const renderHeader = (pathToRoot, activeMenu) => {
     const headerContainer = document.getElementById('header-container');
     if (!headerContainer) return;
 
-    // 🌟 リンク先を `${pathToRoot}/index.html` から `${pathToRoot}/` に変更
+    // リンク先を `${pathToRoot}/` に統一
     const logoHtml = activeMenu === 'home' 
         ? `<a href="${pathToRoot}/" class="logo" style="font-size: 1.2rem;">Japan Snowflake User Group <span>SnowVillage</span></a>`
         : `<a href="${pathToRoot}/" class="logo">Snow<span>Village</span></a>`;
@@ -147,7 +158,7 @@ const renderHeader = (pathToRoot, activeMenu) => {
     initNav();
 };
 
-// --- 🌟 共通フッターの生成---
+// --- 🌟 共通フッターの生成 ---
 const renderFooter = () => {
     const footerContainer = document.getElementById('footer-container');
     if (!footerContainer) return;
