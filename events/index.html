@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>イベント情報 - Snowflake UG Japan</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">Snowflake <span>UGJ</span></a>
+            <ul class="nav-links">
+                <li><a href="../index.html">ホーム</a></li>
+                <li><a href="../about/">運営について</a></li>
+                <li><a href="../events/" class="active">イベント</a></li>
+                <li><a href="#" class="btn">Slackに参加</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div><div class="line2"></div><div class="line3"></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container" style="padding-top: 150px;">
+        <section>
+            <h2 class="reveal">Upcoming Events</h2>
+            <div class="grid" id="event-grid"></div>
+        </section>
+        
+        <section class="reveal" style="text-align: center; border-top: 1px solid #eee; padding-top: 60px;">
+            <h3>過去のイベント (アーカイブ)</h3>
+            <p style="margin-top: 20px;">過去のセッション資料や動画は、Slackコミュニティ内限定で公開しています。</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Japan Snowflake User Group.</p>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>
