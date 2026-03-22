@@ -207,8 +207,21 @@ header.scrolled .logo { font-size: 1.4rem; }
 .nav-links a:not(.btn).active { color: var(--primary); }
 
 
-
 footer { background-color: var(--secondary); color: #fff; padding: 50px 0; text-align: center; }
+
+
+/* 🌟 スクロールプログレスバー */
+#scroll-indicator {
+  position: fixed;
+  bottom: 0; /* 画面下部に配置 */
+  left: 0;
+  height: 4px; /* バーの太さ */
+  background: linear-gradient(90deg, var(--primary), #ffffff); /* ❄️ 青から白へのグラデーション */
+  width: 0%; /* 初期状態は0%（JSで制御） */
+  z-index: 2000; /* ヘッダーより手前に表示 */
+  box-shadow: 0 0 10px rgba(41, 181, 232, 0.6); /* 🌟 発光エフェクト */
+  transition: width 0.1s ease-out; /* なめらかな動き */
+}
 
 /* --- モバイルメニュー --- */
 .burger { display: none; cursor: pointer; z-index: 1100; }

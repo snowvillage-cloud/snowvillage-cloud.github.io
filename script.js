@@ -29,6 +29,28 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  // ==========================================================================
+  // 🌟 追加：スクロールプログレスバーの生成と制御
+  // ==========================================================================
+  // 1. バーの要素を動的に作成してbodyに追加
+  const progressBar = document.createElement("div");
+  progressBar.id = "scroll-indicator";
+  document.body.appendChild(progressBar);
+
+  // 2. スクロール量に応じて幅を計算する関数
+  window.addEventListener("scroll", () => {
+    // 現在のスクロール位置
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    // ページ全体の高さ - 表示領域の高さ = スクロール可能な総距離
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+    // 割合を計算（0〜100）
+    const scrolled = (winScroll / height) * 100;
+
+    // バーの幅に反映
+    progressBar.style.width = scrolled + "%";
+  });
 });
 
 // --- ハンバーガーメニュー制御 ---
@@ -143,9 +165,7 @@ const renderHeader = (pathToRoot, activeMenu) => {
   const headerContainer = document.getElementById("header-container");
   if (!headerContainer) return;
 
-  const logoHtml = activeMenu === "home" 
-    ? `<a href="${pathToRoot}/" class="logo" style="font-size: 1.2rem;">Japan Snowflake User Group <span>SnowVillage</span></a>` 
-    : `<a href="${pathToRoot}/" class="logo">Snow<span>Village</span></a>`;
+  const logoHtml = activeMenu === "home" ? `<a href="${pathToRoot}/" class="logo" style="font-size: 1.2rem;">Japan Snowflake User Group <span>SnowVillage</span></a>` : `<a href="${pathToRoot}/" class="logo">Snow<span>Village</span></a>`;
 
   headerContainer.innerHTML = `
     <header>
@@ -170,39 +190,39 @@ const renderHeader = (pathToRoot, activeMenu) => {
     `;
 
   initNav();
-  initNavSlider(); 
+  initNavSlider();
 };
 
 // --- 🌟 スライディング・ナビゲーションの制御 ---
 const initNavSlider = () => {
-    const navLinks = document.querySelector(".nav-links");
-    const slider = document.getElementById("nav-slider");
-    const links = document.querySelectorAll(".nav-links a:not(.btn)");
+  const navLinks = document.querySelector(".nav-links");
+  const slider = document.getElementById("nav-slider");
+  const links = document.querySelectorAll(".nav-links a:not(.btn)");
 
-    if (!navLinks || !slider) return;
+  if (!navLinks || !slider) return;
 
-    const moveSlider = (element) => {
-        if (!element) return;
-        const rect = element.getBoundingClientRect();
-        const parentRect = navLinks.getBoundingClientRect();
-        slider.style.left = `${rect.left - parentRect.left}px`;
-        slider.style.width = `${rect.width}px`;
-        slider.style.opacity = "1";
-    };
+  const moveSlider = (element) => {
+    if (!element) return;
+    const rect = element.getBoundingClientRect();
+    const parentRect = navLinks.getBoundingClientRect();
+    slider.style.left = `${rect.left - parentRect.left}px`;
+    slider.style.width = `${rect.width}px`;
+    slider.style.opacity = "1";
+  };
 
-    const activeLink = document.querySelector(".nav-links a.active");
-    if (activeLink) {
-        setTimeout(() => moveSlider(activeLink), 150);
-    }
+  const activeLink = document.querySelector(".nav-links a.active");
+  if (activeLink) {
+    setTimeout(() => moveSlider(activeLink), 150);
+  }
 
-    links.forEach(link => {
-        link.addEventListener("mouseenter", (e) => moveSlider(e.target));
-    });
+  links.forEach((link) => {
+    link.addEventListener("mouseenter", (e) => moveSlider(e.target));
+  });
 
-    navLinks.addEventListener("mouseleave", () => {
-        const currentActive = document.querySelector(".nav-links a.active");
-        if (currentActive) moveSlider(currentActive);
-    });
+  navLinks.addEventListener("mouseleave", () => {
+    const currentActive = document.querySelector(".nav-links a.active");
+    if (currentActive) moveSlider(currentActive);
+  });
 };
 
 // --- 🌟 共通フッターの生成 ---
