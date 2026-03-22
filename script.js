@@ -132,7 +132,7 @@ const renderHeader = (pathToRoot, activeMenu) => {
             <a href="${pathToRoot}/index.html" class="logo">Snow<span>Village</span></a>
             <ul class="nav-links">
                 <li><a href="${pathToRoot}/index.html" class="${activeMenu === 'home' ? 'active' : ''}">ホーム</a></li>
-                <li><a href="${pathToRoot}/about/" class="${activeMenu === 'about' ? 'active' : ''}">運営について</a></li>
+                <li><a href="${pathToRoot}/guide/" class="${activeMenu === 'guide' ? 'active' : ''}">歩き方</a></li> <li><a href="${pathToRoot}/about/" class="${activeMenu === 'about' ? 'active' : ''}">運営について</a></li>
                 <li><a href="${pathToRoot}/events/" class="${activeMenu === 'events' ? 'active' : ''}">イベント</a></li>
                 <li><a href="${pathToRoot}/calendar/" class="${activeMenu === 'calendar' ? 'active' : ''}">カレンダー</a></li>
                 <li><a href="${pathToRoot}/join/" class="btn ${activeMenu === 'join' ? 'active' : ''}">Slackに参加</a></li>
