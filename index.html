@@ -8,20 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="container nav-container">
-            <a href="index.html" class="logo" style="font-size: 1.2rem;">Japan Snowflake User Group <span>SnowVillage</span></a>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">ホーム</a></li>
-                <li><a href="about/">運営について</a></li>
-                <li><a href="events/">イベント</a></li>
-                <li><a href="../join/" class="btn">Slackに参加</a></li>
-            </ul>
-            <div class="burger">
-                <div class="line1"></div><div class="line2"></div><div class="line3"></div>
-            </div>
-        </div>
-    </header>
+    <div id="header-container"></div>
 
     <div class="hero">
         <div class="hero-content container">
@@ -59,12 +46,16 @@
             <a href="../join/" class="btn">Slackコミュニティに参加登録 (無料)</a>
         </section>
     </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Japan Snowflake User Group. This is a community-run site.</p>
-        </div>
-    </footer>
+    <div id="footer-container"></div>
+    
     <script src="script.js"></script>
+    <script>
+        // 🌟 JSでヘッダーとフッターを描画
+        // 第一引数 '.' は「現在の階層（ルート）」を意味します
+        // 第二引数 'home' は「ホームのリンクをアクティブ(青字)にする」という意味です
+        renderHeader('.', 'home');
+        renderFooter();
+    </script>
+
 </body>
 </html>

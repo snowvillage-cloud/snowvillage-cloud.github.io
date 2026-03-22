@@ -8,20 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="container nav-container">
-            <a href="../index.html" class="logo">Snow<span>Village</span></a>
-            <ul class="nav-links">
-                <li><a href="../index.html">ホーム</a></li>
-                <li><a href="../about/" class="active">運営について</a></li>
-                <li><a href="../events/">イベント</a></li>
-                <li><a href="../join/" class="btn">Slackに参加</a></li>
-            </ul>
-            <div class="burger">
-                <div class="line1"></div><div class="line2"></div><div class="line3"></div>
-            </div>
-        </div>
-    </header>
+    <div id="header-container"></div>
 
     <main class="container" style="padding-top: 150px;">
         <section>
@@ -84,12 +71,13 @@
                 <span class="arrow">→</span> </a>
         </div>
     </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Japan Snowflake User Group.</p>
-        </div>
-    </footer>
+    <div id="footer-container"></div>
+    
     <script src="../script.js"></script>
+    <script>
+        // 🌟 階層を '..' にし、アクティブメニューを 'about' などにする
+        renderHeader('..', 'about');
+        renderFooter();
+    </script>
 </body>
 </html>

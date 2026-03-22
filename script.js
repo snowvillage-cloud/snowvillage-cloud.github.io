@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    initNav();
     initScrollReveal();
-    // id="event-grid" があるページ（イベントページ）でのみ実行
     if (document.getElementById('event-grid')) {
         loadEvents();
     }
@@ -122,3 +120,44 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// --- 🌟 共通ヘッダーの生成 ---
+const renderHeader = (pathToRoot, activeMenu) => {
+    const headerContainer = document.getElementById('header-container');
+    if (!headerContainer) return;
+
+    headerContainer.innerHTML = `
+    <header>
+        <div class="container nav-container">
+            <a href="${pathToRoot}/index.html" class="logo">Snow<span>Village</span></a>
+            <ul class="nav-links">
+                <li><a href="${pathToRoot}/index.html" class="${activeMenu === 'home' ? 'active' : ''}">ホーム</a></li>
+                <li><a href="${pathToRoot}/about/" class="${activeMenu === 'about' ? 'active' : ''}">運営について</a></li>
+                <li><a href="${pathToRoot}/events/" class="${activeMenu === 'events' ? 'active' : ''}">イベント</a></li>
+                <li><a href="${pathToRoot}/calendar/" class="${activeMenu === 'calendar' ? 'active' : ''}">カレンダー</a></li>
+                <li><a href="${pathToRoot}/join/" class="btn ${activeMenu === 'join' ? 'active' : ''}">Slackに参加</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div><div class="line2"></div><div class="line3"></div>
+            </div>
+        </div>
+    </header>
+    `;
+    
+    // ヘッダーのHTMLが画面に作られた後に、ハンバーガーメニューの動きを紐付ける
+    initNav();
+};
+
+// --- 🌟 共通フッターの生成---
+const renderFooter = () => {
+    const footerContainer = document.getElementById('footer-container');
+    if (!footerContainer) return;
+
+    footerContainer.innerHTML = `
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Japan Snowflake User Group SnowVillage.</p>
+        </div>
+    </footer>
+    `;
+};

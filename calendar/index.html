@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>カレンダー - Snowflake UG Japan</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">Snow<span>Village</span></a>
+            <ul class="nav-links">
+                <li><a href="../index.html">ホーム</a></li>
+                <li><a href="../about/">運営について</a></li>
+                <li><a href="../events/">イベント</a></li>
+                <li><a href="../calendar/" class="active">カレンダー</a></li>
+                <li><a href="../join/" class="btn">Slackに参加</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div><div class="line2"></div><div class="line3"></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container" style="padding-top: 150px; padding-bottom: 100px;">
+        <section class="calendar-section">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h2 class="reveal" style="margin-bottom: 10px;">Community Calendar</h2>
+                <p class="reveal" style="color: var(--text-light); font-size: 1.1rem; max-width: 700px; margin: 0 auto;">
+                    SnowVillage全体および各分科会のイベントスケジュールです。<br>
+                    右下の「+ Google カレンダー」ボタンを押すと、ご自身のカレンダーに予定を同期できます。
+                </p>
+            </div>
+            
+            <div class="calendar-wrapper reveal">
+                <iframe src="https://calendar.google.com/calendar/u/0/embed?src=295ef847e514cf67debce604f99909d12925a5d7b023e44a0d13c668a1e47137@group.calendar.google.com&ctz=Asia/Tokyo" style="border-width:0" frameborder="0" scrolling="no"></iframe>
+            </div>
+            
+            <div class="reveal" style="text-align: center; margin-top: 40px;">
+                <a href="../events/" class="btn-text" style="color: var(--secondary); text-decoration: none; font-weight: 600;">← イベント一覧・TECH PLAYページへ</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Japan Snowflake User Group.</p>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>
