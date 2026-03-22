@@ -203,3 +203,33 @@ function loadLatestNews() {
         archiveLink.style.display = 'block';
     }
 }
+
+
+// --- 🎮 イースターエッグ：コナミコマンド監視 ---
+// コマンド: ↑ ↑ ↓ ↓ ← → ← → B A
+const konamiCode = [
+    'ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 
+    'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 
+    'KeyB', 'KeyA'
+];
+let konamiPosition = 0;
+
+document.addEventListener('keydown', (e) => {
+    // 入力されたキーがコマンドの現在の位置と一致するか
+    if (e.code === konamiCode[konamiPosition]) {
+        konamiPosition++;
+        // 最後まで正しく入力されたら
+        if (konamiPosition === konamiCode.length) {
+            // 🎉 エフェクト＆隠しページへ遷移
+            alert("❄️ Easter Egg Unlocked! ❄️\nWelcome to SnowTris!");
+            // ルートからの絶対パスか、相対パスで /secret/ へ遷移
+            // (ローカル環境・本番環境に合わせて適宜調整してください)
+            const basePath = window.location.pathname.includes('/SnowVillage') ? '/SnowVillage' : '';
+            window.location.href = `${basePath}/secret/`;
+            konamiPosition = 0; // リセット
+        }
+    } else {
+        // 間違えたら最初からやり直し
+        konamiPosition = 0;
+    }
+});
