@@ -2,9 +2,15 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <title>News アーカイブ</title>
-    <link rel="stylesheet" href="../style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>News アーカイブ - Snowflake UG Japan</title>
+    
+    <link rel="stylesheet" href="../css/common.css" />
     <link rel="stylesheet" href="../css/home.css" />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet" />
+    
     <style>
       /* アーカイブページ専用の微調整 */
       .archive-container {
@@ -13,21 +19,24 @@
       }
       .news-wrapper {
         max-width: 1000px;
-        margin-bottom: 100px;
+        margin: 0 auto 100px auto; /* 🌟 中央寄せを確実にする */
       }
       .news-item {
         padding: 20px 0;
-      } /* 一覧なので少しゆったり */
+        list-style: none; /* 🌟 箇条書きの黒ポッチを消す */
+      }
     </style>
   </head>
   <body>
     <div id="header-container"></div>
 
-    <main class="container archive-container">
-      <h2 class="reveal" style="text-align: center; margin-bottom: 40px">News Archive</h2>
+    <main>
+      <div class="container archive-container">
+        <h2 class="reveal" style="text-align: center; margin-bottom: 40px; color: var(--secondary);">News Archive</h2>
 
-      <div class="news-wrapper reveal">
-        <ul id="news-full-list"></ul>
+        <div class="news-wrapper reveal">
+          <ul id="news-full-list" style="padding: 0; margin: 0;"></ul>
+        </div>
       </div>
     </main>
 
@@ -36,15 +45,16 @@
     <script src="../newsData.js"></script>
     <script src="../script.js"></script>
     <script>
-      renderHeader("..", "news");
-      renderFooter();
+      // 🌟 第一引数 ".." は「一つ上の階層」を意味します
+      if (typeof renderHeader === "function") {
+        renderHeader("..", "news");
+        renderFooter("..");
+      }
 
       // 🌟 アーカイブページ専用の読み込み処理
-      // news/index.html の script 部分
       window.addEventListener("DOMContentLoaded", () => {
         const fullList = document.getElementById("news-full-list");
         if (fullList && typeof newsData !== "undefined") {
-          // 🌟 index を追加して、0番目（最新）を判定
           fullList.innerHTML = newsData
             .map(
               (item, index) => `
