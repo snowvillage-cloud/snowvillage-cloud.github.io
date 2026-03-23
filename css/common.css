@@ -14,9 +14,14 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: var(--font-family); color: var(--text); background-color: var(--bg); line-height: 1.6; overflow-x: hidden; }
+body { 
+  font-family: var(--font-family); 
+  color: var(--text); 
+  background-color: var(--bg); 
+  line-height: 1.6; 
+  overflow-x: hidden; 
+}
 
-/* 1200pxのコンテンツ枠（z-indexを上げて波より手前に） */
 .container { 
   max-width: 1200px; 
   margin: 0 auto; 
@@ -25,13 +30,11 @@ body { font-family: var(--font-family); color: var(--text); background-color: va
   z-index: 10; 
 }
 
-/* 🌟 波が表示される白いエリア全体 */
+/* 🌟 波を配置するための土台（1ページに1つの波） */
 main {
   position: relative;
-  z-index: 1;
-  background-color: var(--bg);
-  /* 波が表示されるスペースを確保 */
-  padding-bottom: 250px; 
+  display: block;
+  width: 100%;
 }
 
 /* ==========================================================================
@@ -43,54 +46,50 @@ main {
   color: #fff !important; text-decoration: none; border-radius: 30px;
   font-weight: 600; transition: var(--transition); border: none; cursor: pointer;
   box-shadow: 0 4px 15px rgba(41, 181, 232, 0.3);
-  position: relative; z-index: 11;
+  position: relative; z-index: 20;
 }
 .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(41, 181, 232, 0.4); }
 
 .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
 .reveal.active { opacity: 1; transform: translateY(0); }
 
-section { padding: 100px 0; position: relative; z-index: 2; }
-section h2 { font-size: 2.5rem; color: var(--secondary); text-align: center; margin-bottom: 60px; position: relative; z-index: 5; }
+section { padding: 80px 0; position: relative; z-index: 5; }
+section h2 { font-size: 2.5rem; color: var(--secondary); text-align: center; margin-bottom: 60px; }
 
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
 .card { background: var(--card-bg); padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: var(--transition); border: 1px solid #e2e8f0; }
 
 /* ==========================================================================
-   3. 🌟 白いエリア全体で動く波（継ぎ目なし・薄い色・画面幅いっぱい）
+   3. 🌟 動く波（1ページに1つ・全幅・繋ぎ目なし）
    ========================================================================== */
-/* mainタグの最下部に1つの大きな波を表示 */
-main::before {
+/* mainタグの最下部に1つだけ配置 */
+main::after {
   content: '';
   position: absolute;
   bottom: 0;
-  /* 🌟 ブレイクアウト手法で画面端まで広げる */
   left: 50%;
-  width: 100vw;
-  height: 250px; /* 波の高さ */
+  width: 100vw; /* 画面幅いっぱい */
+  height: 200px;
   transform: translateX(-50%);
   
-  /* 🌊 数学的にループする波（不透明度 15% / 8%）
-     開始と終了の角度を水平に固定し、継ぎ目を完全に消去。
-  */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 250'%3E%3Cpath d='M0,125 C400,25,1200,225,1600,125' fill='none' stroke='rgba(41,181,232,0.15)' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M0,145 C400,245,1200,45,1600,145' fill='none' stroke='rgba(41,181,232,0.08)' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  /* 🌊 数学的に完全に繋がる波（極めて薄い色：0.1 / 0.05） */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 200'%3E%3Cpath d='M0,100 C400,180 1200,20 1600,100' fill='none' stroke='rgba(41,181,232,0.1)' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M0,120 C400,200 1200,40 1600,120' fill='none' stroke='rgba(41,181,232,0.05)' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
   
-  background-size: 1600px 250px; 
+  background-size: 1600px 200px; 
   background-repeat: repeat-x;
   background-position: 0 0;
   pointer-events: none;
-  z-index: 0; /* 背景の一番奥 */
-  /* 波をよりゆっくり、優雅に動かす */
-  animation: whitePageWave 50s linear infinite;
+  z-index: 1; /* セクションの文字より後ろ、背景より前 */
+  animation: waveMoveLoop 45s linear infinite;
 }
 
-@keyframes whitePageWave {
+@keyframes waveMoveLoop {
     from { background-position: 0 0; }
-    to { background-position: 1600px 0; }
+    to { background-position: -1600px 0; }
 }
 
 /* ==========================================================================
-   4. ヘッダー
+   4. ヘッダー・ナビゲーション
    ========================================================================== */
 header { 
   background-color: rgba(255, 255, 255, 0.85); padding: 25px 0; position: fixed; 
@@ -129,10 +128,18 @@ header.scrolled { padding: 10px 0; background-color: rgba(255, 255, 255, 0.98); 
 }
 
 /* ==========================================================================
-   5. フッター・読了バー・モバイル
+   5. モバイルメニュー・ハンバーガー (確実表示)
    ========================================================================== */
-/* 🌟 フッターを波より手前に */
-footer { background-color: var(--secondary); color: #fff; padding: 50px 0; text-align: center; position: relative; z-index: 100; }
+.burger { 
+  display: none; 
+  cursor: pointer; 
+  z-index: 1200; 
+  position: relative; 
+}
+.burger div { 
+  width: 25px; height: 3px; background-color: var(--secondary); 
+  margin: 5px; transition: all 0.3s ease; 
+}
 
 #scroll-indicator {
   position: fixed; bottom: 0; left: 0; height: 4px; z-index: 2000;
@@ -140,12 +147,23 @@ footer { background-color: var(--secondary); color: #fff; padding: 50px 0; text-
   width: 0%; transition: width 0.1s ease-out;
 }
 
-.burger { display: none; cursor: pointer; z-index: 1200; position: relative; }
-.burger div { width: 25px; height: 3px; background-color: var(--secondary); margin: 5px; }
+footer { background-color: var(--secondary); color: #fff; padding: 50px 0; text-align: center; position: relative; z-index: 100; }
 
 @media screen and (max-width: 768px) {
+  .burger { display: block !important; }
   .nav-links { 
     position: fixed; right: 0; top: 0; height: 100vh; width: 75%; 
     background-color: rgba(26, 54, 93, 0.98); backdrop-filter: blur(15px); 
     display: flex; flex-direction: column; align-items: center; justify-content: center;
-    transform: translateX(100%); transition: transform
+    transform: translateX(100%); transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1); 
+    z-index: 1100;
+  }
+  .nav-active { transform: translateX(0%); }
+  #nav-slider { display: none !important; }
+  .nav-links li { opacity: 0; margin: 20px 0; }
+  .nav-links a { color: #fff !important; font-size: 1.4rem; }
+}
+
+.toggle .line1 { transform: rotate(-45deg) translate(-5px, 6px); }
+.toggle .line2 { opacity: 0; }
+.toggle .line3 { transform: rotate(45deg) translate(-5px, -6px); }
