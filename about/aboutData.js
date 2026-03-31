@@ -29,6 +29,15 @@ const organizersData = [
     xUrl: "https://x.com/あなたのID",
     linkedInUrl: "https://www.linkedin.com/in/あなたのID"
   }
+  {
+    name: "Kosuke Kida",
+    role: "Community Engagement Lead",
+    desc: "みんながコミュニティを楽しみ、成長するお手伝い。みんなの「褒められ」を後押しします！",
+    departments: ["Event", "Brand"],
+    photo: "../images/organizers/KosukeKida.jpg",
+    xUrl: "https://x.com/kkkida_twtr",
+    linkedInUrl: "https://www.linkedin.com/in/kosuke-kida-b03ab29a"
+  },
 ];
 
 // 🌟 スポンサーのデータ
