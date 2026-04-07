@@ -28,6 +28,15 @@ const organizersData = [
     photo: "../images/organizers/photo_jiro.jpg",
     xUrl: "https://x.com/あなたのID",
     linkedInUrl: "https://www.linkedin.com/in/あなたのID"
+  },
+  {
+    name: "Tatsuya Koreeda",
+    role: "Snowflake DataSuperheros 2026",
+    desc: "dbt・Terraformを活用したデータマネジメント業務を行うデータエンジニア。関西地域やヘルスケア業界のSnowflakeユーザーグループのリーダーを務めてます！",
+    departments: ["Events & Experience", "Programs & Ops"],
+    photo: "../images/organizers/tatsuya_koreeda.jpeg",
+    xUrl: "https://x.com/cs_dev_engineer",
+    linkedInUrl: "https://www.linkedin.com/in/tkoreeda/"
   }
   {
     name: "Kosuke Kida",
