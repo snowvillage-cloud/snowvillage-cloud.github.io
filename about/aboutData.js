@@ -15,7 +15,7 @@ const organizersData = [
     name: "Yuya Matsubara",
     role: "Snowflake DataSuperheros 2026 & Snowflake Squad",
     desc: "Principal Data Engineer at NTT DOCOMO, Inc. <br>Slackでなんかうるさいやつです!",
-    departments: ["Events & Experience", "Content & Platform"],
+    departments: ["Event", "Brand"],
     photo: "../images/organizers/yuya_matsubara.jpeg",
     xUrl: "https://x.com/matsubara_tech",
     linkedInUrl: "https://www.linkedin.com/in/yuya-matsubara-b86278323"
