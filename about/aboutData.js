@@ -37,7 +37,7 @@ const organizersData = [
     photo: "../images/organizers/tatsuya_koreeda.jpeg",
     xUrl: "https://x.com/cs_dev_engineer",
     linkedInUrl: "https://www.linkedin.com/in/tkoreeda/"
-  }
+  },
   {
     name: "Kosuke Kida",
     role: "Community Engagement Lead",
@@ -46,7 +46,7 @@ const organizersData = [
     photo: "../images/organizers/KosukeKida.jpg",
     xUrl: "https://x.com/kkkida_twtr",
     linkedInUrl: "https://www.linkedin.com/in/kosuke-kida-b03ab29a"
-  },
+  }
 ];
 
 // 🌟 スポンサーのデータ
