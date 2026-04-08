@@ -46,6 +46,15 @@ const organizersData = [
     photo: "../images/organizers/KosukeKida.jpg",
     xUrl: "https://x.com/kkkida_twtr",
     linkedInUrl: "https://www.linkedin.com/in/kosuke-kida-b03ab29a"
+  },
+  {
+    name: "あれ",
+    role: "Snowflake DataSuperheros 2024-2026",
+    desc: "DATUM STUDIO株式会社 プリンシパルエンジニア<br>Snowflake女子会、コンテナグループ、Frosty Friday をよろしくね！",
+    departments: ["Event", "Growth", "Operation"],
+    photo: "../images/organizers/allllllllez.jpg",
+    xUrl: "https://x.com/__allllllllez__",
+    linkedInUrl: "https://www.linkedin.com/in/miho-kajiya-928847297"
   }
 ];
 
