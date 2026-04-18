@@ -1,55 +1,164 @@
-/* 🌟 注力領域（Focus Areas）説明ページ専用スタイル */
+/* ==========================================================================
+   Focus Areas - Simple Card Design (Organizers風)
+   ========================================================================== */
 
-.dept-section {
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 40px;
-  margin-bottom: 30px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-  border-top: 4px solid var(--primary);
-  /* 💡 ここが重要：タグクリックで飛んできた時に、固定ヘッダーの下に隠れないようにする余白 */
-  scroll-margin-top: 100px; 
+/* 2×2グリッド（1画面に4枚） */
+.dept-grid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
 }
 
-.dept-title {
-  color: var(--secondary);
-  font-size: 1.5rem;
-  margin-bottom: 15px;
+/* カード本体 - コンパクトに1画面収まるサイズ */
+.dept-card {
+  text-align: center;
+  padding: 25px 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dept-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* アイコンラッパー - コンパクトサイズ */
+.dept-icon-wrapper {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin: 0 auto 15px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--acc-blue) 0%, rgba(41, 181, 232, 0.15) 100%);
+  border: 3px solid var(--primary);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(41, 181, 232, 0.15);
 }
 
-.dept-icon {
-  font-size: 2rem;
+.dept-card:hover .dept-icon-wrapper {
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 8px 20px rgba(41, 181, 232, 0.25);
 }
 
-/* 🌟 追加：業務内容リストの装飾スタイル */
-.task-list {
-  list-style: none;
-  padding-left: 0;
-  margin-top: 20px;
+.dept-emoji {
+  font-size: 1.8rem;
 }
 
-.task-list li {
-  margin-bottom: 12px;
-  padding-left: 24px;
-  position: relative;
-  color: var(--text-light);
-  line-height: 1.6;
-}
-
-.task-list li::before {
-  content: "✦";
-  color: var(--primary);
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-size: 0.9rem;
-}
-
-.task-list strong {
+/* 部門名 */
+.dept-name {
+  font-size: 1.2rem;
   color: var(--secondary);
+  margin-bottom: 4px;
+  font-weight: 700;
+}
+
+/* 役割サブタイトル */
+.dept-role {
+  color: var(--primary);
   font-weight: 600;
-  margin-right: 5px;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+
+/* 説明文 */
+.dept-desc {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+/* タスクタグコンテナ */
+.task-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center;
+  padding-top: 12px;
+  border-top: 1px dashed #e2e8f0;
+}
+
+/* タスクタグ */
+.task-tag {
+  background-color: rgba(41, 181, 232, 0.08);
+  color: var(--primary);
+  border: 1px solid rgba(41, 181, 232, 0.3);
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.task-tag:hover {
+  background-color: var(--primary);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(41, 181, 232, 0.2);
+}
+
+/* オーガナイザーアイコン */
+.dept-members {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+  padding-top: 12px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.dept-member {
+  display: block;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--acc-blue);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.dept-member img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dept-member:hover {
+  transform: scale(1.15) translateY(-3px);
+  border-color: var(--primary);
+  box-shadow: 0 4px 12px rgba(41, 181, 232, 0.3);
+}
+
+/* ==========================================================================
+   レスポンシブ
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+  .dept-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .dept-card {
+    padding: 25px 20px;
+  }
+
+  .dept-icon-wrapper {
+    width: 80px;
+    height: 80px;
+  }
+
+  .dept-emoji {
+    font-size: 2rem;
+  }
+
+  .task-tags {
+    gap: 4px;
+  }
+
+  .task-tag {
+    font-size: 0.65rem;
+    padding: 3px 8px;
+  }
 }
