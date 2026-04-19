@@ -5,6 +5,40 @@
   margin: 0 auto;
 }
 
+/* 目次（TOC） */
+.guide-toc {
+  max-width: 800px;
+  margin: 0 auto 50px;
+  padding: 24px 32px;
+  background: #f7fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+}
+.guide-toc .toc-label {
+  margin: 0 0 12px;
+  color: var(--secondary);
+  font-weight: 800;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+.guide-toc ol {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--text);
+}
+.guide-toc li { margin: 6px 0; line-height: 1.6; }
+.guide-toc a {
+  color: var(--secondary);
+  text-decoration: none;
+  border-bottom: 1px dashed transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.guide-toc a:hover { color: var(--primary); border-bottom-color: var(--primary); }
+
+/* 固定ヘッダー分のアンカーオフセット */
+.guide-section { scroll-margin-top: 110px; }
+
 .guide-section {
   margin-bottom: 64px;
 }

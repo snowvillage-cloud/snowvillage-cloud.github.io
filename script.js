@@ -139,14 +139,9 @@ const renderHeader = (pathToRoot, activeMenu) => {
   setPageTitle(activeMenu);
 
   const logoSrc = `${pathToRoot}/images/brand/logo-white.png`;
-  const logoHtml =
-    activeMenu === "home"
-      ? `<a href="${pathToRoot}/" class="logo logo-home" aria-label="SnowVillage">
+  const logoHtml = `<a href="${pathToRoot}/" class="logo logo-home" aria-label="SnowVillage">
            <img src="${logoSrc}" alt="" class="logo-mark" />
            <span class="logo-text">SnowVillage</span>
-         </a>`
-      : `<a href="${pathToRoot}/" class="logo logo-icon" aria-label="SnowVillage">
-           <img src="${logoSrc}" alt="SnowVillage" class="logo-mark" />
          </a>`;
 
   // about 配下のサブページも「運営」タブをアクティブ扱い
