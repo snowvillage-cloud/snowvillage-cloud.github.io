@@ -8,12 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
       header.classList.toggle("scrolled", window.scrollY > 50);
     }
   });
-  // 1. イベントカードの動的生成（※必ずフェードイン監視の「前」に行うこと！）
-  if (document.getElementById("event-grid")) {
-    loadEvents();
-  }
-
-  // 2. スクロールフェードイン制御の開始（生成されたカードもここで監視対象になる）
+  // スクロールフェードイン制御の開始（各ページで描画されたカードも監視対象になる）
   initScrollReveal();
 
   // 3. 規約同意チェックボックスの制御 (joinページ用)
@@ -93,71 +88,46 @@ const initScrollReveal = () => {
   });
 };
 
-// --- イベントデータ動的生成 ---
-const loadEvents = () => {
-  const eventGrid = document.getElementById("event-grid");
+// --- 🌟 ナビゲーション定義（一元管理） ---
+const NAV_ITEMS = [
+  { key: "guide", label: "歩き方", path: "/guide/" },
+  { key: "about", label: "運営", path: "/about/" },
+  { key: "events", label: "イベント", path: "/events/" },
+  { key: "calendar", label: "カレンダー", path: "/calendar/" },
+  { key: "contents", label: "コンテンツ", path: "/contents/" },
+  { key: "links", label: "リンク集", path: "/links/" },
+];
 
-  const eventsData = [
-    {
-      image: "../images/events/sample.png", // events/index.html から見た相対パス
-      title: "Snowflake World Tour Tokyo",
-      date: "2026.XX.XX (X)",
-      tags: ["オンライン", "XXXXX", "XXXX"],
-      desc: "XXXXXXXX",
-    },
-    {
-      image: "../images/events/sample.png",
-      title: "XXXXXXX",
-      date: "2026.05.20 (水)",
-      tags: ["Tech", "XXXX"],
-      desc: "aaaaa",
-    },
-  ];
-
-  eventsData.forEach((event, index) => {
-    const card = document.createElement("div");
-    card.className = "card reveal event-card";
-    card.style.transitionDelay = `${index * 0.1}s`;
-
-    const tagsHtml = event.tags.map((tag) => `<span class="tag">${tag}</span>`).join("");
-
-    card.innerHTML = `
-            <div class="event-image-container">
-                <img src="${event.image}" alt="${event.title}" class="event-photo">
-            </div>
-            <div class="event-content">
-                <div class="event-date">${event.date}</div>
-                <h3>${event.title}</h3>
-                <div class="tags">${tagsHtml}</div>
-                <p>${event.desc}</p>
-                <a href="https://techplay.jp/community_group/snowflake_users" target="_blank" rel="noopener noreferrer" class="btn-text">TECH PLAY で詳細を見る →</a>
-            </div>
-        `;
-    eventGrid.appendChild(card);
-  });
-
-  addEventStyles();
+// --- 🌟 ページタイトル一元設定 ---
+const PAGE_TITLES = {
+  home: "SnowVillage",
+  guide: "歩き方",
+  about: "運営",
+  mayors: "Mayors",
+  neighbors: "Neighbors",
+  departments: "部門紹介",
+  alumni: "歴代の貢献者",
+  events: "イベント",
+  calendar: "カレンダー",
+  contents: "コンテンツ",
+  links: "リンク集",
+  join: "Slackに参加",
+  news: "お知らせ",
 };
 
-// --- イベントカード専用レイアウト調整 ---
-const addEventStyles = () => {
-  if (!document.getElementById("event-styles")) {
-    const style = document.createElement("style");
-    style.id = "event-styles";
-    style.innerHTML = `
-            .event-card { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
-            .event-image-container { width: 100%; height: 200px; overflow: hidden; }
-            .event-photo { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-            .event-card:hover .event-photo { transform: scale(1.1); }
-            .event-content { padding: 30px; flex-grow: 1; display: flex; flex-direction: column; }
-            .event-date { color: var(--primary); font-weight: bold; margin-bottom: 10px; font-size: 1.1rem; }
-            .tags { margin-bottom: 20px; display: flex; gap: 10px; flex-wrap: wrap; }
-            .tag { background-color: var(--acc-blue); color: var(--secondary); padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 500; }
-            .btn-text { color: var(--primary); text-decoration: none; font-weight: 600; transition: var(--transition); display: inline-block; margin-top: auto; padding-top: 15px;}
-            .btn-text:hover { color: var(--secondary); transform: translateX(5px); }
-        `;
-    document.head.appendChild(style);
-  }
+const setPageTitle = (menuKey) => {
+  const name = PAGE_TITLES[menuKey];
+  document.title = !name || menuKey === "home" ? "SnowVillage" : `${name} - SnowVillage`;
+};
+
+// --- 🌟 favicon を全ページ共通で注入 ---
+const injectFavicon = (pathToRoot) => {
+  if (document.querySelector("link[rel='icon']")) return;
+  const link = document.createElement("link");
+  link.rel = "icon";
+  link.type = "image/png";
+  link.href = `${pathToRoot}/images/brand/favicon.png`;
+  document.head.appendChild(link);
 };
 
 // --- 🌟 共通ヘッダーの生成 ---
@@ -165,21 +135,37 @@ const renderHeader = (pathToRoot, activeMenu) => {
   const headerContainer = document.getElementById("header-container");
   if (!headerContainer) return;
 
-  const logoHtml = activeMenu === "home" ? `<a href="${pathToRoot}/" class="logo" style="font-size: 1.2rem;">Japan Snowflake User Group <span>SnowVillage</span></a>` : `<a href="${pathToRoot}/" class="logo">Snow<span>Village</span></a>`;
+  injectFavicon(pathToRoot);
+  setPageTitle(activeMenu);
+
+  const logoSrc = `${pathToRoot}/images/brand/logo-white.png`;
+  const logoHtml =
+    activeMenu === "home"
+      ? `<a href="${pathToRoot}/" class="logo logo-home" aria-label="SnowVillage">
+           <img src="${logoSrc}" alt="" class="logo-mark" />
+           <span class="logo-text">SnowVillage</span>
+         </a>`
+      : `<a href="${pathToRoot}/" class="logo logo-icon" aria-label="SnowVillage">
+           <img src="${logoSrc}" alt="SnowVillage" class="logo-mark" />
+         </a>`;
+
+  // about 配下のサブページも「運営」タブをアクティブ扱い
+  const isActive = (key) => {
+    if (key === "about") return ["about", "mayors", "neighbors", "departments", "alumni"].includes(activeMenu);
+    return key === activeMenu;
+  };
+
+  const navItemsHtml = NAV_ITEMS.map(
+    (item) => `<li><a href="${pathToRoot}${item.path}" class="${isActive(item.key) ? "active" : ""}">${item.label}</a></li>`
+  ).join("");
 
   headerContainer.innerHTML = `
     <header>
         <div class="container nav-container">
             ${logoHtml}
             <ul class="nav-links">
-                <li><a href="${pathToRoot}/" class="${activeMenu === "home" ? "active" : ""}">ホーム</a></li>
-                <li><a href="${pathToRoot}/guide/" class="${activeMenu === "guide" ? "active" : ""}">歩き方</a></li>
-                <li><a href="${pathToRoot}/about/" class="${activeMenu === "about" ? "active" : ""}">運営について</a></li>
-                <li><a href="${pathToRoot}/events/" class="${activeMenu === "events" ? "active" : ""}">イベント</a></li>
-                <li><a href="${pathToRoot}/calendar/" class="${activeMenu === "calendar" ? "active" : ""}">カレンダー</a></li>
-                <li><a href="${pathToRoot}/links/" class="${activeMenu === "links" ? "active" : ""}">リンク集</a></li>
+                ${navItemsHtml}
                 <li><a href="${pathToRoot}/join/" class="btn ${activeMenu === "join" ? "active" : ""}">Slackに参加</a></li>
-                
                 <li id="nav-slider"></li>
             </ul>
             <div class="burger">
@@ -232,7 +218,7 @@ const renderFooter = () => {
 
   // 現在見ているページのURLを自動取得してシェア用にエンコード
   const currentUrl = encodeURIComponent(window.location.href);
-  const shareText = encodeURIComponent("Japan Snowflake User Group 公式サイトをチェック！");
+  const shareText = encodeURIComponent("SnowVillage 公式サイトをチェック！");
   const hashtag = "SnowVillage";
 
   // 🌟 X (旧Twitter) 用のシェアURL生成
@@ -275,7 +261,7 @@ const renderFooter = () => {
                 </a>
             </div>
 
-            <p style="color: var(--text-light); font-size: 0.85rem; margin: 0;">&copy; 2026 Japan Snowflake User Group SnowVillage.</p>
+            <p style="color: var(--text-light); font-size: 0.85rem; margin: 0;">&copy; 2026 SnowVillage</p>
         </div>
     </footer>
     `;
@@ -297,9 +283,8 @@ function loadLatestNews() {
       (item, index) => `
         <li class="news-item">
             <a href="${item.link}" class="news-link" ${item.isExternal ? 'target="_blank" rel="noopener noreferrer"' : ""}>
-                ${index === 0 ? '<span class="latest-pulse" aria-hidden="true"></span>' : ""}
-                
                 <span class="news-date">${item.date}</span>
+                <span class="news-badge-slot">${index === 0 ? '<span class="news-badge-new">NEW</span>' : ""}</span>
                 <span class="news-text">${item.text}</span>
                 <span class="news-arrow">→</span>
             </a>

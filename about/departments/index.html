@@ -3,28 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>注力領域 (Focus Areas) - Snowflake UG Japan</title>
+    <title>部門紹介 - SnowVillage</title>
     <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="../../css/about.css" />
     <link rel="stylesheet" href="../../css/departments.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet" />
   </head>
   <body>
     <div id="header-container"></div>
 
-    <main class="container" style="padding-top: 150px; padding-bottom: 100px;">
-      <div style="text-align: center; margin-bottom: 60px;">
-        <h1 class="reveal" style="color: var(--secondary); font-size: 2.8rem; margin-bottom: 15px">Focus Areas</h1>
-        <p class="reveal" style="color: var(--text-light); font-size: 1.1rem; max-width: 700px; margin: 0 auto;">
-          SnowVillage Mayors（運営メンバー）は、コミュニティ体験を最大化するために、主に4つの領域（部門）に注力して活動しています。
+    <main class="container" style="padding-top: 150px; padding-bottom: 100px">
+      <div style="text-align: center; margin-bottom: 60px">
+        <h1 class="reveal" style="color: var(--secondary); font-size: 2.8rem; margin-bottom: 15px">Departments</h1>
+        <p class="reveal" style="color: var(--text-light); font-size: 1.1rem; max-width: 720px; margin: 0 auto">
+          SnowVillage の運営は、コミュニティ体験を最大化するために4つの部門で活動しています。<br />
+          各部門の役割と、協力してくださっているメンバー・スポンサーを紹介します。
         </p>
       </div>
 
       <div class="grid dept-grid">
-        <!-- Event -->
-        <div class="card reveal dept-card" id="events">
-          <div class="dept-icon-wrapper">
-            <span class="dept-emoji">🎪</span>
-          </div>
+        <div class="card reveal dept-card" id="event">
           <h3 class="dept-name">Event</h3>
           <p class="dept-role">体験を創り出す</p>
           <p class="dept-desc">規模の大小に関わらず、ユーザーが実際に集まる場を企画・運営します。</p>
@@ -40,11 +38,7 @@
           </div>
         </div>
 
-        <!-- Brand -->
-        <div class="card reveal dept-card" id="content">
-          <div class="dept-icon-wrapper">
-            <span class="dept-emoji">🌐</span>
-          </div>
+        <div class="card reveal dept-card" id="brand">
           <h3 class="dept-name">Brand</h3>
           <p class="dept-role">発信と場作り</p>
           <p class="dept-desc">ストック型の情報発信や、日常的な交流を支えます。</p>
@@ -56,11 +50,7 @@
           </div>
         </div>
 
-        <!-- Growth -->
-        <div class="card reveal dept-card" id="enablement">
-          <div class="dept-icon-wrapper">
-            <span class="dept-emoji">🚀</span>
-          </div>
+        <div class="card reveal dept-card" id="growth">
           <h3 class="dept-name">Growth</h3>
           <p class="dept-role">成長と繋がり</p>
           <p class="dept-desc">技術力の向上や、他団体との連携を深めます。</p>
@@ -71,11 +61,7 @@
           </div>
         </div>
 
-        <!-- Operation -->
-        <div class="card reveal dept-card" id="programs">
-          <div class="dept-icon-wrapper">
-            <span class="dept-emoji">⚙️</span>
-          </div>
+        <div class="card reveal dept-card" id="operation">
           <h3 class="dept-name">Operation</h3>
           <p class="dept-role">戦略と調整</p>
           <p class="dept-desc">リソース管理や運営スキームなど、仕組みを考えます。</p>
@@ -87,8 +73,16 @@
         </div>
       </div>
 
-      <div class="reveal" style="text-align: center; margin-top: 50px;">
-        <a href="../" class="btn-text" style="color: var(--secondary); font-weight: 600;">← 運営メンバー一覧に戻る</a>
+      <section class="reveal" style="border-top: 1px solid #eee; margin-top: 80px; padding-top: 60px">
+        <h2 style="text-align: center; color: var(--secondary); margin-bottom: 10px">Supporters & Sponsors</h2>
+        <p style="text-align: center; color: var(--text-light); max-width: 700px; margin: 0 auto 40px">
+          部門活動を個人の貢献・企業の協賛で支えてくださっている皆さんです。
+        </p>
+        <div id="sponsors-grid" class="grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr))"></div>
+      </section>
+
+      <div class="reveal" style="text-align: center; margin-top: 60px">
+        <a href="../" class="btn-text" style="color: var(--secondary); font-weight: 600">← 運営トップへ戻る</a>
       </div>
     </main>
 
@@ -97,43 +91,54 @@
     <script src="../../script.js"></script>
     <script src="../aboutData.js"></script>
     <script>
-      renderHeader("../..", "about");
+      renderHeader("../..", "departments");
       renderFooter();
 
-      // 部門名のマッピング（aboutData.jsの値 → カードのID）
-      const deptMapping = {
-        "Event": "events",
-        "Events & Experience": "events",
-        "Brand": "content",
-        "Content & Platform": "content",
-        "Growth": "enablement",
-        "Enablement": "enablement",
-        "Operation": "programs",
-        "Programs & Ops": "programs"
+      // 部門カードごとに所属メンバー（Mayors）のアイコンを追加
+      const deptKeyMap = {
+        Event: "event",
+        Brand: "brand",
+        Growth: "growth",
+        Operation: "operation",
       };
 
-      // 各カードにオーガナイザーアイコンを追加
-      document.querySelectorAll('.dept-card').forEach(card => {
+      document.querySelectorAll(".dept-card").forEach((card) => {
         const cardId = card.id;
-
-        // この部門に所属するオーガナイザーをフィルタ
-        const members = organizersData.filter(org =>
-          org.departments && org.departments.some(dept => deptMapping[dept] === cardId)
-        );
-
+        const members = (mayorsData || []).filter((m) => m.departments && m.departments.some((d) => deptKeyMap[d] === cardId));
         if (members.length > 0) {
-          const membersHtml = `
+          const html = `
             <div class="dept-members">
-              ${members.map(m => `
-                <a href="../" class="dept-member" title="${m.name}">
-                  <img src="${m.photo.replace('../images', '../../images')}" alt="${m.name}" />
-                </a>
-              `).join('')}
-            </div>
-          `;
-          card.insertAdjacentHTML('beforeend', membersHtml);
+              ${members
+                .map(
+                  (m) => `
+                <a href="../mayors/" class="dept-member" title="${m.name}">
+                  <img src="${m.photo.replace("../images", "../../images")}" alt="${m.name}" />
+                </a>`
+                )
+                .join("")}
+            </div>`;
+          card.insertAdjacentHTML("beforeend", html);
         }
       });
+
+      // スポンサー描画
+      const sponsorGrid = document.getElementById("sponsors-grid");
+      if (sponsorGrid && typeof sponsorsData !== "undefined" && sponsorsData.length > 0) {
+        sponsorGrid.innerHTML = sponsorsData
+          .map(
+            (s, i) => `
+            <div class="card reveal sponsor-card" style="transition-delay: ${i * 0.1}s; padding: 24px">
+              <img src="${s.logo.replace("../images", "../../images")}" alt="${s.name}" class="sponsor-logo" style="max-height: 48px" />
+              <p style="font-size: 0.85rem; font-weight: 600; margin-top: 10px">${s.name}</p>
+              <p style="font-size: 0.75rem; color: var(--text-light); margin-top: 6px">${s.desc}</p>
+              ${s.department ? `<p style="font-size: 0.7rem; color: var(--primary); margin-top: 8px; font-weight: 700; letter-spacing: 0.5px">支援部門: ${s.department}</p>` : ""}
+            </div>
+          `
+          )
+          .join("");
+      } else if (sponsorGrid) {
+        sponsorGrid.innerHTML = '<p style="text-align: center; color: var(--text-light); grid-column: 1 / -1">協賛のご相談は <strong>#mayors</strong> チャンネルまでお気軽にどうぞ。</p>';
+      }
     </script>
   </body>
 </html>

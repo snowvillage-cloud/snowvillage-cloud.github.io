@@ -1,111 +1,84 @@
-/* --- 🌟 コミュニティの歩き方ページ用スタイル (css/guide.css) --- */
+/* --- 🌟 歩き方ページ：通読を前提とした記事スタイル --- */
+
+.guide-article {
+  max-width: 800px;
+  margin: 0 auto;
+}
 
 .guide-section {
-    max-width: 900px;
-    margin: 0 auto 80px auto;
+  margin-bottom: 64px;
 }
 
 .guide-section h2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    font-size: 2.2rem;
-    color: var(--secondary);
-    margin-bottom: 40px;
-    padding-bottom: 20px;
-    border-bottom: 3px solid var(--acc-blue);
+  font-size: 1.9rem;
+  color: var(--secondary);
+  text-align: left;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--acc-blue);
 }
 
-.guide-section h2 .emoji {
-    font-size: 2.8rem;
+.guide-section h3 {
+  color: var(--primary);
+  font-size: 1.2rem;
+  margin: 32px 0 12px;
 }
 
-.guide-block {
-    background: var(--card-bg);
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-    margin-bottom: 40px;
-    border: 1px solid #edf2f7;
+.guide-section h4 {
+  color: var(--secondary);
+  font-size: 1rem;
+  margin: 24px 0 10px;
 }
 
-.guide-block h3 {
-    color: var(--primary);
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.guide-section p {
+  color: var(--text);
+  line-height: 1.9;
+  margin-bottom: 16px;
 }
 
-.guide-block p {
-    color: var(--text);
-    margin-bottom: 20px;
-    line-height: 1.8;
-}
-
-/* --- コールアウト（Tips, Warningなどのお知らせ枠） --- */
+/* --- コールアウト（Tips / Warning） --- */
 .callout {
-    padding: 20px 25px;
-    border-radius: 10px;
-    margin: 25px 0;
-    display: flex;
-    gap: 15px;
-    align-items: flex-start;
-}
-
-.callout .icon {
-    font-size: 1.5rem;
-    line-height: 1;
+  padding: 18px 22px;
+  border-radius: 10px;
+  margin: 22px 0;
 }
 
 .callout .content p {
-    margin-bottom: 10px;
+  margin-bottom: 8px;
 }
-.callout .content p:last-child {
-    margin-bottom: 0;
-}
+.callout .content p:last-child { margin-bottom: 0; }
 
-/* Info (水色) */
-.callout.info {
-    background-color: #ebf8ff;
-    border-left: 5px solid var(--primary);
-}
-
-/* Warning (黄色) */
 .callout.warning {
-    background-color: #fffff0;
-    border-left: 5px solid #ecc94b;
+  background-color: #fffff0;
+  border-left: 5px solid #ecc94b;
 }
 
-/* Tip (緑/グレー系) */
 .callout.tip {
-    background-color: #f7fafc;
-    border: 1px dashed #cbd5e0;
+  background-color: #f7fafc;
+  border: 1px dashed #cbd5e0;
 }
 .callout.tip .tip-label {
-    font-weight: bold;
-    color: #4a5568;
-    margin-bottom: 5px;
-    display: block;
+  font-weight: bold;
+  color: #4a5568;
+  margin-bottom: 6px;
+  display: block;
 }
 
-/* Slackチャンネル風の装飾 */
+/* Slack チャンネル風の装飾 */
 .channel-tag {
-    background-color: #e2e8f0;
-    color: #2d3748;
-    padding: 2px 8px;
-    border-radius: 6px;
-    font-weight: 600;
-    font-family: monospace;
-    font-size: 0.95em;
+  background-color: #e2e8f0;
+  color: #2d3748;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-family: monospace;
+  font-size: 0.95em;
 }
 
 .mention-tag {
-    color: var(--primary);
-    font-weight: 600;
-    background-color: var(--acc-blue);
-    padding: 2px 6px;
-    border-radius: 4px;
+  color: var(--primary);
+  font-weight: 600;
+  background-color: var(--acc-blue);
+  padding: 2px 6px;
+  border-radius: 4px;
 }

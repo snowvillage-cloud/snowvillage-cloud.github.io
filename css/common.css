@@ -110,8 +110,12 @@ header::before {
 header.scrolled { padding: 10px 0; background-color: rgba(255, 255, 255, 0.98); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); }
 
 .nav-container { display: flex; justify-content: space-between; align-items: center; }
-.logo { font-size: 1.6rem; font-weight: 800; color: var(--secondary); text-decoration: none; }
-.logo span { color: var(--primary); }
+.logo { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; color: var(--secondary); font-weight: 800; }
+.logo-mark { height: 40px; width: auto; display: block; }
+.logo-text { font-size: 1.4rem; letter-spacing: 0.5px; color: var(--secondary); }
+.logo-icon .logo-mark { height: 42px; }
+header.scrolled .logo-mark { height: 32px; }
+header.scrolled .logo-text { font-size: 1.2rem; }
 
 .nav-links { display: flex; gap: 30px; list-style: none; align-items: center; position: relative; }
 .nav-links a:not(.btn) { text-decoration: none; color: var(--secondary); font-weight: 600; padding: 5px 0; display: block; }

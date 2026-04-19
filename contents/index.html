@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>コンテンツ - SnowVillage</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet" />
+    <style>
+      .content-card {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        padding: 0;
+      }
+      .content-thumb {
+        width: 100%;
+        height: 180px;
+        background: linear-gradient(135deg, var(--acc-blue) 0%, #ffffff 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        color: var(--primary);
+      }
+      .content-thumb img { width: 100%; height: 100%; object-fit: cover; }
+      .content-body { padding: 24px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+      .content-type {
+        display: inline-block;
+        align-self: flex-start;
+        background: rgba(41, 181, 232, 0.12);
+        color: var(--primary);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        padding: 3px 10px;
+        border-radius: 12px;
+        text-transform: uppercase;
+      }
+      .content-title { font-size: 1.2rem; color: var(--secondary); margin: 4px 0 0; }
+      .content-meta { font-size: 0.8rem; color: var(--text-light); }
+      .content-summary { font-size: 0.92rem; color: var(--text); line-height: 1.7; margin: 0; }
+      .content-note {
+        font-size: 0.85rem;
+        color: var(--secondary);
+        line-height: 1.7;
+        margin: 0;
+        padding: 12px 14px;
+        background: var(--acc-blue);
+        border-radius: 8px;
+      }
+      .content-note .note-label {
+        display: block;
+        font-size: 0.7rem;
+        font-weight: 800;
+        letter-spacing: 1px;
+        color: var(--primary);
+        margin-bottom: 4px;
+        text-transform: uppercase;
+      }
+      .content-link {
+        margin-top: auto;
+        color: var(--primary);
+        font-weight: 600;
+        text-decoration: none;
+      }
+      .content-link:hover { text-decoration: underline; }
+      .content-empty {
+        text-align: center;
+        padding: 60px 20px;
+        color: var(--text-light);
+        border: 1px dashed #cbd5e0;
+        border-radius: 15px;
+      }
+      .type-icon-youtube::before { content: "📺 "; }
+      .type-icon-subgroup::before { content: "👥 "; }
+      .type-icon-series::before { content: "🔁 "; }
+      .type-icon-doc::before { content: "📚 "; }
+    </style>
+  </head>
+  <body>
+    <div id="header-container"></div>
+
+    <main class="container" style="padding-top: 150px; padding-bottom: 100px">
+      <div style="text-align: center; margin-bottom: 60px">
+        <h1 class="reveal" style="color: var(--secondary); font-size: 2.8rem; margin-bottom: 15px">Community Contents</h1>
+        <p class="reveal" style="color: var(--text-light); font-size: 1.15rem; max-width: 780px; margin: 0 auto">
+          SnowVillage がコミュニティとして運営している YouTube チャンネル、サブグループのポータル、勉強会シリーズなど、<br />
+          コミュニティ単位で継続発信している公式コンテンツをまとめています。
+        </p>
+      </div>
+
+      <div id="contents-grid" class="grid"></div>
+
+      <div id="contents-empty" class="content-empty reveal" style="display: none">
+        <p style="margin-bottom: 10px; font-weight: 600; color: var(--secondary)">コンテンツを準備中です</p>
+        <p>新しいコミュニティ・コンテンツの立ち上げや掲載のご相談は、Slack の <strong>#mayors</strong> までお気軽にどうぞ。</p>
+      </div>
+
+      <section class="reveal" style="margin-top: 80px; padding-top: 50px; border-top: 1px dashed #cbd5e0; text-align: center">
+        <h3 style="color: var(--secondary); margin-bottom: 10px">外部リソースをお探しですか？</h3>
+        <p style="color: var(--text-light); margin-bottom: 20px">Snowflake 公式ドキュメントや海外コミュニティなど、外部のリンクは <a href="../links/" style="color: var(--primary); font-weight: 600">リンク集</a> にまとめています。</p>
+      </section>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="../script.js"></script>
+    <script src="contentsData.js"></script>
+    <script>
+      renderHeader("..", "contents");
+      renderFooter();
+
+      const TYPE_LABELS = {
+        youtube: "YouTube チャンネル",
+        subgroup: "サブグループ",
+        series: "勉強会シリーズ",
+        doc: "ドキュメント",
+      };
+
+      const grid = document.getElementById("contents-grid");
+      const empty = document.getElementById("contents-empty");
+      if (grid && typeof contentsData !== "undefined") {
+        if (contentsData.length === 0) {
+          empty.style.display = "block";
+        } else {
+          grid.innerHTML = contentsData
+            .map(
+              (item, i) => {
+                const type = item.type || "doc";
+                const typeLabel = TYPE_LABELS[type] || type.toUpperCase();
+                return `
+              <article class="card reveal content-card" style="transition-delay: ${i * 0.1}s">
+                <div class="content-thumb">
+                  ${item.thumbnail ? `<img src="${item.thumbnail}" alt="${item.title}" />` : `<span class="type-icon-${type}">${typeLabel}</span>`}
+                </div>
+                <div class="content-body">
+                  <span class="content-type">${typeLabel}</span>
+                  <h3 class="content-title">${item.title}</h3>
+                  ${item.owner ? `<div class="content-meta">運営: ${item.owner}</div>` : ""}
+                  <p class="content-summary">${item.summary || ""}</p>
+                  ${item.communityNote ? `<p class="content-note"><span class="note-label">SnowVillage の推しポイント</span>${item.communityNote}</p>` : ""}
+                  <a href="${item.url}" class="content-link" target="_blank" rel="noopener noreferrer">コンテンツを見る →</a>
+                </div>
+              </article>`;
+              }
+            )
+            .join("");
+        }
+      }
+    </script>
+  </body>
+</html>

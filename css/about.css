@@ -1,3 +1,44 @@
+/* --- 運営ハブ：Mayors / Neighbors カード --- */
+.about-role-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+.about-role-card {
+  background: var(--card-bg);
+  padding: 40px;
+  border-radius: 18px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.about-role-card h2 {
+  font-size: 2rem;
+  color: var(--secondary);
+  margin: 0;
+  text-align: left;
+}
+.about-role-card .role-tag {
+  color: var(--primary);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  font-size: 0.85rem;
+  margin: 0;
+}
+.about-role-card p {
+  color: var(--text);
+  line-height: 1.8;
+  margin: 0;
+}
+.about-role-card .btn {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
 /* --- メンバー・卒業生画像 --- */
 .member-card { text-align: center; }
 .member-photo {
