@@ -55,6 +55,15 @@ const organizersData = [
     photo: "../images/organizers/allllllllez.jpg",
     xUrl: "https://x.com/__allllllllez__",
     linkedInUrl: "https://www.linkedin.com/in/miho-kajiya-928847297"
+  },
+  {
+    name: "Hiroki Murayama",
+    role: "Community Operation Lead",
+    desc: "まだ飽きないの？って最近よくいわれますが、まだまだ熱量高めです!!",
+    departments: ["Operation", "Event"],
+    photo: "../images/organizers/Hiroki_Murayama.jpg",
+    xUrl: "https://x.com/piroki_0310",
+    linkedInUrl: "https://www.linkedin.com/in/hiroki-murayama-2481a84b"
   }
 ];
 
