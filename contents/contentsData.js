@@ -15,7 +15,7 @@ const contentsData = [
     type: "youtube",
     title: "SnowVillage 公式 YouTube チャンネル",
     owner: "SnowVillage",
-    thumbnail: "",
+    thumbnail: "../images/contents/snowvillage-youtube.jpg",
     url: "https://www.youtube.com/channel/UC-FKvkAWBegvxZF4jkP7sLA",
     summary:
       "SnowVillage が運営する公式 YouTube チャンネル。コミュニティ主催イベントの録画やライブ配信、ハイライト動画を継続的にアーカイブしています。",
@@ -26,7 +26,7 @@ const contentsData = [
     type: "series",
     title: "Frosty Friday 解説プレイリスト",
     owner: "SnowVillage",
-    thumbnail: "",
+    thumbnail: "../images/contents/frosty-friday.jpg",
     url: "https://www.youtube.com/playlist?list=PLVj4iIZgzTAq2FzaBBgqFOtZaJTcoG3JR",
     summary:
       "Snowflake の練習課題「Frosty Friday」を題材に、SnowVillage メンバーが解法や考え方を解説するプレイリストです。週次課題を題材ベースで学べます。",
@@ -37,7 +37,7 @@ const contentsData = [
     type: "series",
     title: "25 Days of Streamlit",
     owner: "SnowVillage",
-    thumbnail: "",
+    thumbnail: "../images/contents/25days-of-streamlit.jpg",
     url: "https://st-advent-calendar-2024.streamlit.app/",
     summary:
       "Streamlit と Snowflake を題材にしたアドベントカレンダー形式の学習シリーズ。1 日ごとに小さな実装テーマを積み上げていく構成です。",
