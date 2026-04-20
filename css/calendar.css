@@ -1,36 +1,102 @@
-/* --- 🌟 カレンダーページ用スタイル (css/calendar.css) --- */
+/* --- 🌟 カレンダーページ用スタイル --- */
 
 .calendar-section {
-    max-width: 1000px;
-    margin: 0 auto;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-/* カレンダーを囲むラッパー（装飾とレスポンシブ化） */
+/* メイン CTA（Google カレンダーへの導線を主役に） */
+.calendar-cta {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+/* btn-cal-primary は .btn の派生として塗り＋影で目立たせる */
+.btn-cal-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, #1fa2d4 100%);
+  color: #ffffff !important;
+  padding: 16px 34px;
+  font-size: 1.05rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 6px 20px rgba(41, 181, 232, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-cal-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(41, 181, 232, 0.4); }
+
+/* btn-cal-secondary は枠線スタイル。.btn の白文字を上書きして可視化 */
+.btn-cal-secondary {
+  background: #ffffff !important;
+  color: var(--secondary) !important;
+  padding: 14px 28px;
+  font-size: 1.05rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 700;
+  border: 2px solid var(--secondary);
+  box-shadow: none !important;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.btn-cal-secondary:hover { background: var(--secondary) !important; color: #ffffff !important; }
+
+/* 主催者向けの注意書き（生成AIっぽい黄色のアクセントバーを廃止し、落ち着いた囲み箱に） */
+.calendar-notice {
+  background: #f7fafc;
+  border: 1px solid #e2e8f0;
+  padding: 20px 24px;
+  border-radius: 10px;
+  margin-bottom: 24px;
+}
+.calendar-notice strong { display: block; color: var(--secondary); margin-bottom: 6px; }
+.calendar-notice p { margin: 0; color: var(--text); line-height: 1.7; }
+
+/* 凡例（地球儀=オンライン、サーカス=オフラインに揃える） */
+.calendar-legend {
+  background: #ffffff;
+  border: 1px dashed #cbd5e0;
+  border-radius: 10px;
+  padding: 16px 24px;
+  margin-bottom: 30px;
+}
+.calendar-legend strong { display: block; color: var(--secondary); margin-bottom: 10px; font-size: 0.9rem; letter-spacing: 0.5px; }
+.calendar-legend ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.calendar-legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text);
+  font-size: 0.9rem;
+}
+.legend-icon { font-size: 1.1rem; }
+
+/* 当月分の埋め込み（月表示に戻す） */
 .calendar-wrapper {
-    width: 100%;
-    height: 650px; /* カレンダーの基本の高さ */
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* リッチな影 */
-    border: 1px solid #e2e8f0;
-    background-color: var(--white);
-    transition: transform 0.3s ease;
+  width: 100%;
+  height: 650px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  border: 1px solid #e2e8f0;
+  background-color: #fff;
 }
-
-.calendar-wrapper:hover {
-    box-shadow: 0 15px 40px rgba(41, 181, 232, 0.15); /* ホバー時にうっすら青い影 */
-}
-
-/* 中のiframeをラッパーのサイズにピッタリ合わせる */
 .calendar-wrapper iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
-/* スマホ閲覧時の微調整（高さを少し抑えて見やすくする） */
 @media screen and (max-width: 768px) {
-    .calendar-wrapper {
-        height: 500px;
-    }
+  .calendar-wrapper { height: 500px; }
+  .calendar-legend ul { gap: 12px; flex-direction: column; }
 }

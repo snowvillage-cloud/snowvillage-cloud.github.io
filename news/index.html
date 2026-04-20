@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <title>News アーカイブ - Snowflake UG Japan</title>
+    <title>お知らせ - SnowVillage</title>
     
     <link rel="stylesheet" href="../css/common.css" />
     <link rel="stylesheet" href="../css/home.css" />
@@ -60,12 +60,11 @@
             .map(
               (item, index) => `
             <li class="news-item">
-                <a href="${item.link.startsWith("http") ? item.link : "../" + item.link}" 
-                   class="news-link" 
+                <a href="${item.link.startsWith("http") ? item.link : "../" + item.link}"
+                   class="news-link"
                    ${item.isExternal ? 'target="_blank"' : ""}>
-                    ${index === 0 ? '<span class="latest-pulse"></span>' : ""}
-                    
                     <span class="news-date">${item.date}</span>
+                    <span class="news-badge-slot">${index === 0 ? '<span class="news-badge-new">NEW</span>' : ""}</span>
                     <span class="news-text">${item.text}</span>
                     <span class="news-arrow">→</span>
                 </a>

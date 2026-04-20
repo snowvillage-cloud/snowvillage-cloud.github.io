@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>イベント情報 - Snowflake UG Japan</title>
+    <title>イベント - SnowVillage</title>
     <link rel="stylesheet" href="../style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet" />
   </head>
@@ -13,18 +13,22 @@
     <main class="container" style="padding-top: 150px">
       <section>
         <div style="text-align: center; margin-bottom: 60px">
-          <h2 class="reveal" style="margin-bottom: 10px">Featured Events</h2>
-          <p class="reveal" style="color: var(--text-light); font-size: 1.1rem">コミュニティ全体で開催される、大規模なミートアップや注目のイベントです。</p>
+          <h1 class="reveal" style="color: var(--secondary); font-size: 2.8rem; margin-bottom: 15px">Featured Events</h1>
+          <p class="reveal" style="color: var(--text-light); font-size: 1.1rem; max-width: 720px; margin: 0 auto">
+            SnowVillage が注目する年次・大型イベントをまとめています。<br />
+            定例のオンライン勉強会や部門ミーティングは <a href="../calendar/" style="color: var(--primary); font-weight: 600">カレンダー</a> をご覧ください。
+          </p>
         </div>
         <div class="grid" id="event-grid"></div>
+        <p id="event-empty" class="reveal" style="text-align: center; color: var(--text-light); margin-top: 40px; display: none">掲載予定のイベントを準備中です。最新情報は下記の TECH PLAY からご確認ください。</p>
       </section>
 
       <section class="reveal">
         <div class="techplay-banner">
           <div class="banner-content">
-            <h3>全てのイベント情報は TECH PLAY でチェック！</h3>
-            <p>最新のイベント日程、詳細の確認、および参加申し込みは、TECH PLAYの公式コミュニティページにて受け付けています。グループをフォローして最新情報を受け取りましょう。</p>
-            <a href="https://techplay.jp/community_group/snowflake_users" target="_blank" rel="noopener noreferrer" class="btn btn-techplay"> TECH PLAY コミュニティページへ </a>
+            <h3>全てのイベント情報は TECH PLAY で</h3>
+            <p>最新の日程確認や参加申し込みは、TECH PLAY の公式コミュニティページで受け付けています。グループをフォローして最新情報を受け取りましょう。</p>
+            <a href="https://techplay.jp/community_group/snowflake_users" target="_blank" rel="noopener noreferrer" class="btn btn-techplay">TECH PLAY コミュニティページへ</a>
           </div>
         </div>
       </section>
@@ -32,9 +36,46 @@
     <div id="footer-container"></div>
 
     <script src="../script.js"></script>
+    <script src="eventsData.js"></script>
     <script>
       renderHeader("..", "events");
       renderFooter();
+
+      const grid = document.getElementById("event-grid");
+      const empty = document.getElementById("event-empty");
+      if (grid && typeof eventsData !== "undefined") {
+        if (eventsData.length === 0) {
+          empty.style.display = "block";
+        } else {
+          grid.innerHTML = eventsData
+            .map(
+              (ev, i) => `
+              <article class="card reveal event-card" style="transition-delay: ${i * 0.1}s">
+                <div class="event-image-container">
+                  ${ev.thumbnail ? `<img src="${ev.thumbnail}" alt="${ev.title}" class="event-photo" />` : ""}
+                  <span class="event-badge event-badge-${ev.status || "upcoming"}">${ev.status === "report" ? "開催レポート" : "開催予定"}</span>
+                </div>
+                <div class="event-content">
+                  <div class="event-date">${ev.date || ""}</div>
+                  <h3>${ev.title}</h3>
+                  ${ev.tags && ev.tags.length ? `<div class="tags">${ev.tags.map((t) => `<span class="tag">${t}</span>`).join("")}</div>` : ""}
+                  <p>${ev.summary || ""}</p>
+                  <div class="event-links">
+                    ${ev.blogUrl ? `<a href="${ev.blogUrl}" class="btn-text" target="_blank" rel="noopener noreferrer">${ev.status === "report" ? "開催レポートを読む" : "詳細を見る"} →</a>` : ""}
+                    ${
+                      ev.externalLinks && ev.externalLinks.length
+                        ? `<div class="event-external">${ev.externalLinks
+                            .map((l) => `<a href="${l.url}" target="_blank" rel="noopener noreferrer">${l.label}</a>`)
+                            .join(" ・ ")}</div>`
+                        : ""
+                    }
+                  </div>
+                </div>
+              </article>`
+            )
+            .join("");
+        }
+      }
     </script>
   </body>
 </html>

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mayors - SnowVillage</title>
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="../../css/about.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="header-container"></div>
+
+    <main class="container" style="padding-top: 150px; padding-bottom: 100px">
+      <div style="text-align: center; margin-bottom: 60px">
+        <h1 class="reveal" style="color: var(--secondary); font-size: 2.8rem; margin-bottom: 15px">Mayors</h1>
+        <p class="reveal" style="color: var(--text-light); font-size: 1.1rem; max-width: 700px; margin: 0 auto">
+          コミュニティ全体の意思決定を担い、アクティブに活動している運営中核メンバーです。<br />
+          ※年次順＆アルファベット順
+        </p>
+      </div>
+
+      <div id="mayors-grid" class="grid"></div>
+
+      <div class="reveal" style="text-align: center; margin-top: 60px">
+        <a href="../" class="btn-text" style="color: var(--secondary); text-decoration: none; font-weight: 600">← 運営トップへ戻る</a>
+      </div>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="../../script.js"></script>
+    <script src="../aboutData.js"></script>
+    <script>
+      renderHeader("../..", "mayors");
+      renderFooter();
+
+      const grid = document.getElementById("mayors-grid");
+      if (grid && typeof mayorsData !== "undefined") {
+        // about/ 配下からのパスを mayors/ 配下から見たパスに変換
+        const fixPath = (p) => (p && p.startsWith("../") ? "../" + p : p);
+
+        const deptAnchors = {
+          Event: "event",
+          Brand: "brand",
+          Growth: "growth",
+          Operation: "operation",
+        };
+
+        grid.innerHTML = mayorsData
+          .map((member, index) => {
+            const tagsHtml =
+              member.departments && member.departments.length > 0
+                ? `
+                <div style="margin-top: 18px;">
+                  <p style="font-size: 0.7rem; color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">FOCUS / 注力領域</p>
+                  <div class="dept-tags">
+                    ${member.departments
+                      .map((dept) => {
+                        const anchorId = deptAnchors[dept] || "";
+                        return `<a href="../departments/#${anchorId}" class="dept-tag">${dept}</a>`;
+                      })
+                      .join("")}
+                  </div>
+                </div>`
+                : "";
+
+            return `
+              <div class="card reveal member-card" style="transition-delay: ${index * 0.1}s">
+                <img src="${fixPath(member.photo)}" alt="${member.name}" class="member-photo" />
+                <h3>${member.name}</h3>
+                <p style="color: var(--secondary); font-weight: 600; font-size: 0.9rem;">${member.role}</p>
+                ${tagsHtml}
+                <p class="desc" style="font-size: 0.9rem; color: var(--text-light); margin-top: 15px; border-top: 1px dashed #e2e8f0; padding-top: 15px;">${member.desc}</p>
+                <div class="member-sns">
+                  ${
+                    member.xUrl
+                      ? `<a href="${member.xUrl}" target="_blank" rel="noopener noreferrer" class="sns-link" aria-label="X">
+                          <svg viewBox="0 0 24 24" class="sns-icon"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+                        </a>`
+                      : ""
+                  }
+                  ${
+                    member.linkedInUrl
+                      ? `<a href="${member.linkedInUrl}" target="_blank" rel="noopener noreferrer" class="sns-link" aria-label="LinkedIn">
+                          <svg viewBox="0 0 24 24" class="sns-icon"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"></path></svg>
+                        </a>`
+                      : ""
+                  }
+                </div>
+              </div>
+            `;
+          })
+          .join("");
+      }
+    </script>
+  </body>
+</html>

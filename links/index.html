@@ -3,97 +3,88 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>リンク集 - Snowflake UG Japan</title>
+    <title>リンク集 - SnowVillage</title>
     <link rel="stylesheet" href="../style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet" />
     <style>
-      /* リンク集専用の微調整スタイル */
-      .link-card {
-        display: block;
-        text-decoration: none;
-        color: inherit;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        padding: 25px;
-      }
-      .link-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-        border-color: var(--primary);
-      }
-      .link-icon {
-        font-size: 2rem;
-        margin-bottom: 15px;
-      }
-      .link-title {
-        font-size: 1.2rem;
-        font-weight: 600;
-        margin-bottom: 10px;
+      .links-wrapper { max-width: 900px; margin: 0 auto; }
+      .link-group { margin-bottom: 50px; }
+      .link-group h2 {
+        text-align: left;
+        font-size: 1.5rem;
         color: var(--secondary);
+        margin-bottom: 6px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid var(--acc-blue);
+      }
+      .link-group .desc { color: var(--text-light); margin-bottom: 18px; }
+      .link-list { list-style: none; padding: 0; margin: 0; }
+      .link-list li {
+        border-bottom: 1px solid #edf2f7;
+      }
+      .link-list a {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        padding: 14px 4px;
+        text-decoration: none;
+        color: var(--text);
+        font-weight: 500;
+        transition: color 0.2s ease, padding 0.2s ease;
       }
-      .link-arrow {
-        color: var(--primary);
-        font-weight: bold;
-        opacity: 0;
-        transition: opacity 0.3s ease, transform 0.3s ease;
-        transform: translateX(-10px);
-      }
-      .link-card:hover .link-arrow {
-        opacity: 1;
-        transform: translateX(0);
-      }
+      .link-list a:hover { color: var(--primary); padding-left: 12px; }
+      .link-list .arrow { color: var(--primary); font-weight: 700; }
     </style>
   </head>
   <body>
     <div id="header-container"></div>
 
-    <main class="container" style="padding-top: 150px; padding-bottom: 100px;">
-      <div style="text-align: center; margin-bottom: 60px;">
-        <h1 class="reveal" style="color: var(--secondary); font-size: 2.8rem; margin-bottom: 15px">Useful Links</h1>
-        <p class="reveal" style="color: var(--text-light); font-size: 1.2rem">SnowVillageメンバーに役立つリソース集</p>
+    <main class="container" style="padding-top: 150px; padding-bottom: 100px">
+      <div style="text-align: center; margin-bottom: 60px">
+        <h1 class="reveal" style="color: var(--secondary); font-size: 2.8rem; margin-bottom: 15px">External Links</h1>
+        <p class="reveal" style="color: var(--text-light); font-size: 1.1rem; max-width: 720px; margin: 0 auto">
+          Snowflake 公式や関連コミュニティなど、外部のリソース集です。<br />
+          コミュニティ内部で作られた資料・記事は <a href="../contents/" style="color: var(--primary); font-weight: 600">コンテンツ</a> からご覧ください。
+        </p>
       </div>
 
-      <div id="links-container"></div>
-
+      <div id="links-container" class="links-wrapper"></div>
     </main>
 
     <div id="footer-container"></div>
-    
+
     <script src="../script.js"></script>
     <script src="linksData.js"></script>
 
     <script>
-      // 1. ヘッダーとフッターの描画
       renderHeader("..", "links");
       renderFooter();
 
-      // 2. リンク集の描画（イベント待機を外して直接実行）
-      const container = document.getElementById('links-container');
-      
-      if (container && typeof linksData !== 'undefined') {
-        container.innerHTML = linksData.map((section, sectionIndex) => `
-          <section class="reveal" style="margin-bottom: 60px;">
-            <h2 style="border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 10px;">${section.category}</h2>
-            <p style="color: var(--text-light); margin-bottom: 30px;">${section.description}</p>
-            
-            <div class="grid">
-              ${section.items.map((item, itemIndex) => `
-                <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="card link-card" style="transition-delay: ${(itemIndex * 0.1)}s">
-                  <div class="link-icon">${item.icon}</div>
-                  <div class="link-title">
-                    ${item.title}
-                    <span class="link-arrow">→</span>
-                  </div>
-                  <p style="font-size: 0.95rem; color: var(--text-light); line-height: 1.5;">${item.desc}</p>
-                </a>
-              `).join('')}
-            </div>
-          </section>
-        `).join('');
-      } else {
-        // もしデータが読み込めていなければ、赤いエラーを出す
-        console.error("【エラー】linksData.js が読み込めていないか、links-container が見つかりません！");
+      const container = document.getElementById("links-container");
+      if (container && typeof linksData !== "undefined") {
+        container.innerHTML = linksData
+          .map(
+            (section) => `
+            <section class="reveal link-group">
+              <h2>${section.category}</h2>
+              ${section.description ? `<p class="desc">${section.description}</p>` : ""}
+              <ul class="link-list">
+                ${section.items
+                  .map(
+                    (item) => `
+                  <li>
+                    <a href="${item.url}" target="_blank" rel="noopener noreferrer">
+                      <span>${item.title}</span>
+                      <span class="arrow">→</span>
+                    </a>
+                  </li>`
+                  )
+                  .join("")}
+              </ul>
+            </section>`
+          )
+          .join("");
       }
     </script>
+  </body>
+</html>

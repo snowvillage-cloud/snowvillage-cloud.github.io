@@ -1,40 +1,30 @@
 // links/linksData.js
+// 外部リソースをカテゴリごとのリンクリストで管理する。
+// コミュニティ内部で生まれた資産（資料・録画・ブログ など）は contents/ 側に置く。
 
 const linksData = [
   {
-    category: "Official Resources",
-    description: "Snowflake公式のドキュメントやリソースです。",
+    category: "Snowflake 公式",
+    description: "製品情報・ドキュメント・アップデートのファーストソース。",
     items: [
-      {
-        title: "Snowflake 公式サイト (日本)",
-        url: "https://www.snowflake.com/ja/",
-        desc: "Snowflakeの製品情報や最新のアップデートはこちらから。",
-        icon: "❄️"
-      },
-      {
-        title: "Snowflake Documentation",
-        url: "https://docs.snowflake.com/ja/",
-        desc: "開発者・管理者向けの公式ドキュメント（日本語版）。",
-        icon: "📚"
-      }
-    ]
+      { title: "Snowflake 公式サイト (日本)", url: "https://www.snowflake.com/ja/" },
+      { title: "Snowflake Documentation (日本語)", url: "https://docs.snowflake.com/ja/" },
+      { title: "Snowflake Community", url: "https://community.snowflake.com/s/" },
+    ],
   },
   {
-    category: "Community & Learning",
-    description: "コミュニティ発信の情報や学習用コンテンツです。",
+    category: "コミュニティ・ユーザーグループ",
+    description: "国内外の Snowflake ユーザーコミュニティ。",
     items: [
-      {
-        title: "SnowVillage XXXXX",
-        url: "XXXXXXX", // ※実際のURLに変更してください
-        desc: "XXXXXX",
-        icon: "🎪"
-      },
-      {
-        title: "Qiita - Snowflake タグ",
-        url: "https://qiita.com/tags/snowflake",
-        desc: "日本のエンジニアによる実践的なTipsや検証記事。",
-        icon: "📝"
-      }
-    ]
-  }
+      { title: "TECH PLAY - Japan Snowflake User Group", url: "https://techplay.jp/community_group/snowflake_users" },
+    ],
+  },
+  {
+    category: "学習・情報収集",
+    description: "個人の発信や Q&A の集約先。",
+    items: [
+      { title: "Qiita - Snowflake タグ", url: "https://qiita.com/tags/snowflake" },
+      { title: "Zenn - Snowflake タグ", url: "https://zenn.dev/topics/snowflake" },
+    ],
+  },
 ];
