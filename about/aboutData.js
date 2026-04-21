@@ -55,6 +55,15 @@ const organizersData = [
     photo: "../images/organizers/allllllllez.jpg",
     xUrl: "https://x.com/__allllllllez__",
     linkedInUrl: "https://www.linkedin.com/in/miho-kajiya-928847297"
+  },
+  {
+    name: "すずき",
+    role: "Brand部門リーダー / Snowflake Squad 2024-2026",
+    desc: "船井総研ヒューマンキャピタルコンサルティング データチームマネージャー<br>Data ManagementやUnconferenceなどの分科会イベントにも是非参加してください！",
+    departments: ["Event", "Brand"],
+    photo: "../images/organizers/ryo_suzuki.jpg",
+    xUrl: "https://x.com/suzupappa",
+    linkedInUrl: "https://www.linkedin.com/in/suzupappa"
   }
 ];
 
