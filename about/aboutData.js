@@ -5,6 +5,15 @@
 // 🌟 Mayors（意思決定権を持つ運営中核メンバー）
 const mayorsData = [
   {
+    name: "K T",
+    role: "None",
+    desc: "Japan Community Lead Canva<br>None",
+    departments: [""],
+    photo: "../images/organizers/SnowVillageLogo-white.png",
+    xUrl: "None",
+    linkedInUrl: "None",
+  },
+  {
     name: "Yuya Matsubara",
     role: "Snowflake DataSuperheros 2026 & Snowflake Squad",
     desc: "Principal Data Engineer at NTT DOCOMO, Inc.<br />Slackでなんかうるさいやつです!",
@@ -58,6 +67,33 @@ const mayorsData = [
     xUrl: "https://x.com/suzupappa",
     linkedInUrl: "https://www.linkedin.com/in/suzupappa",
   },
+  {
+    name: "Akira Sakatoku",
+    role: "None",
+    desc: "Core Staff KDDI Corporation<br>None",
+    departments: ["Brand","GROWTH"],
+    photo: "../images/organizers/SnowVillageLogo-white.png",
+    xUrl: "None",
+    linkedInUrl: "None",
+  },
+  {
+    name: "pei 0804",
+    role: "None",
+    desc: "Vice President of Data CARTA ZERO<br>None",
+    departments: [],
+    photo: "../images/organizers/SnowVillageLogo-white.png",
+    xUrl: "None",
+    linkedInUrl: "None",
+  },
+  {
+    name: "Toru Hiyama",
+    role: "None",
+    desc: "SimpleForm, Inc<br>None",
+    departments: [""],
+    photo: "../images/organizers/SnowVillageLogo-white.png",
+    xUrl: "None",
+    linkedInUrl: "None",
+  }
 ];
 
 // 🌟 Neighbors（年次募集に応じてくれた、役職はないが頼れる貢献メンバー）
