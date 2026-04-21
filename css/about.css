@@ -50,7 +50,7 @@
 
 /* --- スポンサーロゴ --- */
 .sponsor-card { display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 40px 20px; }
-.sponsor-logo { max-width: 100%; height: auto; max-height: 60px; margin-bottom: 15px; filter: grayscale(100%); opacity: 0.7; transition: all 0.4s ease; }
+.sponsor-logo { max-width: 100%; height: auto; max-height: 60px; margin-bottom: 15px; filter: grayscale(0%); opacity: 0.7; transition: all 0.4s ease; }
 .sponsor-card:hover .sponsor-logo { filter: grayscale(0%); opacity: 1; transform: scale(1.1); }
 
 /* --- css/about.css の後半部分を修正 --- */
