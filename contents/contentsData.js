@@ -15,33 +15,33 @@ const contentsData = [
     type: "youtube",
     title: "SnowVillage 公式 YouTube チャンネル",
     owner: "SnowVillage",
-    thumbnail: "../images/contents/snowvillage-youtube.jpg",
+    thumbnail: "../images/contents/snowvillage.png",
     url: "https://www.youtube.com/channel/UC-FKvkAWBegvxZF4jkP7sLA",
     summary:
-      "SnowVillage が運営する公式 YouTube チャンネル。コミュニティ主催イベントの録画やライブ配信、ハイライト動画を継続的にアーカイブしています。",
+      "SnowVillage が運営する公式 YouTube チャンネルです。",
     communityNote:
-      "リアルタイム参加が難しい方も、登壇内容や議論をあとから追体験できるよう、コミュニティ全体で運用している学習アーカイブです。",
+      "ライブ配信限定イベントやオンサイトイベントとのハイブリッド配信、動画学習コンテンツなど。すべてはここから始まった！",
   },
   {
     type: "series",
-    title: "Frosty Friday 解説プレイリスト",
-    owner: "SnowVillage",
-    thumbnail: "../images/contents/frosty-friday.jpg",
+    title: "Frosty Friday Live Challenge",
+    owner: "#FrostyFriday",
+    thumbnail: "../images/contents/FrostyFriday.png",
     url: "https://www.youtube.com/playlist?list=PLVj4iIZgzTAq2FzaBBgqFOtZaJTcoG3JR",
     summary:
-      "Snowflake の練習課題「Frosty Friday」を題材に、SnowVillage メンバーが解法や考え方を解説するプレイリストです。週次課題を題材ベースで学べます。",
+      "グローバルの有志で運営されているSnowflakeの練習課題「Frosty Friday」を題材に、SnowVillage メンバーが解法や考え方を解説するチャレンジ企画です。",
     communityNote:
-      "個人で完走しづらい Frosty Friday を、解説動画付きで追いかけられる「コミュニティ伴走型」の学習シリーズです。",
+      "ゲストの得意を活かしたオリジナリティ溢れる解法と、レギュラーメンバーとの掛け合いで初級から応用まで楽しくSnowflakeを学べます！",
   },
   {
     type: "series",
     title: "25 Days of Streamlit",
-    owner: "SnowVillage",
-    thumbnail: "../images/contents/25days-of-streamlit.jpg",
+    owner: "#Streamlit",
+    thumbnail: "../images/contents/25days-of-streamlit.png",
     url: "https://st-advent-calendar-2024.streamlit.app/",
     summary:
-      "Streamlit と Snowflake を題材にしたアドベントカレンダー形式の学習シリーズ。1 日ごとに小さな実装テーマを積み上げていく構成です。",
+      "Streamlit と Snowflake を題材にしたハンズオンコンテンツ。1日ごとに小さな実装テーマを積み上げてアプリを完成させましょう！",
     communityNote:
-      "毎日少しずつ触れて慣れる設計になっており、Snowflake 上で動くアプリ開発の入門に最適なコミュニティ発の連載企画です。",
+      "2024年 Advent Calender 企画！ 分析アプリ開発の入門に最適なコミュニティ発の連載企画です。",
   },
 ];
