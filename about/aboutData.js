@@ -49,6 +49,15 @@ const mayorsData = [
     xUrl: "https://x.com/piroki_0310",
     linkedInUrl: "https://www.linkedin.com/in/hiroki-murayama-2481a84b",
   },
+  {
+    name: "すずき",
+    role: "Brand部門リーダー / Snowflake Squad 2024-2026",
+    desc: "船井総研ヒューマンキャピタルコンサルティング データチームマネージャー<br>Data ManagementやUnconferenceなどの分科会イベントにも是非参加してください！",
+    departments: ["Event", "Brand"],
+    photo: "../images/organizers/ryo_suzuki.jpg",
+    xUrl: "https://x.com/suzupappa",
+    linkedInUrl: "https://www.linkedin.com/in/suzupappa",
+  },
 ];
 
 // 🌟 Neighbors（年次募集に応じてくれた、役職はないが頼れる貢献メンバー）
