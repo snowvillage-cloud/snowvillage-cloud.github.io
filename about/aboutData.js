@@ -71,7 +71,7 @@ const mayorsData = [
     name: "Akira Sakatoku",
     role: "None",
     desc: "Core Staff KDDI Corporation<br>None",
-    departments: ["Brand","GROWTH"],
+    departments: ["Brand","Growth"],
     photo: "../images/organizers/SnowVillageLogo-white.png",
     xUrl: "None",
     linkedInUrl: "None",
