@@ -3,7 +3,7 @@ const newsData = [
     {
         date: "2026.04.22",
         text: "SnowVillage運営体制についてのお知らせ",
-        link: "events/", 
+        link: "about/", 
         isExternal: false
     },
     {
