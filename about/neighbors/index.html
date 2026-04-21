@@ -15,8 +15,8 @@
       <div style="text-align: center; margin-bottom: 60px">
         <h1 class="reveal" style="color: var(--secondary); font-size: 2.8rem; margin-bottom: 15px">Neighbors</h1>
         <p class="reveal" style="color: var(--text-light); font-size: 1.1rem; max-width: 720px; margin: 0 auto">
-          年次のスタッフ募集に応じてくれた、コミュニティの頼れる隣人たちです。<br />
-          特定イベントの運営や、得意スキルでの貢献など、さまざまな形で SnowVillage を一緒に育ててくれています。
+          通年/特定イベントでのお手伝い、各種コンテンツ作成やスキルを活かした活躍で、困ったときに助けてくれるお隣のお兄さん・お姉さんのような存在です！<br />
+          さまざまな形で SnowVillage を一緒に育ててくれています。
         </p>
       </div>
 
@@ -24,16 +24,22 @@
         <div class="guide-block" style="background: var(--card-bg); padding: 40px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); border: 1px solid #edf2f7;">
           <h3 style="color: var(--primary); margin-bottom: 16px">Neighbors の募集について</h3>
           <p style="color: var(--text); line-height: 1.8; margin-bottom: 16px">
-            Neighbors は、コミュニティ貢献度が高い方や、ある特定のイベント・分野で手を挙げてくれた方を対象に、年次でスタッフ募集を行っています。決まった役職はありませんが、Mayors と並んで SnowVillage の活動を一緒に盛り上げる存在です。
+            Neighborsは、Mayorsと連携しながら、SnowVillageの運営や企画をサポートする「コミュニティのサポーター」です。<br />
+            それぞれの興味やスキルを活かして、コミュニティ運営、Snowflakeエコシステムの発展のためにぜひお力をお貸しください。<br />
           </p>
           <p style="color: var(--text); line-height: 1.8">
-            次回の募集や相談は Slack の <strong>#mayors</strong> チャンネルでアナウンスします。「手伝ってみたい」「得意を活かしたい」と感じたら、ぜひ気軽に声をかけてください。
+            <strong>こんな方を求めてます！</strong><br />
+            ✓ Snowflakeが好きで、もっと多くのユーザーとつながりたい方。<br />
+            ✓ コミュニティ運営のノウハウを学びたい、あるいは自分の知見を活かしたい方。<br />
+            ✓ Mayorsをサポートし、メンバー間の活発な交流を生み出したい方。<br />
+            ✓ Data Superheroes、Squad、Mayors を目指して、イベント企画やコンテンツ制作に関わりたい方！<br />
+          </p>
+          <p style="color: var(--text); line-height: 1.8">
+            今年度の募集を <a href="https://forms.gle/6YmGZFcqxFUFGKs18" target="_blank" rel="noopener noreferrer" class="btn">応募フォーム</a> で行います。質問・相談は Slack の <strong>#mayors</strong> チャンネルへ<br />
+            「手伝ってみたい」「得意を活かしたい」「いつもイベントやってるが・・・？」という方、お気軽に手を挙げてください。<br />
           </p>
         </div>
       </section>
-
-      <div id="neighbors-grid" class="grid"></div>
-      <p id="neighbors-empty" class="reveal" style="text-align: center; color: var(--text-light); margin-top: 40px; display: none">現在、Neighbors のメンバー情報を準備中です。ぜひあなたも次回の募集でお待ちしています。</p>
 
       <div class="reveal" style="text-align: center; margin-top: 60px">
         <a href="../" class="btn-text" style="color: var(--secondary); text-decoration: none; font-weight: 600">← 運営トップへ戻る</a>
@@ -43,32 +49,9 @@
     <div id="footer-container"></div>
 
     <script src="../../script.js"></script>
-    <script src="../aboutData.js"></script>
     <script>
       renderHeader("../..", "neighbors");
       renderFooter();
-
-      const grid = document.getElementById("neighbors-grid");
-      const empty = document.getElementById("neighbors-empty");
-      if (grid && typeof neighborsData !== "undefined") {
-        if (neighborsData.length === 0) {
-          empty.style.display = "block";
-        } else {
-          const fixPath = (p) => (p && p.startsWith("../") ? "../" + p : p);
-          grid.innerHTML = neighborsData
-            .map(
-              (n, i) => `
-                <div class="card reveal member-card" style="transition-delay: ${i * 0.1}s">
-                  <img src="${fixPath(n.photo)}" alt="${n.name}" class="member-photo" />
-                  <h3>${n.name}</h3>
-                  <p style="color: var(--secondary); font-weight: 600; font-size: 0.9rem;">${n.role || "Neighbor"}</p>
-                  <p class="desc" style="font-size: 0.9rem; color: var(--text-light); margin-top: 15px; border-top: 1px dashed #e2e8f0; padding-top: 15px;">${n.desc || ""}</p>
-                </div>
-              `
-            )
-            .join("");
-        }
-      }
     </script>
   </body>
 </html>
