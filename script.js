@@ -11,20 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // スクロールフェードイン制御の開始（各ページで描画されたカードも監視対象になる）
   initScrollReveal();
 
-  // 3. 規約同意チェックボックスの制御 (joinページ用)
-  const agreeCheckbox = document.getElementById("agree-checkbox");
-  const slackJoinBtn = document.getElementById("slack-join-btn");
-
-  if (agreeCheckbox && slackJoinBtn) {
-    agreeCheckbox.addEventListener("change", (e) => {
-      if (e.target.checked) {
-        slackJoinBtn.classList.remove("disabled");
-      } else {
-        slackJoinBtn.classList.add("disabled");
-      }
-    });
-  }
-
   // ==========================================================================
   // 🌟 追加：スクロールプログレスバーの生成と制御
   // ==========================================================================
@@ -160,7 +146,7 @@ const renderHeader = (pathToRoot, activeMenu) => {
             ${logoHtml}
             <ul class="nav-links">
                 ${navItemsHtml}
-                <li><a href="${pathToRoot}/join/" class="btn ${activeMenu === "join" ? "active" : ""}">Slackに参加</a></li>
+                <li><a href="https://usergroups.snowflake.com/snowvillage/" target="_blank" rel="noopener noreferrer" class="btn">Slackに参加</a></li>
                 <li id="nav-slider"></li>
             </ul>
             <div class="burger">
