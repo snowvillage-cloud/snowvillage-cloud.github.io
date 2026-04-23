@@ -77,15 +77,6 @@ const mayorsData = [
     linkedInUrl: "None",
   },
   {
-    name: "pei 0804",
-    role: "None",
-    desc: "Vice President of Data CARTA ZERO<br>None",
-    departments: [],
-    photo: "../images/organizers/SnowVillageLogo-white.png",
-    xUrl: "None",
-    linkedInUrl: "None",
-  },
-  {
     name: "Toru Hiyama",
     role: "None",
     desc: "SimpleForm, Inc<br>None",
