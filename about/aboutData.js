@@ -6,12 +6,12 @@
 const mayorsData = [
   {
     name: "K T",
-    role: "None",
-    desc: "Japan Community Lead Canva<br>None",
+    role: "Founder of SnowVillage",
+    desc: "Japan Community & Education Lead at Canva<br>コミュニティが人生に愛を与え、豊かにする",
     departments: ["Growth", "Operation"],
-    photo: "../images/organizers/SnowVillageLogo-white.png",
-    xUrl: "None",
-    linkedInUrl: "None",
+    photo: "../images/organizers/KTProfile.png",
+    xUrl: "https://x.com/DATA_Saber",
+    linkedInUrl: "https://www.linkedin.com/in/datasaber/",
   },
   {
     name: "Yuya Matsubara",
