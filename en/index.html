@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SnowVillage — English Summary</title>
+    <meta name="description" content="SnowVillage is the Snowflake user community in Japan. A short English overview for global friends." />
+
+    <meta property="og:url" content="https://snowvillage.cloud/en/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="SnowVillage | Snowflake User Community in Japan" />
+    <meta property="og:description" content="SnowVillage is the Snowflake user community in Japan. A short English overview for global friends." />
+    <meta property="og:site_name" content="SnowVillage" />
+    <meta property="og:image" content="https://snowvillage.cloud/images/brand/logo-white.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://snowvillage.cloud/images/brand/logo-white.png" />
+
+    <link rel="icon" type="image/png" href="../images/brand/favicon.png" />
+    <link rel="stylesheet" href="../style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet" />
+    <style>
+      /* --- EN page header with in-page anchor nav --- */
+      .en-header {
+        position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+        padding: 18px 0;
+        background-color: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(14px) saturate(180%);
+        -webkit-backdrop-filter: blur(14px) saturate(180%);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+        transition: padding 0.3s ease;
+      }
+      .en-header .nav-container { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+      .en-header .logo { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; color: var(--secondary); font-weight: 800; }
+      .en-header .logo-mark { height: 36px; width: auto; display: block; }
+      .en-header .logo-text { font-size: 1.3rem; letter-spacing: 0.5px; color: var(--secondary); }
+
+      .en-nav { display: flex; gap: 22px; list-style: none; padding: 0; margin: 0; align-items: center; }
+      .en-nav a {
+        text-decoration: none; color: var(--secondary); font-weight: 600; font-size: 0.92rem;
+        padding: 4px 0; border-bottom: 2px solid transparent;
+        transition: color 0.2s ease, border-color 0.2s ease;
+      }
+      .en-nav a:hover { color: var(--primary); border-bottom-color: var(--primary); }
+      .en-lang-link {
+        color: var(--secondary);
+        text-decoration: none;
+        font-weight: 700;
+        padding: 6px 14px;
+        border: 1px solid var(--secondary);
+        border-radius: 20px;
+        transition: background 0.2s ease, color 0.2s ease;
+      }
+      .en-lang-link:hover { background: var(--secondary); color: #fff; }
+
+      /* --- sections --- */
+      .en-section { max-width: 1000px; margin: 0 auto; padding: 70px 0; scroll-margin-top: 100px; }
+      .en-section h2 {
+        font-size: 2rem;
+        color: var(--secondary);
+        text-align: left;
+        margin-bottom: 24px;
+        padding-bottom: 12px;
+        border-bottom: 2px solid var(--acc-blue);
+      }
+      .en-section h3.sub-head {
+        color: var(--primary);
+        font-size: 0.95rem;
+        margin: 36px 0 14px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+      .en-section p { line-height: 1.85; color: var(--text); margin-bottom: 14px; }
+
+      /* --- simple card grid (for Events, About, Organizer) --- */
+      .en-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 24px;
+        margin-top: 20px;
+      }
+      .en-card {
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 14px;
+        padding: 26px;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .en-card h3 { color: var(--secondary); font-size: 1.15rem; margin: 0; }
+      .en-card .tag {
+        display: inline-block;
+        align-self: flex-start;
+        background: rgba(41, 181, 232, 0.12);
+        color: var(--primary);
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        padding: 3px 10px;
+        border-radius: 10px;
+        text-transform: uppercase;
+      }
+      .en-card .role-name {
+        font-size: 1.6rem;
+        color: var(--secondary);
+        font-weight: 800;
+        margin: 0;
+        letter-spacing: 0.5px;
+      }
+      .en-card .role-sub {
+        color: var(--primary);
+        font-weight: 700;
+        font-size: 0.85rem;
+        margin: 0;
+        letter-spacing: 0.5px;
+      }
+      .en-card p { margin: 0; color: var(--text); line-height: 1.7; font-size: 0.95rem; }
+      .en-card a.card-link {
+        margin-top: auto;
+        color: var(--primary);
+        font-weight: 600;
+        text-decoration: none;
+      }
+      .en-card a.card-link:hover { text-decoration: underline; }
+
+      /* --- contents card (mirror of JP Learning Contents) --- */
+      .content-card {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        padding: 0;
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 14px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      }
+      .content-thumb {
+        width: 100%;
+        height: 180px;
+        background: linear-gradient(135deg, var(--acc-blue) 0%, #ffffff 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .content-thumb img { width: 100%; height: 100%; object-fit: cover; }
+      .content-body { padding: 24px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+      .content-type {
+        display: inline-block;
+        align-self: flex-start;
+        background: rgba(41, 181, 232, 0.12);
+        color: var(--primary);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        padding: 3px 10px;
+        border-radius: 12px;
+        text-transform: uppercase;
+      }
+      .content-title { font-size: 1.2rem; color: var(--secondary); margin: 4px 0 0; }
+      .content-meta { font-size: 0.8rem; color: var(--text-light); }
+      .content-summary { font-size: 0.92rem; color: var(--text); line-height: 1.7; margin: 0; }
+      .content-note {
+        font-size: 0.85rem;
+        color: var(--secondary);
+        line-height: 1.7;
+        margin: 0;
+        padding: 12px 14px;
+        background: var(--acc-blue);
+        border-radius: 8px;
+      }
+      .content-note .note-label {
+        display: block;
+        font-size: 0.7rem;
+        font-weight: 800;
+        letter-spacing: 1px;
+        color: var(--primary);
+        margin-bottom: 4px;
+        text-transform: uppercase;
+      }
+      .content-link {
+        margin-top: auto;
+        color: var(--primary);
+        font-weight: 600;
+        text-decoration: none;
+      }
+      .content-link:hover { text-decoration: underline; }
+
+      /* --- calendar embed --- */
+      .en-calendar-wrapper {
+        width: 100%;
+        height: 600px;
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        border: 1px solid #e2e8f0;
+        background: #fff;
+      }
+      .en-calendar-wrapper iframe { width: 100%; height: 100%; border: 0; }
+
+      /* --- slack box --- */
+      .en-slack-box {
+        background: var(--acc-blue);
+        border-radius: 18px;
+        padding: 40px 32px;
+        text-align: center;
+      }
+      .en-slack-box h2 { color: var(--secondary); font-size: 1.8rem; margin: 0 0 14px; text-align: center; border: none; padding: 0; }
+      .en-slack-box .btn { margin-top: 12px; }
+      .en-slack-notes {
+        max-width: 720px;
+        margin: 28px auto 0;
+        text-align: left;
+        background: #fff;
+        border-radius: 10px;
+        padding: 22px 26px;
+      }
+      .en-slack-notes li { margin: 10px 0; line-height: 1.75; color: var(--text); }
+      .en-channel-list {
+        margin-top: 12px;
+        display: grid;
+        grid-template-columns: 130px 1fr;
+        gap: 6px 12px;
+        font-size: 0.9rem;
+        color: var(--text);
+        line-height: 1.6;
+      }
+      .en-channel-list dt { font-weight: 700; color: var(--secondary); }
+      .en-channel-list dd { margin: 0; }
+      .channel-tag {
+        background-color: #e2e8f0;
+        color: #2d3748;
+        padding: 2px 8px;
+        border-radius: 6px;
+        font-weight: 600;
+        font-family: monospace;
+        font-size: 0.95em;
+      }
+
+      /* --- hero override: headline slightly shorter --- */
+      .hero { padding-top: 80px; }
+
+      @media screen and (max-width: 900px) {
+        .en-nav { display: none; }
+      }
+      @media screen and (max-width: 768px) {
+        .en-calendar-wrapper { height: 460px; }
+        .en-header .logo-text { display: none; }
+        .en-channel-list { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="en-header">
+      <div class="container nav-container">
+        <a href="./" class="logo" aria-label="SnowVillage">
+          <img src="../images/brand/logo-white.png" alt="" class="logo-mark" />
+          <span class="logo-text">SnowVillage</span>
+        </a>
+        <ul class="en-nav">
+          <li><a href="#about">About</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#contents">Contents</a></li>
+          <li><a href="#calendar">Calendar</a></li>
+          <li><a href="#organizer">Organizer</a></li>
+          <li><a href="#slack">Join Slack</a></li>
+        </ul>
+        <a href="../" class="en-lang-link">日本語</a>
+      </div>
+    </header>
+
+    <!-- ======================== HERO ======================== -->
+    <div class="hero">
+      <div class="hero-content container hero-split">
+        <div class="hero-logo">
+          <img src="../images/brand/logo-white.png" alt="SnowVillage" />
+        </div>
+        <div class="hero-copy">
+          <p class="hero-eyebrow">Japan Snowflake User Group</p>
+          <h1>To Mobilize the World's Data</h1>
+          <p class="hero-lead">
+            People connect. Then knowledge connects.<br />
+            Then companies and data connect.<br />
+            SnowVillage is a Japanese engineering community that mobilizes the world's data through human connection.
+          </p>
+          <div class="hero-ctas">
+            <a href="#slack" class="btn">Join our Slack</a>
+            <a href="#events" class="btn btn-ghost">See Events</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main class="container">
+      <!-- ======================== ABOUT ======================== -->
+      <section id="about" class="en-section">
+        <h2>What is SnowVillage?</h2>
+        <p>
+          <strong>SnowVillage is the Japanese user community around Snowflake.</strong>
+          Conversation lives in Slack, where members organize themselves into interest-based sub-groups — we call them <em>"user groups"</em>. Those user groups form around technology &amp; functional topics, industries, and activity styles.
+        </p>
+        <p>
+          Each user group operates semi-autonomously and runs its own meetups, so <strong>somewhere in Japan, a SnowVillage-affiliated event happens almost every week</strong>. Beyond events, user groups also produce ongoing online content — YouTube streams, hands-on series, and community-run writing — so that knowledge keeps flowing even between meetups.
+        </p>
+        <p>
+          In other words, SnowVillage is less a single organization and more a <strong>network of engineer-led sub-communities</strong> connected by Slack, shared values, and a common platform.
+        </p>
+      </section>
+
+      <!-- ======================== EVENTS ======================== -->
+      <section id="events" class="en-section">
+        <h2>Events</h2>
+        <p>
+          We run events at two levels: SnowVillage members amplify the large Snowflake-hosted events from the user side, and user groups organize their own meetups on a community cadence.
+        </p>
+
+        <h3 class="sub-head">Participation in Snowflake-hosted events (past track record)</h3>
+        <div class="en-grid">
+          <article class="en-card">
+            <span class="tag">Snowflake World Tour Tokyo</span>
+            <h3>A community booth for 1,000+ attendees at the Tokyo stop</h3>
+            <p>
+              At the Tokyo stop of Snowflake World Tour, SnowVillage ran a community booth that welcomed over 1,000 attendees — turning the venue into a touchpoint where visitors could discover the right Slack channels and plug into local user groups on the spot.
+            </p>
+          </article>
+          <article class="en-card">
+            <span class="tag">Snowflake BUILD Meetup</span>
+            <h3>Community Meetup aligned with Snowflake BUILD</h3>
+            <p>
+              Historically, our year-end community meetup has been organized around Snowflake BUILD — a space for members to share what they built during the conference period and close out the year together as a community.
+            </p>
+          </article>
+        </div>
+
+        <h3 class="sub-head">SnowVillage-driven events</h3>
+        <div class="en-grid">
+          <article class="en-card">
+            <span class="tag">New for FY2026</span>
+            <h3>SnowVillage-hosted original event (planned for early 2027)</h3>
+            <p>
+              A new community-first event we are designing this fiscal year. We are still defining the concept and format — more news will come through the community as it takes shape.
+            </p>
+          </article>
+          <article class="en-card">
+            <span class="tag">User group meetups</span>
+            <h3>Weekly meetups run by user groups</h3>
+            <p>
+              SnowVillage user groups run their own meetups all year. Practically every week there is a meetup somewhere in Japan — open to both members and non-members. Upcoming events are listed on TECH PLAY.
+            </p>
+            <a class="card-link" href="https://techplay.jp/community_group/snowflake_users" target="_blank" rel="noopener noreferrer">See upcoming user group events (TECH PLAY) →</a>
+          </article>
+        </div>
+      </section>
+
+      <!-- ======================== CONTENTS ======================== -->
+      <section id="contents" class="en-section">
+        <h2>Learning Contents</h2>
+        <p>
+          Community-run learning outlets where SnowVillage puts its energy. We would love global friends to feel the output that Japanese engineers keep producing around Snowflake.
+        </p>
+        <div class="en-grid">
+          <article class="content-card">
+            <div class="content-thumb">
+              <img src="../images/contents/snowvillage.png" alt="SnowVillage YouTube" />
+            </div>
+            <div class="content-body">
+              <span class="content-type">YouTube Channel</span>
+              <h3 class="content-title">SnowVillage Official YouTube</h3>
+              <div class="content-meta">Operated by: SnowVillage</div>
+              <p class="content-summary">
+                The official community YouTube channel, archiving meetup recordings, live streams, and hybrid broadcasts from across SnowVillage user groups.
+              </p>
+              <p class="content-note">
+                <span class="note-label">Why we love it</span>
+                For anyone who can't join live, this is the community's shared memory — every big moment in SnowVillage started here.
+              </p>
+              <a class="content-link" href="https://www.youtube.com/channel/UC-FKvkAWBegvxZF4jkP7sLA" target="_blank" rel="noopener noreferrer">Open YouTube →</a>
+            </div>
+          </article>
+
+          <article class="content-card">
+            <div class="content-thumb">
+              <img src="../images/contents/FrostyFriday.png" alt="Frosty Friday Live Challenge" />
+            </div>
+            <div class="content-body">
+              <span class="content-type">Series</span>
+              <h3 class="content-title">Frosty Friday Live Challenge</h3>
+              <div class="content-meta">Operated by: #FrostyFriday user group</div>
+              <p class="content-summary">
+                A live challenge series based on the globally run "Frosty Friday" Snowflake exercises. Community members tackle each week's problem on air and share their own take in real time.
+              </p>
+              <p class="content-note">
+                <span class="note-label">Why we love it</span>
+                Guests raise their hand for the challenges that match their specialty, so each episode delivers a jaw-dropping solution you would never have thought of yourself. The regular hosts add friendly, technical commentary on top — so whether you are a beginner or an advanced user, you can treat it as entertainment and still come away smarter.
+              </p>
+              <a class="content-link" href="https://www.youtube.com/playlist?list=PLVj4iIZgzTAq2FzaBBgqFOtZaJTcoG3JR" target="_blank" rel="noopener noreferrer">Open Playlist →</a>
+            </div>
+          </article>
+
+          <article class="content-card">
+            <div class="content-thumb">
+              <img src="../images/contents/25days-of-streamlit.png" alt="25 Days of Streamlit" />
+            </div>
+            <div class="content-body">
+              <span class="content-type">Series</span>
+              <h3 class="content-title">25 Days of Streamlit</h3>
+              <div class="content-meta">Operated by: #Streamlit user group</div>
+              <p class="content-summary">
+                A 25-day advent-calendar-style hands-on series combining Streamlit and Snowflake. Build one small piece each day in December and end up with a working app on Christmas Day.
+              </p>
+              <p class="content-note">
+                <span class="note-label">Why we love it</span>
+                "Tech blog Advent Calendars" have been a beloved tradition in Japanese tech communities for years — a different author writes each day from December 1st to the 25th, on a shared theme. This series leans fully into that spirit: by day 25 you've built a Streamlit + Snowflake app where Santa delivers Christmas cards. It's a playful, true-to-form advent calendar that also happens to be a great on-ramp for building analytics apps on Snowflake.
+              </p>
+              <a class="content-link" href="https://st-advent-calendar-2024.streamlit.app/" target="_blank" rel="noopener noreferrer">Open Series →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ======================== CALENDAR ======================== -->
+      <section id="calendar" class="en-section">
+        <h2>Community rhythm</h2>
+        <p>
+          A quick look at how often SnowVillage gathers — user group meetups, online study sessions, and operational meetings. This is a read-only preview; please browse it to get a sense of the cadence.
+        </p>
+        <div class="en-calendar-wrapper" aria-label="SnowVillage community calendar (read-only preview)">
+          <iframe src="https://calendar.google.com/calendar/u/0/embed?src=295ef847e514cf67debce604f99909d12925a5d7b023e44a0d13c668a1e47137@group.calendar.google.com&ctz=Asia/Tokyo" frameborder="0" scrolling="no"></iframe>
+        </div>
+      </section>
+
+      <!-- ======================== ORGANIZER ======================== -->
+      <section id="organizer" class="en-section">
+        <h2>Who runs SnowVillage</h2>
+        <p>
+          SnowVillage is kept alive by three layers of volunteers: the Mayors who coordinate the whole community, the Neighbors who pitch in with events and skills, and the user group operators who actually run each sub-community.
+        </p>
+        <div class="en-grid">
+          <article class="en-card">
+            <h3 class="role-name">Mayors</h3>
+            <p class="role-sub">Community leads coordinating the whole ecosystem</p>
+            <p>
+              <strong>Mayors</strong> drive SnowVillage across four areas — Event, Brand, Growth, and Operation. They act as the first point of contact for anything community-related and keep the overall direction aligned.
+            </p>
+            <a class="card-link" href="../about/mayors/">See Mayors profile (Japanese) →</a>
+          </article>
+          <article class="en-card">
+            <h3 class="role-name">Neighbors</h3>
+            <p class="role-sub">Reliable neighbors growing the community with us</p>
+            <p>
+              <strong>Neighbors</strong> are community supporters recruited annually. They help with specific events, bring their own skills, and keep the ecosystem warm and approachable — like the dependable neighbor next door.
+            </p>
+            <a class="card-link" href="../about/neighbors/">See Neighbors page (Japanese) →</a>
+          </article>
+          <article class="en-card">
+            <h3 class="role-name">User Group Operators</h3>
+            <p class="role-sub">Operators who run each sub-community</p>
+            <p>
+              Each SnowVillage <strong>user group</strong> — organized by technical area, industry, or activity style — has its own operators. They plan and run meetups, produce online content, and steer the group's culture. Their energy is what makes "somewhere every week" possible.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ======================== SLACK JOIN ======================== -->
+      <section id="slack" class="en-section">
+        <div class="en-slack-box">
+          <h2>Join our Slack</h2>
+          <p style="color: var(--text-light); margin: 0 auto; max-width: 600px;">
+            Registration is handled through the official Snowflake user group page.
+          </p>
+          <a href="https://usergroups.snowflake.com/snowvillage/" target="_blank" rel="noopener noreferrer" class="btn">Go to Snowflake User Group page</a>
+
+          <ul class="en-slack-notes">
+            <li><strong>Read the Code of Conduct first.</strong> The rules are hosted on the Snowflake Community site and apply to SnowVillage Slack. Please read them before joining.</li>
+            <li><strong>Discussions are mostly in Japanese.</strong> English is welcome, but expect most channels to run in Japanese — feel free to ask someone for help translating.</li>
+            <li>
+              <strong>Once you are in, introduce yourself in <span class="channel-tag">#自己紹介</span> (self-introduction),</strong> then join the channels that match your interest.
+              <dl class="en-channel-list">
+                <dt>Technology</dt>
+                <dd>
+                  <span class="channel-tag">#ai-datacloud</span>
+                  <span class="channel-tag">#data-management</span>
+                  <span class="channel-tag">#data-science</span>
+                  <span class="channel-tag">#container</span>
+                </dd>
+                <dt>Industry</dt>
+                <dd>
+                  <span class="channel-tag">#healthcare</span>
+                  <span class="channel-tag">#流通</span> (retail)
+                </dd>
+                <dt>Activity</dt>
+                <dd>
+                  <span class="channel-tag">#女子会</span> (women in Snowflake)
+                  <span class="channel-tag">#unconference</span>
+                  <span class="channel-tag">#Certification</span>
+                </dd>
+              </dl>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer style="padding: 40px 0; background-color: var(--secondary); color: #fff; text-align: center; margin-top: 40px;">
+      <div class="container">
+        <p style="color: var(--text-light); font-size: 0.85rem; margin: 0;">&copy; 2026 SnowVillage</p>
+      </div>
+    </footer>
+  </body>
+</html>
