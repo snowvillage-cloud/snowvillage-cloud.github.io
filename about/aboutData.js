@@ -15,7 +15,7 @@ const mayorsData = [
   },
   {
     name: "Yuya Matsubara",
-    role: "Snowflake Data Superheros 2026 & Snowflake Squad",
+    role: "Snowflake Data Superheroes 2026 & Snowflake Squad",
     desc: "Principal Data Engineer at NTT DOCOMO, Inc.<br />Slackでなんかうるさいやつです!",
     departments: ["Event", "Brand"],
     photo: "../images/organizers/yuya_matsubara.jpeg",
@@ -24,7 +24,7 @@ const mayorsData = [
   },
   {
     name: "Tatsuya Koreeda",
-    role: "Snowflake Data Superheros 2026",
+    role: "Snowflake Data Superheroes 2026",
     desc: "dbt・Terraformを活用したデータマネジメント業務を行うデータエンジニア。関西地域やヘルスケア業界のSnowflakeユーザーグループのリーダーを務めてます！",
     departments: [],
     photo: "../images/organizers/tatsuya_koreeda.jpeg",
@@ -42,7 +42,7 @@ const mayorsData = [
   },
   {
     name: "あれ",
-    role: "Snowflake Data Superheros 2024-2026",
+    role: "Snowflake Data Superheroes 2024-2026",
     desc: "DATUM STUDIO株式会社 プリンシパルエンジニア<br />Snowflake女子会、コンテナグループ、Frosty Friday をよろしくね！",
     departments: ["Event", "Growth", "Operation"],
     photo: "../images/organizers/allllllllez.jpg",
@@ -79,7 +79,7 @@ const mayorsData = [
   },
   {
     name: "Toru Hiyama",
-    role: "Growth部門リーダー / Snowflake Data Superhero 2025-2026",
+    role: "Growth部門リーダー / Snowflake Data Superheroes 2025-2026",
     desc: "Data Engineer at SimpleForm, Inc.<br />Snowflake活用に関する機能が大好きですが、一周回ってセキュリティやガバナンス、データモデリングにも領域を拡大中。イベント運営のサポートや、Snowflake初心者向けコンテンツの作成・作成支援を行っています。",
     departments: ["Growth", "Operation"],
     photo: "../images/organizers/toru_hiyama.png",
