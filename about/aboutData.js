@@ -83,7 +83,7 @@ const mayorsData = [
     departments: ["Growth", "Operation"],
     photo: "../images/organizers/toru_hiyama.png",
     xUrl: "https://x.com/toru_data",
-    linkedInUrl: "",
+    linkedInUrl: "https://www.linkedin.com/in/toru-hiyama-4232652a7/",
   }
 ];
 
