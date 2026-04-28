@@ -72,7 +72,7 @@ const mayorsData = [
     role: "Snowflake Data Superheroes 2024-2025 / Slackでなんかうるさいやつ2号",
     desc: "野生のデータエンジニア。コミュニティは学びと実践の場だよ兄貴！",
     departments: ["Brand", "Growth"],
-    photo: "../images/organizers/AkiraSakatoku.png",
+    photo: "../images/organizers/akira_sakatoku.png",
     xUrl: "https://x.com/AkSakatoku",
     linkedInUrl: "https://www.linkedin.com/in/akira-sakatoku/",
     githubUrl: "https://github.com/Sakatoku",
