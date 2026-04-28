@@ -78,12 +78,12 @@ const mayorsData = [
   },
   {
     name: "Toru Hiyama",
-    role: "None",
-    desc: "SimpleForm, Inc<br>None",
+    role: "Growth部門リーダー / Snowflake Data Superhero 2025-2026",
+    desc: "Data Engineer at SimpleForm, Inc.<br />Snowflake活用に関する機能が大好きですが、一周回ってセキュリティやガバナンス、データモデリングにも領域を拡大中。イベント運営のサポートや、Snowflake初心者向けコンテンツの作成・作成支援を行っています。",
     departments: ["Growth", "Operation"],
-    photo: "../images/organizers/SnowVillageLogo-white.png",
-    xUrl: "None",
-    linkedInUrl: "None",
+    photo: "../images/organizers/toru_hiyama.png",
+    xUrl: "https://x.com/toru_data",
+    linkedInUrl: "https://www.linkedin.com/in/toru-hiyama-4232652a7/",
   }
 ];
 
