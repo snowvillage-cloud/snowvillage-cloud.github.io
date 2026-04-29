@@ -23,15 +23,6 @@ const mayorsData = [
     linkedInUrl: "https://www.linkedin.com/in/yuya-matsubara-b86278323",
   },
   {
-    name: "Tatsuya Koreeda",
-    role: "Snowflake Data Superheroes 2026",
-    desc: "dbt・Terraformを活用したデータマネジメント業務を行うデータエンジニア。関西地域やヘルスケア業界のSnowflakeユーザーグループのリーダーを務めてます！",
-    departments: [],
-    photo: "../images/organizers/tatsuya_koreeda.jpeg",
-    xUrl: "https://x.com/cs_dev_engineer",
-    linkedInUrl: "https://www.linkedin.com/in/tkoreeda/",
-  },
-  {
     name: "Kosuke Kida",
     role: "Community Engagement Lead",
     desc: "みんながコミュニティを楽しみ、成長するお手伝い。みんなの「褒められ」を後押しします！",
@@ -99,7 +90,7 @@ const sponsorsData = [
     name: "Yuya Matsubara",
     desc: "Principal Data Engineer at NTT DOCOMO, Inc.",
     logo: "../images/sponsors/yuya_matsubara.jpeg",
-    department: "Operation",
+    department: "サイト維持管理",
   },
 ];
 
