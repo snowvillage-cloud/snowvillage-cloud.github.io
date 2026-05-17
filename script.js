@@ -106,14 +106,35 @@ const setPageTitle = (menuKey) => {
   document.title = !name || menuKey === "home" ? "SnowVillage" : `${name} - SnowVillage`;
 };
 
-// --- 🌟 favicon を全ページ共通で注入 ---
+// --- 🌟 favicon / ホーム画面アイコン / PWA マニフェストを全ページ共通で注入 ---
 const injectFavicon = (pathToRoot) => {
-  if (document.querySelector("link[rel='icon']")) return;
-  const link = document.createElement("link");
-  link.rel = "icon";
-  link.type = "image/png";
-  link.href = `${pathToRoot}/images/brand/favicon.png`;
-  document.head.appendChild(link);
+  const head = document.head;
+  const addLink = (rel, attrs) => {
+    if (document.querySelector(`link[rel='${rel}']`)) return;
+    const link = document.createElement("link");
+    link.rel = rel;
+    Object.entries(attrs).forEach(([k, v]) => link.setAttribute(k, v));
+    head.appendChild(link);
+  };
+  const addMeta = (name, content) => {
+    if (document.querySelector(`meta[name='${name}']`)) return;
+    const meta = document.createElement("meta");
+    meta.name = name;
+    meta.content = content;
+    head.appendChild(meta);
+  };
+
+  addLink("icon", { type: "image/png", href: `${pathToRoot}/images/brand/favicon.png` });
+  // iOS ホーム画面アイコン（180×180、システムが自動で角丸処理）
+  addLink("apple-touch-icon", { sizes: "180x180", href: `${pathToRoot}/images/brand/apple-touch-icon.png` });
+  // Android / PWA マニフェスト
+  addLink("manifest", { href: `${pathToRoot}/site.webmanifest` });
+  // モバイル/PWA テーマカラー（アドレスバー色など）
+  addMeta("theme-color", "#1a365d");
+  // iOS PWA 用ステータスバー設定
+  addMeta("apple-mobile-web-app-capable", "yes");
+  addMeta("apple-mobile-web-app-status-bar-style", "black-translucent");
+  addMeta("apple-mobile-web-app-title", "SnowVillage");
 };
 
 // --- 🌟 共通ヘッダーの生成 ---
