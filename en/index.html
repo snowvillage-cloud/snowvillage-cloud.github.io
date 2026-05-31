@@ -87,6 +87,10 @@
         gap: 24px;
         margin-top: 20px;
       }
+      /* Learning Contents: 2×2 fixed layout on wider screens */
+      @media (min-width: 760px) {
+        .en-contents-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      }
       .en-card {
         background: #fff;
         border: 1px solid #e2e8f0;
@@ -367,26 +371,7 @@
         <p>
           Community-run learning outlets where SnowVillage puts its energy. We would love global friends to feel the output that Japanese engineers keep producing around Snowflake.
         </p>
-        <div class="en-grid">
-          <article class="content-card">
-            <div class="content-thumb">
-              <img src="../images/contents/snowvillage.png" alt="SnowVillage YouTube" />
-            </div>
-            <div class="content-body">
-              <span class="content-type">YouTube Channel</span>
-              <h3 class="content-title">SnowVillage Official YouTube</h3>
-              <div class="content-meta">Operated by: SnowVillage</div>
-              <p class="content-summary">
-                The official community YouTube channel, archiving meetup recordings, live streams, and hybrid broadcasts from across SnowVillage user groups.
-              </p>
-              <p class="content-note">
-                <span class="note-label">Why we love it</span>
-                For anyone who can't join live, this is the community's shared memory — every big moment in SnowVillage started here.
-              </p>
-              <a class="content-link" href="https://www.youtube.com/channel/UC-FKvkAWBegvxZF4jkP7sLA" target="_blank" rel="noopener noreferrer">Open YouTube →</a>
-            </div>
-          </article>
-
+        <div class="en-grid en-contents-grid">
           <article class="content-card">
             <div class="content-thumb">
               <img src="../images/contents/FrostyFriday.png" alt="Frosty Friday Live Challenge" />
@@ -408,6 +393,25 @@
 
           <article class="content-card">
             <div class="content-thumb">
+              <img src="../images/contents/data-management-firststep.png" alt="Introduction to Data Management" />
+            </div>
+            <div class="content-body">
+              <span class="content-type">Series</span>
+              <h3 class="content-title">Introduction to Data Management</h3>
+              <div class="content-meta">Operated by: #data-management user group</div>
+              <p class="content-summary">
+                A structured introductory course for learning data management from scratch. Open to anyone involved in data platform design and operations, or in organizational governance around data.
+              </p>
+              <p class="content-note">
+                <span class="note-label">Why we love it</span>
+                Data management is full of jargon and "no single right answer," which raises the bar for self-learning. This course unpacks it in plain terms. Live viewings and discussion sessions are especially worth joining.
+              </p>
+              <a class="content-link" href="https://data-management.snowvillage.cloud/" target="_blank" rel="noopener noreferrer">Open Course Portal →</a>
+            </div>
+          </article>
+
+          <article class="content-card">
+            <div class="content-thumb">
               <img src="../images/contents/25days-of-streamlit.png" alt="25 Days of Streamlit" />
             </div>
             <div class="content-body">
@@ -422,6 +426,25 @@
                 "Tech blog Advent Calendars" have been a beloved tradition in Japanese tech communities for years — a different author writes each day from December 1st to the 25th, on a shared theme. This series leans fully into that spirit: by day 25 you've built a Streamlit + Snowflake app where Santa delivers Christmas cards. It's a playful, true-to-form advent calendar that also happens to be a great on-ramp for building analytics apps on Snowflake.
               </p>
               <a class="content-link" href="https://st-advent-calendar-2024.streamlit.app/" target="_blank" rel="noopener noreferrer">Open Series →</a>
+            </div>
+          </article>
+
+          <article class="content-card">
+            <div class="content-thumb">
+              <img src="../images/contents/snowvillage.png" alt="SnowVillage YouTube" />
+            </div>
+            <div class="content-body">
+              <span class="content-type">YouTube Channel</span>
+              <h3 class="content-title">SnowVillage Official YouTube</h3>
+              <div class="content-meta">Operated by: SnowVillage</div>
+              <p class="content-summary">
+                The official community YouTube channel, archiving meetup recordings, live streams, and hybrid broadcasts from across SnowVillage user groups.
+              </p>
+              <p class="content-note">
+                <span class="note-label">Why we love it</span>
+                For anyone who can't join live, this is the community's shared memory — every big moment in SnowVillage started here.
+              </p>
+              <a class="content-link" href="https://www.youtube.com/channel/UC-FKvkAWBegvxZF4jkP7sLA" target="_blank" rel="noopener noreferrer">Open YouTube →</a>
             </div>
           </article>
         </div>
