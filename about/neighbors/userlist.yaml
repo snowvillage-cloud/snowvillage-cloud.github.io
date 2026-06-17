@@ -2,9 +2,9 @@
   affiliation: SnowVillage
   photo: ../../images/neighbors/user_name.png
 
-# - name: データ ハナコ
-#   affiliation: Data Engineering Inc.
-#   photo: ../../images/neighbors/hanako.png
+- name: 田中 太郎
+  affiliation: 株式会社田中ファミリー
+  photo: ../../images/neighbors/tanaka_taro.png
 
 # - name: スノー ジョン
 #   affiliation: フリーランス
