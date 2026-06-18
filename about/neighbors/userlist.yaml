@@ -4,6 +4,10 @@
   xUrl: "https://x.com/Snowflake"
   linkedInUrl: "https://www.linkedin.com/in/XXXXX"
 
+- name: 田中 太郎
+  affiliation: 株式会社田中ファミリー
+  photo: ../../images/neighbors/tanaka_taro.png
+  xUrl: "https://x.com/Snowflake"
 
 #  「Linkdin」のアカウントのみあるケース
 # - name: データ ハナコ
