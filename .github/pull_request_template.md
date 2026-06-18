@@ -1,7 +1,6 @@
 ## 概要 (Overview)
 
 ## 変更内容 (Key Changes)
-* * * ## 変更の種類 (Type of Change)
 - [ ] 🐛 バグ修正 (Bug fix)
 - [ ] ✨ 新機能 (New feature)
 - [ ] ♻️ リファクタリング (Refactoring)

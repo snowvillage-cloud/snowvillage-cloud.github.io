@@ -3,6 +3,16 @@
   xUrl: "https://x.com/mfujita2023"
   linkedInUrl: "https://www.linkedin.com/in/madoka-fujita-31b9912b9/"
 
+- name: Daisuke Onoe
+  affiliation: ー
+  photo: ../../images/neighbors/daisuke_onoe.png
+  xUrl: "https://x.com/wonohe"
+
+- name: 山本 且秋
+  affiliation: 株式会社アシスト
+  photo: ../../images/neighbors/kayamamoto.png
+  xUrl: "https://x.com/kayamamoto_"
+  linkedInUrl: "https://www.linkedin.com/in/katsuaki-yamamoto-2b3692329"
 
 #  「Linkdin」のアカウントのみあるケース
 # - name: データ ハナコ
