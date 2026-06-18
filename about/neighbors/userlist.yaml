@@ -1,10 +1,14 @@
 - name: Neighbor
   affiliation: SnowVillage
   photo: ../../images/neighbors/user_name.png
+  xUrl: "https://x.com/Snowflake"
+  linkedInUrl: "https://www.linkedin.com/in/XXXXX"
 
+## 「X」や「Linkdin」のアカウントがない場合は記載不要. あるものだけ記載
 - name: 田中 太郎
   affiliation: 株式会社田中ファミリー
   photo: ../../images/neighbors/tanaka_taro.png
+  linkedInUrl: "https://www.linkedin.com/in/XXXXX"
 
 # - name: データ ハナコ
 #   affiliation: Data Engineering Inc.
