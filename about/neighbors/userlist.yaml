@@ -1,8 +1,7 @@
-- name: Neighbor
-  affiliation: SnowVillage
-  photo: ../../images/neighbors/user_name.png
-  xUrl: "https://x.com/Snowflake"
-  linkedInUrl: "https://www.linkedin.com/in/XXXXX"
+- name: Madoka Fujita
+  photo: ../../images/neighbors/mfujita2023.png
+  xUrl: "https://x.com/mfujita2023"
+  linkedInUrl: "https://www.linkedin.com/in/madoka-fujita-31b9912b9/"
 
 - name: 山本 且秋
   affiliation: 株式会社アシスト
