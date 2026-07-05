@@ -131,6 +131,17 @@
   photo : ../../images/neighbors/t_ryo.jpg
   xUrl : "https://x.com/tryo_sing"
 
+- name: Kazuya Iwata
+  affiliation : DATUM STUDIO株式会社
+  photo : ../../images/neighbors/iwata.png
+  xUrl : --
+
+- name: Madoka Fujita
+  affiliation : --
+  photo : ../../images/neighbors/mfujita2023.jpg
+  xUrl : "https://x.com/mfujita2023"
+  linkedInUrl: "https://www.linkedin.com/in/madoka-fujita-31b9912b9/"
+
 #  「Linkdin」のアカウントのみあるケース
 # - name: データ ハナコ
 #   affiliation: Data Engineering Inc.
