@@ -1,0 +1,247 @@
+[
+  {
+    "id": "snowvillage-main",
+    "name": "SnowVillage - Japan Snowflake User Group",
+    "abbr": "SV",
+    "logoUrl": "logo/snowvillage.webp",
+    "description": "日本最大級のSnowflakeユーザーコミュニティ。初心者から上級者まで、Snowflakeに関わるすべての方の参加を歓迎。",
+    "techplayUrl": "https://techplay.jp/community/snowvillage",
+    "tags": [
+      "latest",
+      "lt",
+      "meetup",
+      "beginner",
+      "ai"
+    ]
+  },
+  {
+    "id": "snowvillage-financial",
+    "name": "Snowflake金融ユーザー会",
+    "abbr": "金融",
+    "logoUrl": "logo/snowvillage-financial.webp",
+    "description": "金融業界におけるSnowflake活用をテーマとしたコミュニティ。データガバナンス・セキュリティ・分析基盤の知見を業界横断で共有。",
+    "techplayUrl": "https://techplay.jp/community/snowvillage-financial",
+    "tags": [
+      "industry",
+      "governance",
+      "security",
+      "ops",
+      "usecase"
+    ]
+  },
+  {
+    "id": "snowvillage-data-management",
+    "name": "SnowVillage - データマネジメント分科会 -",
+    "abbr": "DM",
+    "logoUrl": "logo/snowvillage-data-management.webp",
+    "description": "SnowVillageのデータマネジメント分科会。データ品質・カタログ・メタデータ管理を深掘りする場。",
+    "techplayUrl": "https://techplay.jp/community/snowvillage-data-management",
+    "tags": [
+      "governance",
+      "architecture",
+      "ops",
+      "analysis"
+    ]
+  },
+  {
+    "id": "snowflake-rookies-camp",
+    "name": "Snowflake Rookies Camp",
+    "abbr": "RC",
+    "logoUrl": "logo/snowvillage-snowflake-rookies-camp.webp",
+    "description": "Snowflakeをこれから学びたい方・使い始めたばかりの初心者向けコミュニティ。ハンズオンやベストプラクティスを学べる場。",
+    "techplayUrl": "https://techplay.jp/community/snowvillage-snowflake-rookies-camp",
+    "tags": [
+      "beginner",
+      "hands-on",
+      "meetup",
+      "ops"
+    ]
+  },
+  {
+    "id": "snowvillage-west",
+    "name": "Snowflake WEST User Group",
+    "abbr": "WEST",
+    "logoUrl": "logo/snowvillage-west.webp",
+    "description": "関西地域を中心としたSnowflakeユーザーコミュニティ。ハンズオン・ミートアップを通じて西日本のデータコミュニティを活性化。",
+    "techplayUrl": "https://techplay.jp/community/snowvillage-west",
+    "tags": [
+      "hands-on",
+      "meetup",
+      "lt",
+      "integration",
+      "usecase",
+      "latest"
+    ]
+  },
+  {
+    "id": "snowvillage-datascience",
+    "name": "SnowVillage DataScience&DataEngineering支部",
+    "abbr": "DS/DE",
+    "logoUrl": "logo/snowvillage-datascience.webp",
+    "description": "DataScience・DataEngineeringチャネルに関するイベントを運営するコミュニティ。",
+    "techplayUrl": "https://techplay.jp/community/snowvillage-datascience",
+    "tags": [
+      "datascience",
+      "ai",
+      "engineering",
+      "meetup"
+    ]
+  },
+  {
+    "id": "snowvillage-women",
+    "name": "Snowflake女子会",
+    "abbr": "女子会",
+    "logoUrl": "logo/snowvillage-women.webp",
+    "description": "女性エンジニア同士のつながりと活躍の場を作るコミュニティ。初心者から経験者まで幅広く参加できる勉強会・ハンズオンを開催。",
+    "techplayUrl": "https://techplay.jp/community/snowvillage-women",
+    "tags": [
+      "career",
+      "hands-on",
+      "ai",
+      "app",
+      "integration",
+      "discussion"
+    ]
+  },
+  {
+    "id": "snowvillage-unconference",
+    "name": "SnowVillage Unconference支部",
+    "abbr": "UNC",
+    "logoUrl": "logo/snowvillage-unconference.webp",
+    "description": "参加者主体で知識共有と交流を深めるUnconferenceイベントを企画・運営するコミュニティ。",
+    "techplayUrl": "https://techplay.jp/community/snowvillage-unconference",
+    "tags": [
+      "discussion",
+      "meetup",
+      "lt",
+      "beginner"
+    ]
+  },
+  {
+    "id": "snowvillage-kyushu",
+    "name": "Snowflake Kyushu User Group",
+    "abbr": "九州",
+    "logoUrl": "logo/snowvillage-kyushu.webp",
+    "description": "Snowflakeの良さを九州企業に届け、データで九州を盛り上げることを目指すユーザーグループ。",
+    "techplayUrl": "https://techplay.jp/community/snowvillage-kyushu",
+    "tags": [
+      "latest",
+      "meetup",
+      "usecase"
+    ]
+  },
+  {
+    "id": "snowvillage-ai-data-cloud",
+    "name": "SnowVillage AI DATA User Group",
+    "abbr": "AI",
+    "logoUrl": "logo/snowvillage-ai-data-cloud.webp",
+    "description": "SnowflakeのAI関連機能をテーマに定期的な勉強会・情報交換を行うコミュニティ。AIエコシステムを継続的に学び続ける場。",
+    "techplayUrl": "https://techplay.jp/community/snowvillage-ai-data-cloud",
+    "tags": [
+      "ai",
+      "latest",
+      "lt",
+      "meetup"
+    ]
+  },
+  {
+    "id": "snowvillage-healthcare",
+    "name": "Snowflakeヘルスケア・ライフサイエンスユーザー会",
+    "abbr": "HC",
+    "logoUrl": "logo/snowvillage-healthcare.webp",
+    "description": "ヘルスケア・ライフサイエンス業界でのSnowflake活用をテーマに、事例共有を通じて業界全体の発展を目指すコミュニティ。",
+    "techplayUrl": "https://techplay.jp/community/snowvillage-healthcare",
+    "tags": [
+      "industry",
+      "usecase",
+      "engineering",
+      "analysis"
+    ]
+  },
+  {
+    "id": "sf2ug",
+    "name": "Snowflake x Salesforce User Group",
+    "abbr": "SF×SF",
+    "logoUrl": "logo/sf2ug.webp",
+    "description": "Snowflake と Salesforce を掛け合わせたデータ活用について議論するUser Group。",
+    "techplayUrl": "https://techplay.jp/community/sf2ug",
+    "tags": [
+      "integration",
+      "app",
+      "meetup",
+      "usecase"
+    ]
+  },
+  {
+    "id": "snowvillage-central",
+    "name": "Snowflake CENTRAL User Group",
+    "abbr": "中部",
+    "logoUrl": "logo/snowvillage-central.webp",
+    "description": "中部エリアを中心としたSnowflakeユーザーコミュニティ。活用事例・最新機能・データ分析の知見を共有。",
+    "techplayUrl": "https://techplay.jp/community/snowvillage-central",
+    "tags": [
+      "analysis",
+      "latest",
+      "lt",
+      "architecture",
+      "ops",
+      "discussion"
+    ]
+  },
+  {
+    "id": "snowvillage-sustainability",
+    "name": "SnowVillage サステナvillage",
+    "abbr": "🌱SV",
+    "logoUrl": "logo/snowvillage-sustainability.webp",
+    "description": "サステナビリティをテーマとするコミュニティ。Snowflakeを活用しながら企業・個人のサステナブルな取り組みを後押し。",
+    "techplayUrl": "https://techplay.jp/community/snowvillage-sustainability",
+    "tags": [
+      "sustainability",
+      "usecase",
+      "lt",
+      "meetup"
+    ]
+  },
+  {
+    "id": "snowvillage-okinawa",
+    "name": "Snowflake OKINAWA User Group",
+    "abbr": "沖縄",
+    "logoUrl": "logo/snowvillage-okinawa.webp",
+    "description": "Snowflakeの技術情報を沖縄から発信し、ユーザーコミュニティの活性化を目指すグループ。",
+    "techplayUrl": "https://techplay.jp/community/snowvillage-okinawa",
+    "tags": [
+      "latest",
+      "lt",
+      "analysis",
+      "meetup"
+    ]
+  },
+  {
+    "id": "streamlit-community",
+    "name": "Streamlit Community",
+    "description": "Streamlitに関するイベントや情報共有を行うコミュニティ。ハンズオンやMeetupを通じて、データアプリ開発やAIアプリ開発の知見を共有。", 
+    "category": [
+      "Streamlit",
+      "Python",
+      "Data Apps",
+      "AI"
+    ],
+    "url": "https://techplay.jp/community/streamlit-community",
+    "platform": "TECH PLAY",
+    "active": true
+  },
+  {
+    "id": "frosty-friday",
+    "name": "Frosty Friday",
+    "description": "SnowflakeのSQL・データエンジニアリング課題に取り組む学習コミュニティ。SnowVillageによるライブチャレンジ動画を通じて学習可能。",
+    "category": [
+      "Snowflake",
+      "SQL",
+      "Data Engineering",
+      "Hands-on"
+    ],
+    "url": "https://www.youtube.com/playlist?list=PLVj4iIZgzTAq2FzaBBgqFOtZaJTcoG3JR",
+    "platform": "YouTube",
+    "active": true
+  }
+]

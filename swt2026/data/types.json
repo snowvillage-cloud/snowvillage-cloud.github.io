@@ -1,0 +1,610 @@
+{
+  "ESCI": {
+    "code": "ESCI",
+    "title": "データスーパーヒーロー",
+    "subtitle": "Data Superhero (Advanced Technologist)",
+    "emoji": "🦸",
+    "catchphrase": "先端技術を自ら切り拓く、圧倒的データパイオニア",
+    "description": "高い技術的好奇心と深い探求心を持ち、一人で最先端機能を検証・実装して驚くべき成果を出すタイプ。チームやコミュニティに技術的ブレイクスルーをもたらす存在です。",
+    "axes": [
+      "Explorer",
+      "Solo",
+      "Craft",
+      "Innovator"
+    ],
+    "recommendedFeatures": [
+      {
+        "name": "Snowpark API",
+        "description": "Python/Java/ScalaでSnowflake上に直接データパイプラインやMLを実装",
+        "url": "https://docs.snowflake.com/ja/developer-guide/snowpark/index"
+      },
+      {
+        "name": "動的テーブル",
+        "description": "宣言的にデータ変換パイプラインを定義し自動的に最新化",
+        "url": "https://docs.snowflake.com/ja/user-guide/dynamic-tables-about"
+      },
+      {
+        "name": "Snowflake Notebooks",
+        "description": "Snowflake上でインタラクティブにデータ探索・分析・可視化",
+        "url": "https://docs.snowflake.com/ja/user-guide/ui-snowsight/notebooks-in-workspaces/notebooks-in-workspaces-overview"
+      }
+    ],
+    "actionHints": [
+      "会場でハンズオンブースを体験して新機能を試す",
+      "DataScience & DE支部のイベントに参加してみる",
+      "会場でおすすめNeighborsを探して技術的なディスカッションをする"
+    ],
+    "iconUrl": "logo/types/ESCI.png",
+    "colorGroup": "craft"
+  },
+  "ESVI": {
+    "code": "ESVI",
+    "title": "ビジョナリーアナリスト",
+    "subtitle": "Visionary Analyst (Data Scientist)",
+    "emoji": "🔮",
+    "catchphrase": "データから未来の価値を予見するビジネスイノベーター",
+    "description": "データの奥深くに潜むビジネスチャンスやインサイトを一人で発見し、新しい視点やアイデアを提示するタイプ。データドリブンな意思決定の先駆者です。",
+    "axes": [
+      "Explorer",
+      "Solo",
+      "Value",
+      "Innovator"
+    ],
+    "recommendedFeatures": [
+      {
+        "name": "Cortex Analyst",
+        "description": "自然言語でデータを問い合わせ・分析できるAIアシスタント",
+        "url": "https://docs.snowflake.com/ja/user-guide/snowflake-cortex/cortex-analyst"
+      },
+      {
+        "name": "Streamlit in Snowflake",
+        "description": "データアプリをコード1枚でSnowflake上に即デプロイ",
+        "url": "https://docs.snowflake.com/ja/developer-guide/streamlit/about-streamlit"
+      },
+      {
+        "name": "Snowflake Notebooks",
+        "description": "Snowflake上でインタラクティブにデータ探索・分析・可視化",
+        "url": "https://docs.snowflake.com/ja/user-guide/ui-snowsight/notebooks-in-workspaces/notebooks-in-workspaces-overview"
+      }
+    ],
+    "actionHints": [
+      "事例セッションに参加して他社のビジネス活用例を収集する",
+      "サステナvillageやAI関連の分科会を覗いてみる",
+      "気になったNeighborsとビジネス活用事例について情報交換する"
+    ],
+    "iconUrl": "logo/types/ESVI.png",
+    "colorGroup": "value"
+  },
+  "ETCI": {
+    "code": "ETCI",
+    "title": "テックエバンジェリスト",
+    "subtitle": "Tech Evangelist (Developer Advocate)",
+    "emoji": "📡",
+    "catchphrase": "最新技術の面白さを自ら試し、周りに熱量を広める伝道者",
+    "description": "最新機能や先端技術をいち早く探索し、その価値やノウハウをチームやコミュニティに発信・共有して巻き込んでいくタイプ。技術コミュニティのムードメーカーです。",
+    "axes": [
+      "Explorer",
+      "Team",
+      "Craft",
+      "Innovator"
+    ],
+    "recommendedFeatures": [
+      {
+        "name": "Snowpark Container Services",
+        "description": "Snowflakeのエコシステム内でコンテナアプリを実行",
+        "url": "https://docs.snowflake.com/ja/developer-guide/snowpark-container-services/overview"
+      },
+      {
+        "name": "Git Integration",
+        "description": "GitHubリポジトリを直接Snowflakeに接続してコードを管理",
+        "url": "https://docs.snowflake.com/ja/developer-guide/git/git-setting-up"
+      },
+      {
+        "name": "Streamlit in Snowflake",
+        "description": "データアプリをコード1枚でSnowflake上に即デプロイ",
+        "url": "https://docs.snowflake.com/ja/developer-guide/streamlit/about-streamlit"
+      }
+    ],
+    "actionHints": [
+      "Unconference支部のイベントでライトニングトークや発信をしてみる",
+      "Xで診断結果を投稿してコミュニティと交流を開始する",
+      "ナイトパーティーで同タイプのエンジニア仲間を見つける"
+    ],
+    "iconUrl": "logo/types/ETCI.png",
+    "colorGroup": "craft"
+  },
+  "ETVI": {
+    "code": "ETVI",
+    "title": "ドリームチームクリエイター",
+    "subtitle": "Dream Team Creator (Community Leader)",
+    "emoji": "🌟",
+    "catchphrase": "人をつなぎ、データの力で新しい挑戦とコミュニティを創る",
+    "description": "人と人のコミュニケーションを大切にし、ビジネスアイデアとコミュニティの熱量を掛け合わせて新しい場やプロジェクトを生み出すムードメーカー・リーダーです。",
+    "axes": [
+      "Explorer",
+      "Team",
+      "Value",
+      "Innovator"
+    ],
+    "recommendedFeatures": [
+      {
+        "name": "Snowflake Native App Framework",
+        "description": "Snowflakeマーケットプレイスで配布できるアプリを構築・公開",
+        "url": "https://docs.snowflake.com/ja/developer-guide/native-apps/native-apps-about"
+      },
+      {
+        "name": "Snowflake Marketplace",
+        "description": "データ・アプリ・モデルを社外と安全に共有・公開",
+        "url": "https://docs.snowflake.com/ja/collaboration/collaboration-marketplace-about"
+      },
+      {
+        "name": "Snowsight ダッシュボード",
+        "description": "チームや組織で直感的に使えるグラフィカルなダッシュボード",
+        "url": "https://docs.snowflake.com/ja/user-guide/ui-snowsight-dashboards"
+      }
+    ],
+    "actionHints": [
+      "SnowVillage本会や地域ユーザーグループ（WEST/九州等）に登録する",
+      "会場で気になったNeighborsに積極的に話しかけてみる",
+      "次回コミュニティイベントの予定をその場で確定する"
+    ],
+    "iconUrl": "logo/types/ETVI.png",
+    "colorGroup": "value"
+  },
+  "ESCO": {
+    "code": "ESCO",
+    "title": "インサイトナビゲーター",
+    "subtitle": "Insight Navigator (Analytics Engineer)",
+    "emoji": "🧭",
+    "catchphrase": "緻密な分析と整理力で、美しいデータモデルを導く案内人",
+    "description": "データ探索を行いながら、SQLやモデル定義を美しく整理・最適化する職人タイプ。信頼性の高いデータを整え、周囲の分析効率を何倍にも引き上げます。",
+    "axes": [
+      "Explorer",
+      "Solo",
+      "Craft",
+      "Optimizer"
+    ],
+    "recommendedFeatures": [
+      {
+        "name": "Snowflake Horizon カタログ",
+        "description": "メタデータ・系譜・品質を一元管理するデータカタログ機能",
+        "url": "https://docs.snowflake.com/ja/user-guide/snowflake-horizon"
+      },
+      {
+        "name": "セマンティックビュー",
+        "description": "ビジネス用語でデータモデルを定義しAIと人間が理解しやすく",
+        "url": "https://docs.snowflake.com/ja/user-guide/views-semantic/overview"
+      },
+      {
+        "name": "データ品質チェック",
+        "description": "データの品質指標を継続的に計測・アラートで監視",
+        "url": "https://docs.snowflake.com/ja/user-guide/data-quality-intro"
+      }
+    ],
+    "actionHints": [
+      "データマネジメント分科会の勉強会に参加する",
+      "ガバナンスやデータモデル設計が得意なNeighborsに相談してみる",
+      "社内のデータカタログやセマンティック層の整理を計画する"
+    ],
+    "iconUrl": "logo/types/ESCO.png",
+    "colorGroup": "craft"
+  },
+  "ESVO": {
+    "code": "ESVO",
+    "title": "ストラテジックオプティマイザー",
+    "subtitle": "Strategic Optimizer (Business Analyst)",
+    "emoji": "🎯",
+    "catchphrase": "ビジネス視点でデータを読み解き、確実な改善を導く戦略家",
+    "description": "ビジネスの課題意識を高く持ち、データを一人で着実に分析・整理して業務改善やプロセス最適化の具体的な一手を見つけ出す実践派アナリストです。",
+    "axes": [
+      "Explorer",
+      "Solo",
+      "Value",
+      "Optimizer"
+    ],
+    "recommendedFeatures": [
+      {
+        "name": "Snowsight",
+        "description": "インタラクティブなダッシュボードと可視化でデータをストーリーに",
+        "url": "https://docs.snowflake.com/ja/user-guide/ui-snowsight"
+      },
+      {
+        "name": "Cortex Analyst",
+        "description": "自然言語でデータを問い合わせ・分析できるAIアシスタント",
+        "url": "https://docs.snowflake.com/ja/user-guide/snowflake-cortex/cortex-analyst"
+      },
+      {
+        "name": "Secure Data Sharing",
+        "description": "コピーなしでデータをリアルタイムに安全共有",
+        "url": "https://docs.snowflake.com/ja/user-guide/data-sharing-intro"
+      }
+    ],
+    "actionHints": [
+      "ヘルスケアや金融など業界特化ユーザー会の活用事例をチェックする",
+      "会場でビジネス分析・活用を得意とするNeighborsと対話する",
+      "自社のデータ分析プロセスの効率化アイデアを整理する"
+    ],
+    "iconUrl": "logo/types/ESVO.png",
+    "colorGroup": "value"
+  },
+  "ETCO": {
+    "code": "ETCO",
+    "title": "チームアーキテクト",
+    "subtitle": "Team Architect (Data Architect)",
+    "emoji": "🏗️",
+    "catchphrase": "全体像を描き、チームの基盤とアーキテクチャを美しく整える",
+    "description": "技術的な全体構想を描き、チーム全体の開発効率と安全性を兼ね備えた堅牢なデータ基盤アーキテクチャを設計・最適化する信頼のリーダーです。",
+    "axes": [
+      "Explorer",
+      "Team",
+      "Craft",
+      "Optimizer"
+    ],
+    "recommendedFeatures": [
+      {
+        "name": "Snowflake Horizon カタログ",
+        "description": "メタデータ・系譜・品質を一元管理するデータカタログ機能",
+        "url": "https://docs.snowflake.com/ja/user-guide/snowflake-horizon"
+      },
+      {
+        "name": "行アクセスポリシー",
+        "description": "行レベルでのアクセス制御をポリシーで一元管理",
+        "url": "https://docs.snowflake.com/ja/user-guide/security-row-intro"
+      },
+      {
+        "name": "ストリームとタスク",
+        "description": "変更データキャプチャ(CDC)とスケジュール実行で自動化パイプライン",
+        "url": "https://docs.snowflake.com/ja/user-guide/data-pipelines-intro"
+      }
+    ],
+    "actionHints": [
+      "データマネジメント分科会やSF2UGでアーキテクチャ設計論を議論する",
+      "会場でデータアーキテクトのNeighborsを探してベストプラクティスを聞く",
+      "自社のデータパイプライン全体図の見直しを行う"
+    ],
+    "iconUrl": "logo/types/ETCO.png",
+    "colorGroup": "craft"
+  },
+  "ETVO": {
+    "code": "ETVO",
+    "title": "コミュニティハーモナイザー",
+    "subtitle": "Community Harmonizer (Data Strategist)",
+    "emoji": "🤝",
+    "catchphrase": "ビジネスとチームを調和させ、全員がデータ成果を出せる環境を作る",
+    "description": "ビジネスゴールと現場のチームワークを調和させ、組織全体のデータ活用文化や運用プロセスを安定・最適化させていく調整力抜群のストラテジストです。",
+    "axes": [
+      "Explorer",
+      "Team",
+      "Value",
+      "Optimizer"
+    ],
+    "recommendedFeatures": [
+      {
+        "name": "Secure Data Sharing",
+        "description": "コピーなしでデータをリアルタイムに安全共有",
+        "url": "https://docs.snowflake.com/ja/user-guide/data-sharing-intro"
+      },
+      {
+        "name": "Snowsight ダッシュボード",
+        "description": "チームや組織で直感的に使えるグラフィカルなダッシュボード",
+        "url": "https://docs.snowflake.com/ja/user-guide/ui-snowsight-dashboards"
+      },
+      {
+        "name": "アラート",
+        "description": "データ変化やしきい値超過を検知して通知・アクション自動化",
+        "url": "https://docs.snowflake.com/ja/user-guide/alerts"
+      }
+    ],
+    "actionHints": [
+      "SnowVillage本会や女子会・中部UGなどの交流型イベントに参加する",
+      "会場でコミュニティ運営や組織活用に詳しいNeighborsと繋がる",
+      "チームメンバーと一緒にコミュニティ勉強会に申し込む"
+    ],
+    "iconUrl": "logo/types/ETVO.png",
+    "colorGroup": "value"
+  },
+  "BSCI": {
+    "code": "BSCI",
+    "title": "パイプラインマスター",
+    "subtitle": "Pipeline Master (Data Engineer)",
+    "emoji": "⚙️",
+    "catchphrase": "新技術を取り入れ、黙々と堅牢なデータパイプラインを構築する職人",
+    "description": "最新のデータ処理技術やSnowparkなどを駆使し、一人で高品質かつ高速なデータパイプラインやETL基盤を力強く作り上げるエンジニアリングのプロフェッショナルです。",
+    "axes": [
+      "Builder",
+      "Solo",
+      "Craft",
+      "Innovator"
+    ],
+    "recommendedFeatures": [
+      {
+        "name": "Snowpark API",
+        "description": "Python/Java/ScalaでSnowflake上に直接データパイプラインやMLを実装",
+        "url": "https://docs.snowflake.com/ja/developer-guide/snowpark/index"
+      },
+      {
+        "name": "Snowpipe",
+        "description": "ファイル到着をトリガーにリアルタイムでデータをロード",
+        "url": "https://docs.snowflake.com/ja/user-guide/data-load-snowpipe-intro"
+      },
+      {
+        "name": "動的テーブル",
+        "description": "宣言的にデータ変換パイプラインを定義し自動的に最新化",
+        "url": "https://docs.snowflake.com/ja/user-guide/dynamic-tables-about"
+      }
+    ],
+    "actionHints": [
+      "Rookies CampやDataScience支部のハンズオン勉強会に参加する",
+      "会場でデータパイプライン構築を得意とするNeighborsと技術トークする",
+      "Snowparkを使った新しいパイプライン構築を自社で試す"
+    ],
+    "iconUrl": "logo/types/BSCI.png",
+    "colorGroup": "innovator"
+  },
+  "BSVI": {
+    "code": "BSVI",
+    "title": "プロダクトイノベーター",
+    "subtitle": "Product Innovator (Data Product Owner)",
+    "emoji": "🚀",
+    "catchphrase": "ビジネス課題を自らコードとアプリに変えるデータプロダクトの開拓者",
+    "description": "高い開発力とビジネスセンスを合わせ持ち、StreamlitやNative Appsなどをフル活用して、新しいデータアプリや社内プロダクトをスピーディに生み出す創作者です。",
+    "axes": [
+      "Builder",
+      "Solo",
+      "Value",
+      "Innovator"
+    ],
+    "recommendedFeatures": [
+      {
+        "name": "Streamlit in Snowflake",
+        "description": "データアプリをコード1枚でSnowflake上に即デプロイ",
+        "url": "https://docs.snowflake.com/ja/developer-guide/streamlit/about-streamlit"
+      },
+      {
+        "name": "Snowflake Native App Framework",
+        "description": "Snowflakeマーケットプレイスで配布できるアプリを構築・公開",
+        "url": "https://docs.snowflake.com/ja/developer-guide/native-apps/native-apps-about"
+      },
+      {
+        "name": "Snowflake Cortex AISQL",
+        "description": "Snowflake内で直接LLMや機械学習関数を呼び出してアプリを高度化",
+        "url": "https://docs.snowflake.com/ja/user-guide/snowflake-cortex/aisql"
+      }
+    ],
+    "actionHints": [
+      "AI DATA UGの勉強会でデータアプリの事例をチェックする",
+      "自分で作ったStreamlitアプリの事例をコミュニティで発表してみる",
+      "会場でアプリ開発が得意なNeighborsにデモを見せてもらう"
+    ],
+    "iconUrl": "logo/types/BSVI.png",
+    "colorGroup": "innovator"
+  },
+  "BTCI": {
+    "code": "BTCI",
+    "title": "プラットフォームリーダー",
+    "subtitle": "Platform Leader (Platform Engineer)",
+    "emoji": "🏔️",
+    "catchphrase": "チームが快適に使える、次世代データ開発基盤を全員で作り上げる",
+    "description": "チーム開発の生産性を最大化するため、先鋭的なプラットフォームや開発環境（Container ServicesやGit連携など）をチームで構築・提供するエンジニアリーダーです。",
+    "axes": [
+      "Builder",
+      "Team",
+      "Craft",
+      "Innovator"
+    ],
+    "recommendedFeatures": [
+      {
+        "name": "Snowpark Container Services",
+        "description": "Snowflakeのエコシステム内でコンテナアプリを実行",
+        "url": "https://docs.snowflake.com/ja/developer-guide/snowpark-container-services/overview"
+      },
+      {
+        "name": "Git Integration",
+        "description": "GitHubリポジトリを直接Snowflakeに接続してコードを管理",
+        "url": "https://docs.snowflake.com/ja/developer-guide/git/git-setting-up"
+      },
+      {
+        "name": "Snowflake ML",
+        "description": "Snowflake上でモデル学習から推論まで完結するML基盤",
+        "url": "https://docs.snowflake.com/ja/developer-guide/snowflake-ml/overview"
+      }
+    ],
+    "actionHints": [
+      "DataScience/DE支部やUnconference支部で開発環境の議論に参加する",
+      "会場でプラットフォームエンジニアのNeighborsと情報交換する",
+      "チーム開発におけるGit連携やCI/CD基盤を強化する"
+    ],
+    "iconUrl": "logo/types/BTCI.png",
+    "colorGroup": "innovator"
+  },
+  "BTVI": {
+    "code": "BTVI",
+    "title": "トランスフォーメーションリーダー",
+    "subtitle": "Transformation Leader (Data DX Leader)",
+    "emoji": "🦋",
+    "catchphrase": "組織変革を力強く推進し、データ活用文化を根付かせる改革者",
+    "description": "データ基盤の構築と組織づくりの両輪を回し、会社やチーム全体のデータドリブン変革（DX）を一気に加速させる頼もしい変革リーダーです。",
+    "axes": [
+      "Builder",
+      "Team",
+      "Value",
+      "Innovator"
+    ],
+    "recommendedFeatures": [
+      {
+        "name": "Snowflake Marketplace",
+        "description": "データ・アプリ・モデルを社外と安全に共有・公開",
+        "url": "https://docs.snowflake.com/ja/collaboration/collaboration-marketplace-about"
+      },
+      {
+        "name": "Snowsight ダッシュボード",
+        "description": "チームや組織で直感的に使えるグラフィカルなダッシュボード",
+        "url": "https://docs.snowflake.com/ja/user-guide/ui-snowsight-dashboards"
+      },
+      {
+        "name": "Streamlit in Snowflake",
+        "description": "データアプリをコード1枚でSnowflake上に即デプロイ",
+        "url": "https://docs.snowflake.com/ja/developer-guide/streamlit/about-streamlit"
+      }
+    ],
+    "actionHints": [
+      "SnowVillage本会や地域ユーザー会で他社のDX変革事例を学ぶ",
+      "会場で組織推進を担当するNeighborsと話して横の繋がりを作る",
+      "自社のデータ活用文化醸成のための勉強会を企画する"
+    ],
+    "iconUrl": "logo/types/BTVI.png",
+    "colorGroup": "innovator"
+  },
+  "BSCO": {
+    "code": "BSCO",
+    "title": "サイレントガーディアン",
+    "subtitle": "Silent Guardian (Data Security Specialist)",
+    "emoji": "🛡️",
+    "catchphrase": "データ品質とセキュリティを完璧に防衛する、頼れる陰の功労者",
+    "description": "アクセス制御、ポリシー定義、メタデータタグ付けなどを一人で黙々と設計・運用し、組織のデータ資産を安全かつ健全に保ち続ける堅牢なガーディアンです。",
+    "axes": [
+      "Builder",
+      "Solo",
+      "Craft",
+      "Optimizer"
+    ],
+    "recommendedFeatures": [
+      {
+        "name": "オブジェクトタグ",
+        "description": "テーブル・列にタグを付与してガバナンス・分類を自動化",
+        "url": "https://docs.snowflake.com/ja/user-guide/object-tagging/introduction"
+      },
+      {
+        "name": "ACCESS_HISTORY ビュー",
+        "description": "誰がいつどのデータにアクセスしたかを完全な監査ログで追跡",
+        "url": "https://docs.snowflake.com/ja/sql-reference/account-usage/access_history"
+      },
+      {
+        "name": "ネットワークポリシー",
+        "description": "IPアドレス・プライベートリンクによる接続制限でセキュリティ強化",
+        "url": "https://docs.snowflake.com/ja/user-guide/network-policies"
+      }
+    ],
+    "actionHints": [
+      "金融ユーザー会やデータマネジメント分科会でセキュリティ設計を勉強する",
+      "会場でセキュリティやガバナンスに強いNeighborsと相談する",
+      "自社アカウントのAccess Historyやタグ付けルールを見直す"
+    ],
+    "iconUrl": "logo/types/BSCO.png",
+    "colorGroup": "optimizer"
+  },
+  "BSVO": {
+    "code": "BSVO",
+    "title": "ビジネスエンジニア",
+    "subtitle": "Business Engineer (BI Developer)",
+    "emoji": "📊",
+    "catchphrase": "ビジネスニーズを的確に捉え、実用的で堅牢なBIとレポートを構築",
+    "description": "現場のビジネス要求を的確に理解し、正確で高速なBIダッシュボードやデータビューを一人で安定して構築・運用する実務派エンジニアです。",
+    "axes": [
+      "Builder",
+      "Solo",
+      "Value",
+      "Optimizer"
+    ],
+    "recommendedFeatures": [
+      {
+        "name": "Snowsight",
+        "description": "インタラクティブなダッシュボードと可視化でデータをストーリーに",
+        "url": "https://docs.snowflake.com/ja/user-guide/ui-snowsight"
+      },
+      {
+        "name": "Secure Data Sharing",
+        "description": "コピーなしでデータをリアルタイムに安全共有",
+        "url": "https://docs.snowflake.com/ja/user-guide/data-sharing-intro"
+      },
+      {
+        "name": "アラート",
+        "description": "データ変化やしきい値超過を検知して通知・アクション自動化",
+        "url": "https://docs.snowflake.com/ja/user-guide/alerts"
+      }
+    ],
+    "actionHints": [
+      "ヘルスケア会や金融会など実務適用が活発なユーザー会に参加する",
+      "会場でダッシュボード活用が得意なNeighborsと知見を共有する",
+      "社内ユーザー向けのBI使いやすさ向上施策を検討する"
+    ],
+    "iconUrl": "logo/types/BSVO.png",
+    "colorGroup": "optimizer"
+  },
+  "BTCO": {
+    "code": "BTCO",
+    "title": "データギルドマスター",
+    "subtitle": "Data Guild Master (DataOps Lead)",
+    "emoji": "⚔️",
+    "catchphrase": "チームの運用・CI/CDを極限まで最適化し、開発レベルを引き上げる師範",
+    "description": "チーム開発の自動化やCI/CD、テスト・監視体制（DataOps）を確立し、チームメンバー全員の開発スピードと品質を極限まで引き上げる指導的エンジニアです。",
+    "axes": [
+      "Builder",
+      "Team",
+      "Craft",
+      "Optimizer"
+    ],
+    "recommendedFeatures": [
+      {
+        "name": "ストリームとタスク",
+        "description": "変更データキャプチャ(CDC)とスケジュール実行で自動化パイプライン",
+        "url": "https://docs.snowflake.com/ja/user-guide/data-pipelines-intro"
+      },
+      {
+        "name": "Git Integration",
+        "description": "GitHubリポジトリを直接Snowflakeに接続してコードを管理",
+        "url": "https://docs.snowflake.com/ja/developer-guide/git/git-setting-up"
+      },
+      {
+        "name": "データ品質チェック",
+        "description": "データの品質指標を継続的に計測・アラートで監視",
+        "url": "https://docs.snowflake.com/ja/user-guide/data-quality-intro"
+      }
+    ],
+    "actionHints": [
+      "データマネジメント分科会やSF2UGでDataOpsの運用ノウハウを交換する",
+      "会場でDevOps/DataOpsが得意なNeighborsと情報交換する",
+      "チーム内のデータ運用標準化ドキュメントを作成する"
+    ],
+    "iconUrl": "logo/types/BTCO.png",
+    "colorGroup": "optimizer"
+  },
+  "BTVO": {
+    "code": "BTVO",
+    "title": "オペレーションキャプテン",
+    "subtitle": "Operation Captain (Data Program Manager)",
+    "emoji": "🎖️",
+    "catchphrase": "全体のオペレーションとチーム連携を円滑にし、成果を最大化する頼れる船長",
+    "description": "ビジネスチーム・開発チーム・運用チームの間に立ち、業務フローをスムーズに整理・運用しながらプロジェクトをゴールへと導く司令塔です。",
+    "axes": [
+      "Builder",
+      "Team",
+      "Value",
+      "Optimizer"
+    ],
+    "recommendedFeatures": [
+      {
+        "name": "Snowsight ダッシュボード",
+        "description": "チームや組織で直感的に使えるグラフィカルなダッシュボード",
+        "url": "https://docs.snowflake.com/ja/user-guide/ui-snowsight-dashboards"
+      },
+      {
+        "name": "アラート",
+        "description": "データ変化やしきい値超過を検知して通知・アクション自動化",
+        "url": "https://docs.snowflake.com/ja/user-guide/alerts"
+      },
+      {
+        "name": "Secure Data Sharing",
+        "description": "コピーなしでデータをリアルタイムに安全共有",
+        "url": "https://docs.snowflake.com/ja/user-guide/data-sharing-intro"
+      }
+    ],
+    "actionHints": [
+      "SnowVillage本会や地方ユーザー会（中部・沖縄等）の運営セッションに参加する",
+      "会場でプロジェクト推進が得意なNeighborsと知り合う",
+      "社内のデータ利用フローのボトルネック改善計画を立てる"
+    ],
+    "iconUrl": "logo/types/BTVO.png",
+    "colorGroup": "optimizer"
+  }
+}

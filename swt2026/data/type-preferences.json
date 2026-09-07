@@ -1,0 +1,120 @@
+{
+  "BSCI": {
+    "groups": [
+      "snowvillage-women",
+      "snowvillage-main",
+      "snowvillage-datascience",
+      "snowvillage-data-management",
+      "snowvillage-okinawa",
+      "frosty-friday"
+    ],
+    "features": [
+      "Snowpark API",
+      "Snowpipe",
+      "動的テーブル",
+      "Snowpark Container Services",
+      "ネットワークポリシー"
+    ]
+  },
+  "BSCO": {
+    "groups": [
+      "snowvillage-main",
+      "snowvillage-ai-data-cloud",
+      "snowflake-rookies-camp",
+      "snowvillage-data-management"
+    ],
+    "features": [
+      "Snowsight",
+      "Secure Data Sharing"
+    ]
+  },
+  "BTCI": {
+    "groups": [
+      "snowvillage-data-management",
+      "snowvillage-ai-data-cloud",
+      "snowvillage-main",
+      "snowvillage-unconference"
+    ],
+    "features": [
+      "Snowsight",
+      "Snowflake Horizon カタログ",
+      "オブジェクトタグ"
+    ]
+  },
+  "BTVI": {
+    "groups": [
+      "snowvillage-datascience",
+      "snowvillage-west"
+    ],
+    "features": [
+      "Streamlit in Snowflake",
+      "Cortex Analyst",
+      "Secure Data Sharing"
+    ]
+  },
+  "ESCI": {
+    "groups": [
+      "snowvillage-women",
+      "snowvillage-unconference",
+      "snowvillage-main"
+    ],
+    "features": [
+      "Snowflake Developer Guides",
+      "Snowsight",
+      "アラート"
+    ]
+  },
+  "ESVI": {
+    "groups": [
+      "snowvillage-main",
+      "snowvillage-kyushu",
+      "snowvillage-healthcare",
+      "snowvillage-women",
+      "frosty-friday"
+    ],
+    "features": [
+      "Cortex Analyst",
+      "Streamlit in Snowflake",
+      "Snowflake Notebooks",
+      "Secure Data Sharing",
+      "動的テーブル"
+    ]
+  },
+  "ETCI": {
+    "groups": [
+      "snowvillage-main",
+      "snowvillage-data-management",
+      "snowvillage-datascience",
+      "snowvillage-unconference",
+      "snowvillage-ai-data-cloud",
+      "snowvillage-west"
+    ],
+    "features": [
+      "セマンティックビュー",
+      "Cortex Analyst",
+      "Snowflake Horizon カタログ",
+      "Streamlit in Snowflake",
+      "ネットワークポリシー",
+      "Snowpark Container Services"
+    ]
+  },
+  "ETCO": {
+    "groups": [
+      "snowvillage-main",
+      "snowflake-rookies-camp"
+    ],
+    "features": [
+      "動的テーブル",
+      "セマンティックビュー"
+    ]
+  },
+  "ETVO": {
+    "groups": [
+      "snowvillage-financial",
+      "snowvillage-healthcare"
+    ],
+    "features": [
+      "Snowsight"
+    ]
+  }
+}
