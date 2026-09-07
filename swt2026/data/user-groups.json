@@ -219,6 +219,7 @@
   {
     "id": "streamlit-community",
     "name": "Streamlit Community",
+    "logoUrl": "logo/streamlit.webp",
     "description": "Streamlitに関するイベントや情報共有を行うコミュニティ。ハンズオンやMeetupを通じて、データアプリ開発やAIアプリ開発の知見を共有。", 
     "category": [
       "Streamlit",
@@ -233,6 +234,7 @@
   {
     "id": "frosty-friday",
     "name": "Frosty Friday",
+    "logoUrl": "logo/frosty-friday.webp",
     "description": "SnowflakeのSQL・データエンジニアリング課題に取り組む学習コミュニティ。SnowVillageによるライブチャレンジ動画を通じて学習可能。",
     "category": [
       "Snowflake",
