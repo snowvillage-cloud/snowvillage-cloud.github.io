@@ -12,7 +12,7 @@ Snowflake World Tour Tokyo 2026（SWT 2026）の来場者向けに提供する�
 | :--- | :--- |
 | **`index.html`** | ページ本体。Intro（導入）/ Quiz（設問）/ Result（結果）の3ビューを保持し、表示を切り替えて遷移します。 |
 | **`app.js`** | 設問定義、タイプ判定、結果画面の描画、共有機能を担います。データの取得に失敗した場合に用いる代替値も保持します。 |
-| **`styles.css`** | 本ページ専用のスタイル。ライト／ダークテーマを CSS 変数で切り替えます。 |
+| **`../css/swt2026.css`** | 本ページ専用のスタイル。サイトの「1ページにつき1CSS」の原則に従い `css/` 配下に置いています。ライト／ダークテーマを CSS 変数で切り替えます。 |
 | **`data/`** | 診断に用いるデータ。詳細は次節を参照してください。 |
 | **`logo/`** | ユーザーグループのロゴ（webp）と、`logo/types/` 配下の16タイプ用アイコン（png）。 |
 
@@ -79,7 +79,7 @@ Neighbors / Mayors の名簿は本ディレクトリでは保持しません。�
 
 | 項目 | 仕様 |
 | :--- | :--- |
-| `colorGroup` | 結果カードの配色を決定します。`craft` / `value` / `innovator` / `optimizer` のいずれかを指定してください。実際の配色は `styles.css` の `.result-digital-card[data-color=...]` で定義しています。 |
+| `colorGroup` | 結果カードの配色を決定します。`craft` / `value` / `innovator` / `optimizer` のいずれかを指定してください。実際の配色は `css/swt2026.css` の `.result-digital-card[data-color=...]` で定義しています。 |
 | `iconUrl` | `logo/types/<診断コード>.png` を指します。アイコンは16タイプ分を用意済みです。 |
 | `recommendedFeatures` | 結果画面に表示する Snowflake 機能です。**このタイプに表示される機能は本項目がすべて**であり、`type-preferences.json` は表示順にのみ影響します。 |
 
