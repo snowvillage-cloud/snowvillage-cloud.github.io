@@ -85,11 +85,28 @@ const neighborsData = [];
 
 // 🌟 Sponsors（各部門で協力してくださっている個人・企業）
 // 旧版は運営メンバーページ下部に表示していたが、部門別取り組みページ側で文脈に沿って表示する
+//
+// 【サイト維持管理者を追加する場合】
+// 下記の仮データの name / desc / logo を実際の情報に差し替えてください。
+// - logo に指定する画像ファイルは images/sponsors/ に配置してください
+//   （例: images/sponsors/site_maintainer_a.png を差し替え、または新しいファイルを追加してパスを変更）
 const sponsorsData = [
   {
     name: "Yuya Matsubara",
     desc: "Principal Data Engineer at NTT DOCOMO, Inc.",
     logo: "../images/sponsors/yuya_matsubara.jpeg",
+    department: "サイト維持管理",
+  },
+  {
+    name: "Kazuya Iwata",
+    desc: "Data Engineer",
+    logo: "../images/sponsors/iwata.webp",
+    department: "サイト維持管理",
+  },
+  {
+    name: "Haruki Murakoshi",
+    desc: "AI Engineer / Data Engineer",
+    logo: "../images/sponsors/haruki_murakoshi.webp",
     department: "サイト維持管理",
   },
 ];

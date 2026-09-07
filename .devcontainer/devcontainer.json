@@ -1,0 +1,11 @@
+{
+  "name": "SnowVillage Static Site",
+  "image": "mcr.microsoft.com/devcontainers/python:1-3.12-bookworm",
+  "forwardPorts": [8080],
+  "portsAttributes": {
+    "8080": {
+      "label": "SnowVillage Website",
+      "onAutoForward": "openPreview"
+    }
+  }
+}
