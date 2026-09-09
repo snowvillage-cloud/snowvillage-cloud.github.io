@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SnowVillage Compass - SnowVillage</title>
+    <meta name="description" content="Snowflake World Tour Tokyo 2026 来場者向けの16タイプ診断。8問・約2分で、あなたのデータ活用スタイル・コミュニティ・Neighbors・おすすめSnowflake機能を提案します。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://snowvillage.cloud/swt2026/" />
+    <meta property="og:title" content="SnowVillage Compass | SWT 2026 SVTI診断" />
+    <meta property="og:description" content="8問・約2分で、あなたのデータ活用スタイル・コミュニティ・Neighbors・おすすめSnowflake機能を提案します。" />
+    <meta property="og:image" content="https://snowvillage.cloud/images/brand/og-image.png" />
+    <meta property="og:site_name" content="SnowVillage" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SnowVillage Compass | SWT 2026 SVTI診断" />
+    <meta name="twitter:description" content="8問・約2分で、あなたのデータ活用スタイル・コミュニティ・Neighbors・おすすめSnowflake機能を提案します。" />
+    <meta name="twitter:image" content="https://snowvillage.cloud/images/brand/og-image.png" />
+    <link rel="icon" href="/images/brand/favicon.png" />
+    <link rel="apple-touch-icon" href="/images/brand/apple-touch-icon.png" />
+    <link rel="stylesheet" href="../css/swt2026.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="header-left">
+        <span class="header-icon">🧭</span>
+        <div>
+          <h1>SnowVillage SVTI診断</h1>
+          <p>SWT 2026 コミュニティ＆スタイル診断</p>
+        </div>
+      </div>
+      <button id="theme-toggle" type="button" aria-label="テーマ切替">🌙 / ☀️</button>
+    </header>
+
+    <main class="container">
+
+      <!-- ── Intro View ───────────────────────────────────────── -->
+      <section id="intro-view" class="card">
+        <div class="intro-hero">
+          <div class="hero-icon">❄️🧭</div>
+          <h2>あなたに合う SnowVillage を見つけよう</h2>
+          <p>8問・約2分で、あなたのデータ活用スタイル・コミュニティ・Neighbors・おすすめSnowflake機能を提案します。</p>
+          <div class="intro-features">
+            <div class="intro-feature">
+              <span class="fi">👥</span>
+              <span>初心者歓迎のユーザーグループ提案</span>
+            </div>
+            <div class="intro-feature">
+              <span class="fi">🤝</span>
+              <span>回答の同じ会場Neighbors紹介</span>
+            </div>
+            <div class="intro-feature">
+              <span class="fi">⚡</span>
+              <span>スタイルに合うSnowflake機能を紹介</span>
+            </div>
+            <div class="intro-feature">
+              <span class="fi">🎴</span>
+              <span>16タイプのデジタルカード診断</span>
+            </div>
+          </div>
+          <button id="start-button" class="primary-button" type="button">🚀 診断をはじめる</button>
+          <p class="intro-note">個人情報は収集しません。その場限りのエンタメ診断です。</p>
+        </div>
+      </section>
+
+      <!-- ── Quiz View ────────────────────────────────────────── -->
+      <section id="quiz-view" class="card hidden">
+        <div class="progress-wrapper">
+          <div class="progress-meta">
+            <button id="back-button" class="ghost-button back-button" type="button">← 前の質問に戻る</button>
+            <span id="progress-label">Q1 / 8</span>
+            <span id="progress-pct">12%</span>
+          </div>
+          <div class="progress-bar">
+            <div id="progress-fill"></div>
+          </div>
+        </div>
+        <h2 id="question-text"></h2>
+        <div id="options" class="options options-2col"></div>
+      </section>
+
+      <!-- ── Result View ──────────────────────────────────────── -->
+      <section id="result-view" class="card hidden">
+
+        <!-- デジタルカード風結果ヘッダー -->
+        <div class="result-digital-card">
+          <div class="card-badge-row" id="badge-container"></div>
+          <div class="result-header-content">
+            <div class="result-header-icon" id="result-icon">🌟</div>
+            <div class="result-header-text">
+              <span class="type-tag">YOUR STYLE TYPE</span>
+              <h2 id="result-title" class="result-title"></h2>
+              <div id="result-subtitle" class="result-subtitle"></div>
+            </div>
+          </div>
+          <p id="result-catchphrase" class="result-catchphrase"></p>
+          <p id="result-description" class="result-description"></p>
+        </div>
+
+        <div class="result-section" id="neighbor-section">
+          <h3>👥 特にあなたに近いNeighbors & Mayors</h3>
+          <div id="neighbor-list"></div>
+          <div class="other-people" id="other-people">
+            <p class="other-groups-title">ほかのNeighbors & Mayors</p>
+            <div id="other-neighbor-list" class="other-neighbor-list"></div>
+          </div>
+        </div>
+
+        <div class="result-section">
+          <h3>🏘️ おすすめユーザーグループ</h3>
+          <div id="group-list"></div>
+          <div class="other-groups">
+            <p class="other-groups-title">その他おすすめのコミュニティ</p>
+            <div id="other-group-list" class="other-group-list"></div>
+            <p class="other-groups-note">
+              <a id="other-group-link" href="https://techplay.jp/community_group/snowflake_users" target="_blank" rel="noopener noreferrer">Snowflakeユーザーグループ一覧を見る →</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="result-section">
+          <h3>⚡ おすすめSnowflake機能</h3>
+          <ul id="feature-list" class="feature-pills"></ul>
+        </div>
+
+        <div class="result-section" id="event-section">
+          <h3>🍻 アフターパーティーで会いましょう</h3>
+          <p class="event-lead">飲んで、笑って、ダーツで勝負。</p>
+          <ul id="event-list" class="event-list"></ul>
+        </div>
+
+        <div class="result-section">
+          <h3>🎯 次のアクション</h3>
+          <ul id="action-list" class="action-list"></ul>
+        </div>
+
+        <div class="share-actions">
+          <button id="share-x" class="share-x" type="button">𝕏 でシェア</button>
+          <button id="copy-link" class="secondary-button" type="button">📋 結果リンクをコピー</button>
+          <button id="share-mail" class="ghost-button" type="button">✉️ メールで送る</button>
+          <button id="restart" class="ghost-button" type="button">↺ もう一度診断する</button>
+        </div>
+        <div id="copy-toast" class="toast hidden">リンクをクリップボードにコピーしました！</div>
+      </section>
+
+    </main>
+
+    <!-- ── Detail Modal ─────────────────────────────────────── -->
+    <div id="detail-modal" class="modal-overlay hidden" role="dialog" aria-modal="true">
+      <div class="modal-card">
+        <button id="modal-close" class="modal-close-btn" type="button" aria-label="閉じる">✕</button>
+        <div id="modal-content"></div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
