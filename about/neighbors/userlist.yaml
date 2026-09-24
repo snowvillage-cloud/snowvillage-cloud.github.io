@@ -164,6 +164,12 @@
   photo: ../../images/neighbors/yuji_matsumoto.png
   xUrl: "https://x.com/ym_tech_info"
 
+- name: Madoka Fujita
+  affiliation : --
+  photo : ../../images/neighbors/mfujita2023.jpg
+  xUrl : "https://x.com/mfujita2023"
+  linkedInUrl: "https://www.linkedin.com/in/madoka-fujita-31b9912b9/"
+
 #  「Linkdin」のアカウントのみあるケース
 # - name: データ ハナコ
 #   affiliation: Data Engineering Inc.
